@@ -98,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     input.classList.add("is-invalid");
 
-    // Find the corresponding error container
     const fieldContainer = input.closest(".mb-3");
     const errorContainer = fieldContainer.querySelector(
       ".error-message-container"
@@ -111,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       errorContainer.appendChild(errorDiv);
 
-      // Trigger animation
       requestAnimationFrame(() => {
         errorDiv.classList.add("show");
       });
@@ -133,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (errorMsg.parentNode) {
             errorMsg.remove();
           }
-        }, 300); // Wait for animation to complete
+        }, 300);
       }
     }
   }

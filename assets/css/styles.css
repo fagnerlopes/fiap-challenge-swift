@@ -14,18 +14,15 @@
   --bs-danger: var(--swift-primary);
   --bs-danger-rgb: var(--swift-primary-rgb);
 
-  /* Form Controls */
   --bs-form-valid-color: var(--swift-primary);
   --bs-form-valid-border-color: var(--swift-primary);
   --bs-form-invalid-color: #dc3545;
   --bs-form-invalid-border-color: #dc3545;
 
-  /* Focus States */
   --bs-focus-ring-color: rgba(var(--swift-primary-rgb), 0.25);
   --bs-focus-ring-opacity: 1;
   --bs-focus-ring-width: 0.25rem;
 
-  /* Button Focus */
   --bs-btn-focus-width: 0.25rem;
   --bs-btn-focus-box-shadow: 0 0 0 var(--bs-btn-focus-width)
     rgba(var(--swift-primary-rgb), 0.25);
@@ -183,7 +180,6 @@ a.text-warning:hover {
   color: white !important;
 }
 
-/* Ensure icon color overrides Bootstrap text-warning class */
 .icon-circle:hover .text-warning,
 .icon-circle:hover i[data-lucide] {
   color: white !important;
@@ -232,7 +228,6 @@ hr {
   border-color: var(--bs-form-invalid-border-color, #dc3545) !important;
 }
 
-/* Custom styling for email and password inputs */
 input[type="email"],
 input[type="password"],
 .form-control {
