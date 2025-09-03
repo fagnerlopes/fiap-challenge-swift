@@ -1,3 +1,242 @@
+:root {
+  /* Swift Brand Colors */
+  --swift-primary: #ff6b35;
+  --swift-primary-hover: #e55a2b;
+  --swift-primary-active: #d94f20;
+  --swift-primary-rgb: 255, 107, 53;
+  --swift-secondary: #f7931e;
+
+  /* Bootstrap Variables Override */
+  --bs-primary: var(--swift-primary);
+  --bs-primary-rgb: var(--swift-primary-rgb);
+  --bs-warning: var(--swift-primary);
+  --bs-warning-rgb: var(--swift-primary-rgb);
+  --bs-danger: var(--swift-primary);
+  --bs-danger-rgb: var(--swift-primary-rgb);
+
+  /* Form Controls */
+  --bs-form-valid-color: var(--swift-primary);
+  --bs-form-valid-border-color: var(--swift-primary);
+  --bs-form-invalid-color: #dc3545;
+  --bs-form-invalid-border-color: #dc3545;
+
+  /* Focus States */
+  --bs-focus-ring-color: rgba(var(--swift-primary-rgb), 0.25);
+  --bs-focus-ring-opacity: 1;
+  --bs-focus-ring-width: 0.25rem;
+
+  /* Button Focus */
+  --bs-btn-focus-width: 0.25rem;
+  --bs-btn-focus-box-shadow: 0 0 0 var(--bs-btn-focus-width)
+    rgba(var(--swift-primary-rgb), 0.25);
+}
+
 body {
   font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+button:focus-visible,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.swift-header {
+  background: linear-gradient(
+    135deg,
+    var(--swift-primary) 0%,
+    var(--swift-secondary) 100%
+  );
+  background-color: var(--swift-primary);
+}
+
+.swift-logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.swift-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.input-group-text {
+  background-color: #f8f9fa !important;
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+}
+
+.form-control {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.error-message-container {
+  height: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0.25rem;
+}
+
+.error-message-container .invalid-feedback {
+  display: block !important;
+  font-size: 0.875rem;
+  color: var(--bs-form-invalid-color, #dc3545);
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.error-message-container .invalid-feedback.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-swift {
+  --bs-btn-bg: var(--swift-primary);
+  --bs-btn-border-color: var(--swift-primary);
+  --bs-btn-hover-bg: var(--swift-primary-hover);
+  --bs-btn-hover-border-color: var(--swift-primary-hover);
+  --bs-btn-active-bg: var(--swift-primary-active);
+  --bs-btn-active-border-color: var(--swift-primary-active);
+  --bs-btn-focus-shadow-rgb: var(--swift-primary-rgb);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.btn-swift:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(var(--swift-primary-rgb), 0.3);
+}
+
+.btn-swift:active {
+  transform: translateY(0);
+}
+
+.btn-outline-secondary {
+  border-color: #dee2e6;
+  color: #6c757d;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+  border-color: #adb5bd;
+  color: #495057;
+}
+
+.text-danger {
+  color: var(--swift-primary) !important;
+}
+
+.text-warning {
+  color: var(--swift-primary) !important;
+}
+
+a.text-warning:hover {
+  color: var(--swift-primary-hover) !important;
+  text-decoration: underline !important;
+}
+
+.icon-circle {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--swift-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.icon-circle:hover {
+  background-color: var(--swift-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(var(--swift-primary-rgb), 0.3);
+}
+
+.icon-circle:hover i {
+  color: white !important;
+}
+
+/* Ensure icon color overrides Bootstrap text-warning class */
+.icon-circle:hover .text-warning,
+.icon-circle:hover i[data-lucide] {
+  color: white !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+hr {
+  opacity: 0.3;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .swift-logo {
+    font-size: 2rem;
+  }
+
+  .swift-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .px-md-5 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+.form-control,
+.btn,
+.input-group-text {
+  transition: all 0.3s ease;
+}
+
+.input-group:has(.is-invalid) .input-group-text {
+  border-color: var(--bs-form-invalid-border-color, #dc3545) !important;
+  background-color: rgba(220, 53, 69, 0.1) !important;
+}
+
+.input-group:has(.is-invalid) .input-group-text i {
+  color: var(--bs-form-invalid-color, #dc3545) !important;
+}
+
+.input-group:has(.is-invalid) .form-control {
+  border-color: var(--bs-form-invalid-border-color, #dc3545) !important;
+}
+
+/* Custom styling for email and password inputs */
+input[type="email"],
+input[type="password"],
+.form-control {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  font-size: 1rem;
 }

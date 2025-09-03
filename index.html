@@ -19,18 +19,192 @@
       rel="stylesheet"
     />
 
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Swift</h1>
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <!-- Left Column - Login Form -->
+        <div class="col-md-6 d-flex flex-column m-0 p-0">
+          <!-- Header -->
+          <div class="swift-header text-white p-4">
+            <h1 class="swift-logo mb-1">Swift Pro</h1>
+            <p class="swift-subtitle mb-0">
+              Faça login e comece a ganhar pontos!
+            </p>
+          </div>
+
+          <!-- Login Form -->
+          <div class="flex-grow-1 d-flex align-items-center">
+            <div class="w-100 px-4 px-md-5">
+              <h2 class="mb-4 fw-bold">Acesse sua conta</h2>
+
+              <form id="loginForm">
+                <!-- Email Field -->
+                <div class="mb-3">
+                  <label for="email" class="form-label text-muted"
+                    >E-mail Swift</label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0">
+                      <i data-lucide="mail" class="text-muted"></i>
+                    </span>
+                    <input
+                      type="email"
+                      class="form-control border-start-0"
+                      id="email"
+                      placeholder="seu.email@swift.com.br"
+                      required
+                    />
+                  </div>
+                  <div class="error-message-container" id="email-error"></div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="mb-3">
+                  <label for="password" class="form-label text-muted"
+                    >Senha</label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0">
+                      <i data-lucide="lock" class="text-muted"></i>
+                    </span>
+                    <input
+                      type="password"
+                      class="form-control border-start-0 border-end-0"
+                      id="password"
+                      placeholder="••••••••"
+                      required
+                    />
+                    <span
+                      class="input-group-text bg-light border-start-0 cursor-pointer"
+                      id="togglePassword"
+                    >
+                      <i data-lucide="eye" class="text-muted"></i>
+                    </span>
+                  </div>
+                  <div
+                    class="error-message-container"
+                    id="password-error"
+                  ></div>
+                </div>
+
+                <div
+                  class="d-flex justify-content-between align-items-center mb-4"
+                >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="rememberMe"
+                    />
+                    <label class="form-check-label text-muted" for="rememberMe">
+                      Lembrar de mim
+                    </label>
+                  </div>
+                  <a href="#" class="text-decoration-none text-danger"
+                    >Esqueceu a senha?</a
+                  >
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn btn-warning btn-swift w-100 py-2 mb-4 fw-bold"
+                >
+                  <i data-lucide="shield-check" class="me-2"></i>
+                  Entrar
+                </button>
+
+                <div class="text-center mb-4">
+                  <hr class="d-inline-block" style="width: 100px" />
+                  <span class="text-muted mx-3">Ou continue com</span>
+                  <hr class="d-inline-block" style="width: 100px" />
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-6">
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary w-100 py-2"
+                    >
+                      <i data-lucide="chrome" class="me-2"></i>
+                      Google
+                    </button>
+                  </div>
+                  <div class="col-6">
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary w-100 py-2"
+                    >
+                      <i data-lucide="facebook" class="me-2"></i>
+                      Facebook
+                    </button>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <span class="text-muted">Novo na plataforma? </span>
+                  <a href="#" class="text-decoration-none text-danger fw-bold"
+                    >Fale com o RH</a
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="p-4 d-flex flex-column align-items-center text-center">
+            <div class="d-flex justify-content-center gap-3 mb-3">
+              <div class="icon-circle">
+                <i data-lucide="award" class="text-warning"></i>
+              </div>
+              <div class="icon-circle">
+                <i data-lucide="database" class="text-warning"></i>
+              </div>
+              <div class="icon-circle">
+                <i data-lucide="bar-chart-3" class="text-warning"></i>
+              </div>
+            </div>
+            <a href="#" class="text-warning text-decoration-none fw-bold"
+              >Acessar Site Swift</a
+            >
+            <div class="mt-3">
+              <small class="text-muted">
+                Protegido por reCAPTCHA.
+                <a href="#" class="text-warning">Privacidade</a> e
+                <a href="#" class="text-warning">Termos de uso</a>
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagem da direita -->
+        <div
+          class="col-md-6 d-none d-md-block position-relative overflow-hidden m-0 p-0"
+        >
+          <div
+            class="h-100 bg-light d-flex align-items-center justify-content-center"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Swift Pro"
+              class="img-fluid h-100 w-100"
+              style="object-fit: cover"
+            />
+          </div>
+        </div>
+      </div>
     </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
   </body>
 </html>
