@@ -194,6 +194,36 @@ hr {
   margin: 0;
 }
 
+/* Social login divider responsive styling */
+.social-divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.social-hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid #a0a0a0;
+  opacity: 0.3;
+  margin: 0;
+}
+
+.social-text {
+  padding: 0 1rem;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+/* Mobile adjustments for social divider */
+@media (max-width: 575.98px) {
+  .social-text {
+    padding: 0 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
 @media (max-width: 768px) {
   .swift-logo {
     font-size: 2rem;
@@ -226,6 +256,30 @@ hr {
 
 .input-group:has(.is-invalid) .form-control {
   border-color: var(--bs-form-invalid-border-color, #dc3545) !important;
+}
+
+/* Login container responsive sizing */
+.login-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 767.98px) {
+  .login-container {
+    max-width: 100%;
+  }
+
+  /* Add spacing between header and form content on mobile */
+  .col-md-6 .d-flex.flex-column.h-100 {
+    padding-top: 3rem;
+  }
+
+  /* Ensure proper spacing for form title */
+  .login-container h2 {
+    margin-top: 1rem;
+  }
 }
 
 input[type="email"],
