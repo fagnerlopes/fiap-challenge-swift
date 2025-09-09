@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swift</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <link rel="stylesheet" href="assets/css/login.css" />
+  </head>
+  <body>
+    <main class="container-fluid h-100">
+      <div class="row h-100">
+        <div class="col-md-6 d-flex flex-column m-0 p-0">
+          <header class="swift-header text-white p-4">
+            <h1 class="swift-logo mb-1">Swift Pro</h1>
+            <p class="swift-subtitle mb-0">
+              Faça login e comece a ganhar pontos!
+            </p>
+          </header>
+
+          <div
+            class="d-flex flex-column h-100 justify-content-center align-items-center mt-2"
+          >
+            <div class="login-container w-100">
+              <section class="flex-grow-1 d-flex align-items-center">
+                <div class="w-100 px-4 px-md-5">
+                  <h2 class="mb-4 fw-bold">Acesse sua conta</h2>
+
+                  <form id="loginForm">
+                    <div class="mb-3">
+                      <label for="email" class="form-label text-muted"
+                        >E-mail Swift</label
+                      >
+                      <div class="input-group">
+                        <span class="input-group-text bg-light border-end-0">
+                          <i data-lucide="mail" class="text-muted"></i>
+                        </span>
+                        <input
+                          type="email"
+                          class="form-control border-start-0"
+                          id="email"
+                          placeholder="seu.email@swift.com.br"
+                          required
+                        />
+                      </div>
+                      <div
+                        class="error-message-container"
+                        id="email-error"
+                      ></div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="password" class="form-label text-muted"
+                        >Senha</label
+                      >
+                      <div class="input-group">
+                        <span class="input-group-text bg-light border-end-0">
+                          <i data-lucide="lock" class="text-muted"></i>
+                        </span>
+                        <input
+                          type="password"
+                          class="form-control border-start-0 border-end-0"
+                          id="password"
+                          placeholder="••••••••"
+                          required
+                        />
+                        <span
+                          class="input-group-text bg-light border-start-0 cursor-pointer"
+                          id="togglePassword"
+                        >
+                          <i data-lucide="eye" class="text-muted"></i>
+                        </span>
+                      </div>
+                      <div
+                        class="error-message-container"
+                        id="password-error"
+                      ></div>
+                    </div>
+
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-4"
+                    >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="rememberMe"
+                        />
+                        <label
+                          class="form-check-label text-muted"
+                          for="rememberMe"
+                        >
+                          Lembrar de mim
+                        </label>
+                      </div>
+                      <a href="#" class="text-decoration-none text-danger"
+                        >Esqueceu a senha?</a
+                      >
+                    </div>
+
+                    <button
+                      type="submit"
+                      class="btn btn-warning btn-swift w-100 py-2 mb-4 fw-bold"
+                    >
+                      <i data-lucide="shield-check" class="me-2"></i>
+                      Entrar
+                    </button>
+
+                    <div class="text-center mb-4">
+                      <div class="social-divider">
+                        <hr class="social-hr" />
+                        <span class="text-muted social-text"
+                          >Ou continue com</span
+                        >
+                        <hr class="social-hr" />
+                      </div>
+                    </div>
+
+                    <div class="row mb-4">
+                      <div class="col-6">
+                        <button
+                          type="button"
+                          class="btn btn-outline-secondary w-100 py-2"
+                        >
+                          <i data-lucide="chrome" class="me-2"></i>
+                          Google
+                        </button>
+                      </div>
+                      <div class="col-6">
+                        <button
+                          type="button"
+                          class="btn btn-outline-secondary w-100 py-2"
+                        >
+                          <i data-lucide="facebook" class="me-2"></i>
+                          Facebook
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <span class="text-muted">Novo na plataforma? </span>
+                      <a
+                        href="#"
+                        class="text-decoration-none text-danger fw-bold"
+                        >Fale com o RH</a
+                      >
+                    </div>
+                  </form>
+                </div>
+              </section>
+
+              <footer
+                class="p-4 d-flex flex-column align-items-center text-center"
+              >
+                <div class="d-flex justify-content-center gap-3 mb-3">
+                  <div class="icon-circle">
+                    <i data-lucide="award" class="text-warning"></i>
+                  </div>
+                  <div class="icon-circle">
+                    <i data-lucide="database" class="text-warning"></i>
+                  </div>
+                  <div class="icon-circle">
+                    <i data-lucide="bar-chart-3" class="text-warning"></i>
+                  </div>
+                </div>
+                <a href="#" class="text-warning text-decoration-none fw-bold"
+                  >Acessar Site Swift</a
+                >
+                <div class="mt-3">
+                  <small class="text-muted">
+                    Protegido por reCAPTCHA.
+                    <a href="#" class="text-warning">Privacidade</a> e
+                    <a href="#" class="text-warning">Termos de uso</a>
+                  </small>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagem da direita -->
+        <aside
+          class="col-md-6 d-none d-md-block position-relative overflow-hidden m-0 p-0"
+        >
+          <div
+            class="h-100 bg-light d-flex align-items-center justify-content-center"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Swift Pro"
+              class="img-fluid h-100 w-100"
+              style="object-fit: cover"
+            />
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/login.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

@@ -42,3 +42,34 @@ php -S localhost:8000
 ```
 
 Depois acesse: `http://localhost:8000`
+
+## 🔐 Sistema de Login
+
+A aplicação possui um sistema de autenticação mockado para fins acadêmicos. Use as credenciais abaixo para testar as diferentes visões:
+
+### 👨‍💼 Gerente
+
+- **E-mail**: `gerente@swift.com`
+- **Senha**: `123456`
+- **Acesso**: Todas as páginas, incluindo a **Área do Gerente**
+
+### 👨‍💻 Vendedor
+
+- **E-mail**: `vendedor@swift.com`
+- **Senha**: `123456`
+- **Acesso**: Todas as páginas, **exceto** a Área do Gerente
+
+### 🔒 Controle de Acesso
+
+- **Página `gerente.html`**: Restrita apenas a usuários com role "gerente"
+- **Demais páginas**: Acessíveis por qualquer usuário logado
+- **Sistema de sessão**: Suporte a "Lembrar de mim" usando localStorage
+- **Logout**: Disponível em todas as páginas através do botão "Sair"
+
+### 🚀 Como Testar
+
+1. Acesse `login.html`
+2. Use uma das credenciais acima
+3. Marque "Lembrar de mim" se desejar persistir a sessão
+4. Será redirecionado automaticamente baseado na sua role
+5. Teste acessar `gerente.html` com diferentes usuários

@@ -1,225 +1,942 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Swift</title>
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SwiftPro – Gamificação para Lojas</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- Sistema de Autenticação -->
+    <script src="assets/js/auth.js"></script>
+    <script>
+      // Proteger página - qualquer usuário logado pode acessar
+      window.checkPageAccess();
+    </script>
   </head>
   <body>
-    <main class="container-fluid h-100">
-      <div class="row h-100">
-        <div class="col-md-6 d-flex flex-column m-0 p-0">
-          <header class="swift-header text-white p-4">
-            <h1 class="swift-logo mb-1">Swift Pro</h1>
-            <p class="swift-subtitle mb-0">
-              Faça login e comece a ganhar pontos!
-            </p>
-          </header>
+    <nav
+      class="navbar navbar-expand-lg sticky-top"
+      aria-label="Navegação principal"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand d-flex align-items-center gap-2"
+          href="index.html"
+        >
+          <i class="bi bi-fire text-brand"></i>
+          <strong>SwiftPro</strong>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navOffcanvas"
+          aria-controls="navOffcanvas"
+          aria-label="Abrir menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div
-            class="d-flex flex-column h-100 justify-content-center align-items-center mt-2"
-          >
-            <div class="login-container w-100">
-              <section class="flex-grow-1 d-flex align-items-center">
-                <div class="w-100 px-4 px-md-5">
-                  <h2 class="mb-4 fw-bold">Acesse sua conta</h2>
-
-                  <form id="loginForm">
-                    <div class="mb-3">
-                      <label for="email" class="form-label text-muted"
-                        >E-mail Swift</label
-                      >
-                      <div class="input-group">
-                        <span class="input-group-text bg-light border-end-0">
-                          <i data-lucide="mail" class="text-muted"></i>
-                        </span>
-                        <input
-                          type="email"
-                          class="form-control border-start-0"
-                          id="email"
-                          placeholder="seu.email@swift.com.br"
-                          required
-                        />
-                      </div>
-                      <div
-                        class="error-message-container"
-                        id="email-error"
-                      ></div>
-                    </div>
-
-                    <div class="mb-3">
-                      <label for="password" class="form-label text-muted"
-                        >Senha</label
-                      >
-                      <div class="input-group">
-                        <span class="input-group-text bg-light border-end-0">
-                          <i data-lucide="lock" class="text-muted"></i>
-                        </span>
-                        <input
-                          type="password"
-                          class="form-control border-start-0 border-end-0"
-                          id="password"
-                          placeholder="••••••••"
-                          required
-                        />
-                        <span
-                          class="input-group-text bg-light border-start-0 cursor-pointer"
-                          id="togglePassword"
-                        >
-                          <i data-lucide="eye" class="text-muted"></i>
-                        </span>
-                      </div>
-                      <div
-                        class="error-message-container"
-                        id="password-error"
-                      ></div>
-                    </div>
-
-                    <div
-                      class="d-flex justify-content-between align-items-center mb-4"
-                    >
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          id="rememberMe"
-                        />
-                        <label
-                          class="form-check-label text-muted"
-                          for="rememberMe"
-                        >
-                          Lembrar de mim
-                        </label>
-                      </div>
-                      <a href="#" class="text-decoration-none text-danger"
-                        >Esqueceu a senha?</a
-                      >
-                    </div>
-
-                    <button
-                      type="submit"
-                      class="btn btn-warning btn-swift w-100 py-2 mb-4 fw-bold"
-                    >
-                      <i data-lucide="shield-check" class="me-2"></i>
-                      Entrar
-                    </button>
-
-                    <div class="text-center mb-4">
-                      <div class="social-divider">
-                        <hr class="social-hr" />
-                        <span class="text-muted social-text"
-                          >Ou continue com</span
-                        >
-                        <hr class="social-hr" />
-                      </div>
-                    </div>
-
-                    <div class="row mb-4">
-                      <div class="col-6">
-                        <button
-                          type="button"
-                          class="btn btn-outline-secondary w-100 py-2"
-                        >
-                          <i data-lucide="chrome" class="me-2"></i>
-                          Google
-                        </button>
-                      </div>
-                      <div class="col-6">
-                        <button
-                          type="button"
-                          class="btn btn-outline-secondary w-100 py-2"
-                        >
-                          <i data-lucide="facebook" class="me-2"></i>
-                          Facebook
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="text-center">
-                      <span class="text-muted">Novo na plataforma? </span>
-                      <a
-                        href="#"
-                        class="text-decoration-none text-danger fw-bold"
-                        >Fale com o RH</a
-                      >
-                    </div>
-                  </form>
-                </div>
-              </section>
-
-              <footer
-                class="p-4 d-flex flex-column align-items-center text-center"
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+              <li class="nav-item">
+                <a class="nav-link" href="ranking.html">Ranking</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="missoes.html">Missões</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="plano.html">Plano de Carreira</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gerente.html">Área do Gerente</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="config.html">Configurações</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="historico.html">Histórico</a>
+              </li>
+            </ul>
+            <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
+              <!-- Informações do usuário logado -->
+              <div class="d-flex flex-column text-center text-lg-end me-2">
+                <small class="text-muted">Olá,</small>
+                <strong data-user-name>Usuário</strong>
+                <small class="text-muted" data-user-role>Carregando...</small>
+              </div>
+              <!-- Botão de logout -->
+              <button
+                class="btn btn-outline-danger btn-sm"
+                data-logout
+                title="Sair do sistema"
               >
-                <div class="d-flex justify-content-center gap-3 mb-3">
-                  <div class="icon-circle">
-                    <i data-lucide="award" class="text-warning"></i>
-                  </div>
-                  <div class="icon-circle">
-                    <i data-lucide="database" class="text-warning"></i>
-                  </div>
-                  <div class="icon-circle">
-                    <i data-lucide="bar-chart-3" class="text-warning"></i>
-                  </div>
-                </div>
-                <a href="#" class="text-warning text-decoration-none fw-bold"
-                  >Acessar Site Swift</a
-                >
-                <div class="mt-3">
-                  <small class="text-muted">
-                    Protegido por reCAPTCHA.
-                    <a href="#" class="text-warning">Privacidade</a> e
-                    <a href="#" class="text-warning">Termos de uso</a>
-                  </small>
-                </div>
-              </footer>
+                <i class="bi bi-box-arrow-right me-1"></i> Sair
+              </button>
             </div>
           </div>
         </div>
-
-        <!-- Imagem da direita -->
-        <aside
-          class="col-md-6 d-none d-md-block position-relative overflow-hidden m-0 p-0"
-        >
-          <div
-            class="h-100 bg-light d-flex align-items-center justify-content-center"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-              alt="Swift Pro"
-              class="img-fluid h-100 w-100"
-              style="object-fit: cover"
-            />
-          </div>
-        </aside>
       </div>
-    </main>
+    </nav>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+    <header class="py-5 bg-brand-soft border-bottom">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-lg-5">
+            <div class="card soft-shadow">
+              <div class="card-body d-flex align-items-center gap-3">
+                <img
+                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop"
+                  alt="Avatar do Colaborador"
+                  class="avatar-xl"
+                />
+                <div>
+                  <div class="d-flex align-items-center gap-2">
+                    <h1 class="h4 m-0">Lucas (Colaborador)</h1>
+                    <span class="badge badge-level">Ouro</span>
+                  </div>
+                  <div class="text-muted small">Loja Swift – Vila Mariana</div>
+                  <div class="mt-3">
+                    <div
+                      class="progress"
+                      role="progressbar"
+                      aria-label="Progresso para próximo nível"
+                      aria-valuenow="65"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      <div class="progress-bar" style="width: 65%"></div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-1">
+                      <small class="text-muted">1.280 pts</small>
+                      <small class="text-muted">Próximo: Diamante</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent d-flex flex-wrap gap-2">
+                <button
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#registrarVendaModal"
+                >
+                  <i class="bi bi-cash-coin me-1"></i> Registrar venda
+                </button>
+                <button
+                  class="btn btn-outline-secondary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#abrirDisputaModal"
+                >
+                  <i class="bi bi-shield-exclamation me-1"></i> Abrir disputa
+                </button>
+                <a href="missoes.html" class="btn btn-outline-secondary"
+                  ><i class="bi bi-check2-square me-1"></i> Missões</a
+                >
+                <a href="ranking.html" class="btn btn-outline-secondary"
+                  ><i class="bi bi-trophy me-1"></i> Ranking</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="card soft-shadow">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h2 class="h5 m-0">Painel rápido</h2>
+                  <span class="text-brand"><i data-lucide="sparkles"></i></span>
+                </div>
+                <div class="row g-3 mt-1">
+                  <div class="col-6 col-md-3">
+                    <div class="p-3 border rounded-4 text-center h-100">
+                      <div class="kpi">12</div>
+                      <div class="kpi-sub">Vendas hoje</div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3">
+                    <div class="p-3 border rounded-4 text-center h-100">
+                      <div class="kpi">32%</div>
+                      <div class="kpi-sub">Cross-sell</div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3">
+                    <div class="p-3 border rounded-4 text-center h-100">
+                      <div class="kpi">9.1</div>
+                      <div class="kpi-sub">NPS</div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3">
+                    <div class="p-3 border rounded-4 text-center h-100">
+                      <div class="kpi">+120</div>
+                      <div class="kpi-sub">Pontos hoje</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tabs de papéis: Colaborador x Gerente -->
+                <ul
+                  class="nav nav-pills role-tab gap-2 mt-4"
+                  id="roleTab"
+                  role="tablist"
+                >
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="colab-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#colab"
+                      type="button"
+                      role="tab"
+                      aria-controls="colab"
+                      aria-selected="true"
+                    >
+                      <i class="bi bi-person-badge me-1"></i> Colaborador
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="gerente-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#gerente"
+                      type="button"
+                      role="tab"
+                      aria-controls="gerente"
+                      aria-selected="false"
+                    >
+                      <i class="bi bi-person-gear me-1"></i> Gerente
+                    </button>
+                  </li>
+                </ul>
+
+                <div class="tab-content mt-3" id="roleTabContent">
+                  <!-- COLABORADOR -->
+                  <div
+                    class="tab-pane fade show active"
+                    id="colab"
+                    role="tabpanel"
+                    aria-labelledby="colab-tab"
+                  >
+                    <div class="row g-3">
+                      <div class="col-12 col-md-6">
+                        <div class="card h-100">
+                          <div
+                            class="card-header d-flex align-items-center justify-content-between"
+                          >
+                            Missões ativas
+                            <span class="badge bg-light text-dark">3</span>
+                          </div>
+                          <div class="card-body">
+                            <div class="d-flex flex-column gap-2">
+                              <div class="mission-item">
+                                <div
+                                  class="d-flex justify-content-between align-items-center"
+                                >
+                                  <strong>Combo da Semana</strong>
+                                  <span
+                                    class="badge bg-warning-subtle text-dark"
+                                    >Cross-sell 2x</span
+                                  >
+                                </div>
+                                <div class="small text-muted">
+                                  Vender carne + tempero
+                                </div>
+                                <div class="d-flex gap-2 mt-2">
+                                  <button
+                                    class="btn btn-sm btn-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#entregarEvidenciaModal"
+                                  >
+                                    Entregar evidência
+                                  </button>
+                                  <a
+                                    class="btn btn-sm btn-outline-secondary"
+                                    href="missoes.html"
+                                    >Detalhes</a
+                                  >
+                                </div>
+                              </div>
+                              <div class="mission-item">
+                                <div
+                                  class="d-flex justify-content-between align-items-center"
+                                >
+                                  <strong>NPS 9+</strong>
+                                  <span class="badge bg-light text-dark"
+                                    >+50 pts</span
+                                  >
+                                </div>
+                                <div class="small text-muted">
+                                  Garantir ótima experiência
+                                </div>
+                              </div>
+                              <div class="mission-item">
+                                <div
+                                  class="d-flex justify-content-between align-items-center"
+                                >
+                                  <strong>Ticket Médio R$80+</strong>
+                                  <span class="badge bg-light text-dark"
+                                    >+30 pts</span
+                                  >
+                                </div>
+                                <div class="small text-muted">
+                                  Oferecer cortes premium
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card-footer bg-transparent text-end">
+                            <a
+                              href="missoes.html"
+                              class="btn btn-sm btn-outline-secondary"
+                              >Ver todas</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="card h-100">
+                          <div class="card-header">Atalhos</div>
+                          <div class="card-body">
+                            <div class="row g-2">
+                              <div class="col-6">
+                                <a
+                                  href="ranking.html"
+                                  class="btn w-100 btn-outline-secondary"
+                                  ><i class="bi bi-trophy me-1"></i> Ranking</a
+                                >
+                              </div>
+                              <div class="col-6">
+                                <a
+                                  href="plano.html"
+                                  class="btn w-100 btn-outline-secondary"
+                                  ><i class="bi bi-mortarboard me-1"></i> Plano
+                                  de Carreira</a
+                                >
+                              </div>
+                              <div class="col-6">
+                                <a
+                                  href="historico.html"
+                                  class="btn w-100 btn-outline-secondary"
+                                  ><i class="bi bi-clock-history me-1"></i>
+                                  Histórico</a
+                                >
+                              </div>
+                              <div class="col-6">
+                                <a
+                                  href="config.html"
+                                  class="btn w-100 btn-outline-secondary"
+                                  ><i class="bi bi-gear me-1"></i>
+                                  Configurações</a
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- GERENTE -->
+                  <div
+                    class="tab-pane fade"
+                    id="gerente"
+                    role="tabpanel"
+                    aria-labelledby="gerente-tab"
+                  >
+                    <div class="row g-3">
+                      <div class="col-12 col-lg-7">
+                        <div class="card h-100">
+                          <div class="card-header">KPIs da Loja</div>
+                          <div class="card-body">
+                            <div class="row g-3">
+                              <div class="col-6 col-md-4">
+                                <div
+                                  class="p-3 border rounded-4 text-center h-100"
+                                >
+                                  <div class="kpi">R$ 78</div>
+                                  <div class="kpi-sub">Ticket médio</div>
+                                </div>
+                              </div>
+                              <div class="col-6 col-md-4">
+                                <div
+                                  class="p-3 border rounded-4 text-center h-100"
+                                >
+                                  <div class="kpi">35%</div>
+                                  <div class="kpi-sub">Cross-sell</div>
+                                </div>
+                              </div>
+                              <div class="col-6 col-md-4">
+                                <div
+                                  class="p-3 border rounded-4 text-center h-100"
+                                >
+                                  <div class="kpi">9.0</div>
+                                  <div class="kpi-sub">NPS</div>
+                                </div>
+                              </div>
+                            </div>
+                            <hr />
+                            <div class="d-flex flex-wrap gap-2">
+                              <button
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#aprovarEvidenciasModal"
+                              >
+                                <i class="bi bi-ui-checks me-1"></i> Aprovar
+                                evidências
+                              </button>
+                              <button
+                                class="btn btn-outline-secondary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#gerirRecompensasModal"
+                              >
+                                <i class="bi bi-gift me-1"></i> Recompensas
+                              </button>
+                              <a
+                                href="gerente.html#relatorios"
+                                class="btn btn-outline-secondary"
+                                ><i class="bi bi-filetype-pdf me-1"></i>
+                                Relatórios</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-5">
+                        <div class="card h-100">
+                          <div
+                            class="card-header d-flex align-items-center justify-content-between"
+                          >
+                            Disputas
+                            <span class="badge bg-light text-dark"
+                              >2 pendentes</span
+                            >
+                          </div>
+                          <div class="card-body">
+                            <div class="d-flex flex-column gap-3">
+                              <div class="d-flex align-items-start gap-3">
+                                <i
+                                  class="bi bi-shield-exclamation fs-4 text-brand"
+                                ></i>
+                                <div>
+                                  <div class="fw-semibold">
+                                    Venda não pontuada
+                                  </div>
+                                  <div class="small text-muted">
+                                    Colab.: Ana • 12:32 • R$ 126
+                                  </div>
+                                  <button
+                                    class="btn btn-sm btn-outline-secondary mt-2"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#resolverDisputaModal"
+                                  >
+                                    Analisar
+                                  </button>
+                                </div>
+                              </div>
+                              <div class="d-flex align-items-start gap-3">
+                                <i
+                                  class="bi bi-shield-exclamation fs-4 text-brand"
+                                ></i>
+                                <div>
+                                  <div class="fw-semibold">
+                                    Evidência inválida
+                                  </div>
+                                  <div class="small text-muted">
+                                    Colab.: Davi • 10:05 • Missão Combo
+                                  </div>
+                                  <button
+                                    class="btn btn-sm btn-outline-secondary mt-2"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#resolverDisputaModal"
+                                  >
+                                    Analisar
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card-footer bg-transparent text-end">
+                            <a
+                              href="gerente.html#disputas"
+                              class="btn btn-sm btn-outline-secondary"
+                              >Ver todas</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="py-5" id="recursos">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-lg-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <i class="bi bi-trophy text-brand"></i>
+                  <h3 class="h6 m-0">Ranking Duplo</h3>
+                </div>
+                <p class="text-muted mb-2">
+                  Local por loja (Iniciante → Diamante) e Geral (Especialista →
+                  Lenda Swift) com reinício mensal.
+                </p>
+                <a href="ranking.html" class="btn btn-sm btn-outline-secondary"
+                  >Ver ranking</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <i class="bi bi-check2-square text-brand"></i>
+                  <h3 class="h6 m-0">Missões & Cross-sell</h3>
+                </div>
+                <p class="text-muted mb-2">
+                  Missões com evidência e bônus 2× para vendas combinadas (ex.:
+                  carne + tempero).
+                </p>
+                <a href="missoes.html" class="btn btn-sm btn-outline-secondary"
+                  >Ver missões</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <i class="bi bi-emoji-smile text-brand"></i>
+                  <h3 class="h6 m-0">NPS & Experiência</h3>
+                </div>
+                <p class="text-muted mb-2">
+                  Pontuação extra por encantar clientes e manter a loja com alto
+                  NPS.
+                </p>
+                <a href="plano.html" class="btn btn-sm btn-outline-secondary"
+                  >Plano de carreira</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-4 mt-4">
+      <div
+        class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
+      >
+        <div class="text-muted small">
+          © 2025 SwiftPro. Todos os direitos reservados.
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <a class="small text-decoration-none" href="#">Termos</a>
+          <a class="small text-decoration-none" href="#">Privacidade</a>
+          <a class="small text-decoration-none" href="#">Ajuda</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modais comuns (login/cadastro + registrar/entregar/disputa/etc) -->
+    <!-- Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Entrar</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              class="row g-3"
+              onsubmit="event.preventDefault(); alert('Login simulado.');"
+            >
+              <div class="col-12">
+                <label class="form-label">E-mail</label>
+                <input type="email" class="form-control" required />
+              </div>
+              <div class="col-12">
+                <label class="form-label">Senha</label>
+                <input type="password" class="form-control" required />
+              </div>
+              <div
+                class="col-12 d-flex justify-content-between align-items-center"
+              >
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="lembrar"
+                  />
+                  <label class="form-check-label" for="lembrar">Lembrar</label>
+                </div>
+                <a href="#" class="small">Esqueci minha senha</a>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary w-100">Entrar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cadastro -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Criar conta</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              class="row g-3"
+              onsubmit="event.preventDefault(); alert('Cadastro simulado.');"
+            >
+              <div class="col-12">
+                <label class="form-label">Nome</label>
+                <input class="form-control" required />
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label">Papel</label>
+                <select class="form-select" required>
+                  <option value="colab">Colaborador</option>
+                  <option value="estoq">Estoquista</option>
+                  <option value="gerente">Gerente</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label">Loja</label>
+                <input
+                  class="form-control"
+                  placeholder="Ex.: Vila Mariana"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label class="form-label">E-mail</label>
+                <input type="email" class="form-control" required />
+              </div>
+              <div class="col-12">
+                <label class="form-label">Senha</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  minlength="6"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary w-100">Cadastrar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Registrar venda -->
+    <div
+      class="modal fade"
+      id="registrarVendaModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Registrar venda</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              class="row g-3"
+              onsubmit="event.preventDefault(); registrarVenda();"
+            >
+              <div class="col-12 col-md-6">
+                <label class="form-label">Valor total (R$)</label>
+                <input
+                  type="number"
+                  step="0.01"
+                  class="form-control"
+                  id="valorVenda"
+                  required
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label">Código do vendedor</label>
+                <input
+                  class="form-control"
+                  id="codigoVendedor"
+                  placeholder="Ex.: LUC123"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="crossSell"
+                  />
+                  <label class="form-check-label" for="crossSell"
+                    >Venda com cross-sell (2× pontos)</label
+                  >
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary w-100">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Entregar evidência (missão) -->
+    <div
+      class="modal fade"
+      id="entregarEvidenciaModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Entregar evidência</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              class="row g-3"
+              onsubmit="event.preventDefault(); alert('Evidência enviada para revisão.');"
+            >
+              <div class="col-12">
+                <label class="form-label">Observações</label>
+                <textarea
+                  class="form-control"
+                  rows="3"
+                  placeholder="Descreva sua evidência..."
+                ></textarea>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Anexos</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  accept="image/*,application/pdf"
+                  multiple
+                />
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary w-100">Enviar evidência</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Abrir disputa (colaborador) -->
+    <div
+      class="modal fade"
+      id="abrirDisputaModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Abrir disputa</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              class="row g-3"
+              onsubmit="event.preventDefault(); alert('Disputa aberta. Aguardando gerente.');"
+            >
+              <div class="col-12">
+                <label class="form-label">Tipo</label>
+                <select class="form-select" required>
+                  <option>Venda não pontuada</option>
+                  <option>Missão rejeitada</option>
+                  <option>Ajuste indevido</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Descrição</label>
+                <textarea class="form-control" rows="3" required></textarea>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Anexos</label>
+                <input type="file" class="form-control" multiple />
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary w-100">Enviar disputa</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aprovar evidências (gerente) -->
+    <div
+      class="modal fade"
+      id="aprovarEvidenciasModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Aprovar evidências</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <thead>
+                  <tr>
+                    <th>Colaborador</th>
+                    <th>Missão</th>
+                    <th>Anexos</th>
+                    <th>Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ana</td>
+                    <td>Combo da Semana</td>
+                    <td>2 imagens</td>
+                    <td class="d-flex gap-2">
+                      <button class="btn btn-sm btn-outline-success">
+                        Aprovar</button
+                      ><button class="btn btn-sm btn-outline-danger">
+                        Rejeitar
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resolver disputa (gerente) -->
+    <div
+      class="modal fade"
+      id="resolverDisputaModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Resolver disputa</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              class="row g-3"
+              onsubmit="event.preventDefault(); resolverDisputa();"
+            >
+              <div class="col-12">
+                <label class="form-label">Decisão</label>
+                <select class="form-select" id="decisaoDisputa" required>
+                  <option>Aprovar pontos</option>
+                  <option>Rejeitar</option>
+                  <option>Solicitar mais evidências</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Código de validação (gerente)</label>
+                <input
+                  class="form-control"
+                  id="codigoGerente"
+                  placeholder="Ex.: 7F2B-9Q"
+                  required
+                />
+                <small class="text-muted"
+                  >Código aleatório para trilha de auditoria.</small
+                >
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary w-100">Confirmar decisão</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-      lucide.createIcons();
-    </script>
   </body>
 </html>
