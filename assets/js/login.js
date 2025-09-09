@@ -56,18 +56,26 @@ document.addEventListener("DOMContentLoaded", function () {
         const loginResult = authenticateUser(email, password);
 
         if (loginResult.success) {
-          // Salvar dados da sessão
-          if (rememberMeCheckbox.checked) {
-            localStorage.setItem(
-              "swift_user",
-              JSON.stringify(loginResult.user)
+          // Salvar dados da sessão usando a nova função
+          if (window.SwiftAuth && window.SwiftAuth.saveUserSession) {
+            window.SwiftAuth.saveUserSession(
+              loginResult.user,
+              rememberMeCheckbox.checked
             );
-            localStorage.setItem("swift_remember", "true");
           } else {
-            sessionStorage.setItem(
-              "swift_user",
-              JSON.stringify(loginResult.user)
-            );
+            // Fallback para compatibilidade
+            if (rememberMeCheckbox.checked) {
+              localStorage.setItem(
+                "swift_user",
+                JSON.stringify(loginResult.user)
+              );
+              localStorage.setItem("swift_remember", "true");
+            } else {
+              sessionStorage.setItem(
+                "swift_user",
+                JSON.stringify(loginResult.user)
+              );
+            }
           }
 
           showSuccessMessage(`Bem-vindo(a), ${loginResult.user.name}!`);
@@ -251,14 +259,14 @@ const MOCK_USERS = {
   "gerente@swift.com": {
     email: "gerente@swift.com",
     password: "123456",
-    name: "Ana Silva",
+    name: "Évelyn Rodrigues",
     role: "gerente",
     id: 1,
   },
   "vendedor@swift.com": {
     email: "vendedor@swift.com",
     password: "123456",
-    name: "Carlos Santos",
+    name: "Lucas Fernando",
     role: "vendedor",
     id: 2,
   },

@@ -78,20 +78,60 @@
               </li>
             </ul>
             <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
-              <!-- Informações do usuário logado -->
-              <div class="d-flex flex-column text-center text-lg-end me-2">
-                <small class="text-muted">Olá,</small>
-                <strong data-user-name>Usuário</strong>
-                <small class="text-muted" data-user-role>Carregando...</small>
+              <!-- Menu dropdown do usuário -->
+              <div class="dropdown text-end">
+                <a
+                  href="#"
+                  class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face&auto=format"
+                    alt="Avatar do usuário"
+                    width="32"
+                    height="32"
+                    class="rounded-circle me-2"
+                    data-user-avatar
+                  />
+                  <span class="d-none d-lg-inline-block" data-user-name
+                    >Usuário</span
+                  >
+                </a>
+                <ul class="dropdown-menu text-small">
+                  <li class="dropdown-header">
+                    <div class="fw-semibold" data-user-name>Usuário</div>
+                    <small class="text-muted" data-user-email
+                      >usuario@swift.com</small
+                    >
+                    <small class="text-muted d-block" data-user-role
+                      >Carregando...</small
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="config.html"
+                      ><i class="bi bi-gear me-2"></i>Configurações</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="historico.html"
+                      ><i class="bi bi-clock-history me-2"></i>Histórico</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="index.html"
+                      ><i class="bi bi-house me-2"></i>Dashboard</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#" data-logout
+                      ><i class="bi bi-box-arrow-right me-2"></i>Sair</a
+                    >
+                  </li>
+                </ul>
               </div>
-              <!-- Botão de logout -->
-              <button
-                class="btn btn-outline-danger btn-sm"
-                data-logout
-                title="Sair do sistema"
-              >
-                <i class="bi bi-box-arrow-right me-1"></i> Sair
-              </button>
             </div>
           </div>
         </div>
@@ -252,115 +292,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Modais adicionais -->
-    <!-- Login -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Entrar</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Fechar"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form
-              class="row g-3"
-              onsubmit="event.preventDefault(); alert('Login simulado.');"
-            >
-              <div class="col-12">
-                <label class="form-label">E-mail</label>
-                <input type="email" class="form-control" required />
-              </div>
-              <div class="col-12">
-                <label class="form-label">Senha</label>
-                <input type="password" class="form-control" required />
-              </div>
-              <div
-                class="col-12 d-flex justify-content-between align-items-center"
-              >
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="lembrar"
-                  />
-                  <label class="form-check-label" for="lembrar">Lembrar</label>
-                </div>
-                <a href="#" class="small">Esqueci minha senha</a>
-              </div>
-              <div class="col-12">
-                <button class="btn btn-primary w-100">Entrar</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cadastro -->
-    <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Criar conta</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Fechar"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form
-              class="row g-3"
-              onsubmit="event.preventDefault(); alert('Cadastro simulado.');"
-            >
-              <div class="col-12">
-                <label class="form-label">Nome</label>
-                <input class="form-control" required />
-              </div>
-              <div class="col-12 col-md-6">
-                <label class="form-label">Papel</label>
-                <select class="form-select" required>
-                  <option value="colab">Colaborador</option>
-                  <option value="estoq">Estoquista</option>
-                  <option value="gerente">Gerente</option>
-                </select>
-              </div>
-              <div class="col-12 col-md-6">
-                <label class="form-label">Loja</label>
-                <input
-                  class="form-control"
-                  placeholder="Ex.: Vila Mariana"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <label class="form-label">E-mail</label>
-                <input type="email" class="form-control" required />
-              </div>
-              <div class="col-12">
-                <label class="form-label">Senha</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  minlength="6"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <button class="btn btn-primary w-100">Cadastrar</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Aprovar evidências -->
     <div
