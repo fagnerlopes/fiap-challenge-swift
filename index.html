@@ -76,6 +76,25 @@
               </li>
             </ul>
             <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
+              <!-- Sininho de notificação -->
+              <div class="nav-item dropdown position-relative me-2">
+                <a href="#" class="nav-link p-0" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false" title="Notificações" role="button">
+                  <i class="bi bi-bell-fill fs-4 text-brand"></i>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:0.7em;">
+                    3
+                    <span class="visually-hidden">notificações não lidas</span>
+                  </span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="notificationDropdown" style="min-width: 280px;">
+                  <li class="dropdown-header">Notificações</li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="missoes.html"><strong>Nova missão criada pelo gerente</strong></a></li>
+                  <li><a class="dropdown-item" href="#"><strong>Você subiu de posição no ranking!</strong></a></li>
+                  <li><a class="dropdown-item" href="#"><strong>Disputa resolvida pelo gerente</strong></a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item text-center text-muted" href="#">Ver todas</a></li>
+                </ul>
+              </div>
               <!-- Menu dropdown do usuário -->
               <div class="dropdown text-end">
                 <a
@@ -180,7 +199,7 @@
               </div>
               <div class="card-footer bg-transparent d-flex flex-wrap gap-2">
                 <button
-                  class="btn btn-outline-secondary"
+                  class="btn btn-disputa"
                   data-bs-toggle="modal"
                   data-bs-target="#abrirDisputaModal"
                 >
@@ -189,31 +208,6 @@
               </div>
             </div>
 
-            <!-- Card de Nova Missão criada pelo gerente -->
-            <div class="card soft-shadow mt-3 border-0" style="background:#FF7420;">
-              <div class="card-header fw-semibold" style="background:#FF7420; color:#fff; border-radius:16px 16px 0 0; border-bottom: 2px solid #fff;">
-                Nova Missão do Gerente
-              </div>
-              <div class="card-body">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <i class="bi bi-lightbulb" style="font-size: 2rem; color:#fff;"></i>
-                  <span class="fw-semibold" style="color:#fff;">Desafio Relâmpago de Vendas</span>
-                </div>
-                <div class="small mb-2" style="color:#fff;">
-                  Venda 10 cortes premium até o final do dia e ganhe 200 pontos extras!
-                </div>
-                <div class="progress mb-2" style="height: 5px; background:rgba(255,255,255,0.3);">
-                  <div class="progress-bar" style="width: 40%; background:#fff;"></div>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <small style="color:#fff;">4 de 10</small>
-                  <small style="color:#fff;">Expira hoje às 23:59</small>
-                </div>
-                <div class="d-flex gap-2 justify-content-end">
-                  <button class="btn btn-sm" style="background:#fff; color:#FF7420; font-weight:600;">Iniciar missão</button>
-                </div>
-              </div>
-            </div>
           </div>
           <div class="col-12 col-lg-7">
             <div class="card soft-shadow">
