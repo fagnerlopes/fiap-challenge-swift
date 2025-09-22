@@ -18,6 +18,21 @@ body{ background: var(--swift-light); }
 section{ scroll-margin-top: 84px; }
 .kpi{ font-size: 1.75rem; font-weight: 700; }
 .kpi-sub{ color: #6b7280; font-size: .9rem; }
+
+/* Ajuste de alinhamento para posição do ranking no card do colaborador */
+.ranking-label {
+  margin-bottom: 0.25rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.ranking-badges {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .progress{ height: 10px; border-radius: 999px; background: #eee; }
 .progress-bar{ background: var(--swift-primary); }
 .table thead th{ font-weight: 600; }
@@ -26,3 +41,20 @@ section{ scroll-margin-top: 84px; }
 .mission-item{ border: 1px dashed #e8e4e1; border-radius: 14px; padding: 14px; background: #fff; }
 footer{ background: #fff; border-top: 1px solid #eee; }
 :focus-visible{ outline: 3px solid #ffb98a; outline-offset: 2px; }
+/* Garantir que a tabela de ranking mostre todos os 10 colaboradores */
+.table-responsive {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+/* Linhas alternadas para tabelas de ranking */
+.table-ranking tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+.table-ranking tbody tr:nth-child(even) {
+  background-color: #d9d9d9;
+}

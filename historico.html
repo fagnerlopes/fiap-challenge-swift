@@ -65,16 +65,14 @@
                 <a class="nav-link" href="missoes.html">Missões</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="plano.html">Plano de Carreira</a>
+                <a class="nav-link" href="plano.html">Trilha de Aprendizagem</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="gerente.html">Área do Gerente</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="config.html">Configurações</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="historico.html">Histórico</a>
               </li>
             </ul>
             <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
@@ -141,9 +139,18 @@
     <section id="historico" class="py-5">
       <div class="container">
         <h2 class="h4 mb-3">Histórico</h2>
+        <div class="mb-3">
+          <label for="filtroTipo" class="form-label mb-1">Filtrar por:</label>
+          <select class="form-select w-auto d-inline-block" id="filtroTipo" onchange="filtrarHistorico()">
+            <option value="">Todos</option>
+            <option value="Venda">Vendas</option>
+            <option value="Missão">Missões</option>
+            <option value="NPS">NPS</option>
+          </select>
+        </div>
         <div class="card">
           <div class="table-responsive">
-            <table class="table align-middle mb-0">
+            <table class="table align-middle mb-0" id="tabelaHistorico">
               <thead>
                 <tr>
                   <th>Data</th>
@@ -166,15 +173,62 @@
                   <td>Missão</td>
                   <td>Combo da Semana</td>
                   <td>+60</td>
-                  <td>
-                    <span class="badge bg-warning text-dark">Em revisão</span>
-                  </td>
+                  <td><span class="badge bg-warning text-dark">Em revisão</span></td>
                 </tr>
                 <tr>
                   <td>06/09</td>
                   <td>NPS</td>
                   <td>Avaliação 10</td>
                   <td>+50</td>
+                  <td><span class="badge bg-success">Computado</span></td>
+                </tr>
+                <tr>
+                  <td>05/09</td>
+                  <td>Venda</td>
+                  <td>R$ 210 • Venda simples</td>
+                  <td>+30</td>
+                  <td><span class="badge bg-success">Computado</span></td>
+                </tr>
+                <tr>
+                  <td>05/09</td>
+                  <td>Missão</td>
+                  <td>Desafio NPS Excelente</td>
+                  <td>+80</td>
+                  <td><span class="badge bg-success">Computado</span></td>
+                </tr>
+                <tr>
+                  <td>04/09</td>
+                  <td>NPS</td>
+                  <td>Avaliação 9</td>
+                  <td>+40</td>
+                  <td><span class="badge bg-success">Computado</span></td>
+                </tr>
+                <tr>
+                  <td>03/09</td>
+                  <td>Venda</td>
+                  <td>R$ 95 • Cross-sell</td>
+                  <td>+20</td>
+                  <td><span class="badge bg-success">Computado</span></td>
+                </tr>
+                <tr>
+                  <td>03/09</td>
+                  <td>Missão</td>
+                  <td>Meta de Vendas</td>
+                  <td>+100</td>
+                  <td><span class="badge bg-warning text-dark">Em revisão</span></td>
+                </tr>
+                <tr>
+                  <td>02/09</td>
+                  <td>NPS</td>
+                  <td>Avaliação 8</td>
+                  <td>+30</td>
+                  <td><span class="badge bg-success">Computado</span></td>
+                </tr>
+                <tr>
+                  <td>01/09</td>
+                  <td>Venda</td>
+                  <td>R$ 180 • Venda simples</td>
+                  <td>+25</td>
                   <td><span class="badge bg-success">Computado</span></td>
                 </tr>
               </tbody>
@@ -184,9 +238,7 @@
       </div>
     </section>
     <footer class="py-4 mt-4">
-      <div
-        class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
-      >
+      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
         <div class="text-muted small">
           © 2025 SwiftPro. Todos os direitos reservados.
         </div>
@@ -200,5 +252,19 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      function filtrarHistorico() {
+        const filtro = document.getElementById('filtroTipo').value;
+        const linhas = document.querySelectorAll('#tabelaHistorico tbody tr');
+        linhas.forEach(linha => {
+          const tipo = linha.children[1].textContent;
+          if (!filtro || tipo === filtro) {
+            linha.style.display = '';
+          } else {
+            linha.style.display = 'none';
+          }
+        });
+      }
+    </script>
   </body>
 </html>

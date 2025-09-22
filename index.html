@@ -65,16 +65,14 @@
                 <a class="nav-link" href="missoes.html">Missões</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="plano.html">Plano de Carreira</a>
+                <a class="nav-link" href="plano.html">Trilha de Aprendizagem</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="gerente.html">Área do Gerente</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="config.html">Configurações</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="historico.html">Histórico</a>
               </li>
             </ul>
             <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
@@ -170,17 +168,17 @@
                       <small class="text-muted">1.280 pts</small>
                       <small class="text-muted">Próximo: Diamante</small>
                     </div>
+                    <div class="mt-1">
+                      <div class="ranking-label">Posição no ranking</div>
+                      <div class="ranking-badges">
+                        <span class="badge bg-light text-dark" title="Ranking local">1º local</span>
+                        <span class="badge bg-light text-dark" title="Ranking global">2º global</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="card-footer bg-transparent d-flex flex-wrap gap-2">
-                <button
-                  class="btn btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#registrarVendaModal"
-                >
-                  <i class="bi bi-cash-coin me-1"></i> Registrar venda
-                </button>
                 <button
                   class="btn btn-outline-secondary"
                   data-bs-toggle="modal"
@@ -188,12 +186,32 @@
                 >
                   <i class="bi bi-shield-exclamation me-1"></i> Abrir disputa
                 </button>
-                <a href="missoes.html" class="btn btn-outline-secondary"
-                  ><i class="bi bi-check2-square me-1"></i> Missões</a
-                >
-                <a href="ranking.html" class="btn btn-outline-secondary"
-                  ><i class="bi bi-trophy me-1"></i> Ranking</a
-                >
+              </div>
+            </div>
+
+            <!-- Card de Nova Missão criada pelo gerente -->
+            <div class="card soft-shadow mt-3 border-0" style="background:#FF7420;">
+              <div class="card-header fw-semibold" style="background:#FF7420; color:#fff; border-radius:16px 16px 0 0; border-bottom: 2px solid #fff;">
+                Nova Missão do Gerente
+              </div>
+              <div class="card-body">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="bi bi-lightbulb" style="font-size: 2rem; color:#fff;"></i>
+                  <span class="fw-semibold" style="color:#fff;">Desafio Relâmpago de Vendas</span>
+                </div>
+                <div class="small mb-2" style="color:#fff;">
+                  Venda 10 cortes premium até o final do dia e ganhe 200 pontos extras!
+                </div>
+                <div class="progress mb-2" style="height: 5px; background:rgba(255,255,255,0.3);">
+                  <div class="progress-bar" style="width: 40%; background:#fff;"></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <small style="color:#fff;">4 de 10</small>
+                  <small style="color:#fff;">Expira hoje às 23:59</small>
+                </div>
+                <div class="d-flex gap-2 justify-content-end">
+                  <button class="btn btn-sm" style="background:#fff; color:#FF7420; font-weight:600;">Iniciar missão</button>
+                </div>
               </div>
             </div>
           </div>
@@ -251,7 +269,7 @@
                       <i class="bi bi-person-badge me-1"></i> Colaborador
                     </button>
                   </li>
-                  <li class="nav-item" role="presentation">
+                  <li class="nav-item" role="presentation" data-manager-only>
                     <button
                       class="nav-link"
                       id="gerente-tab"
@@ -276,7 +294,7 @@
                     aria-labelledby="colab-tab"
                   >
                     <div class="row g-3">
-                      <div class="col-12 col-md-6">
+                      <div class="col-12">
                         <div class="card h-100">
                           <div
                             class="card-header d-flex align-items-center justify-content-between"
@@ -285,112 +303,89 @@
                             <span class="badge bg-light text-dark">3</span>
                           </div>
                           <div class="card-body">
-                            <div class="d-flex flex-column gap-2">
+                            <div class="d-flex flex-column gap-4">
                               <div class="mission-item">
                                 <div
                                   class="d-flex justify-content-between align-items-center"
                                 >
-                                  <strong>Combo da Semana</strong>
-                                  <span
-                                    class="badge bg-warning-subtle text-dark"
-                                    >Cross-sell 2x</span
-                                  >
+                                  <div>
+                                    <strong>Venda Casada Premium</strong>
+                                    <span class="badge bg-danger-subtle text-danger ms-2">Diária</span>
+                                  </div>
+                                  <span class="badge bg-warning-subtle text-dark">+30 pts</span>
                                 </div>
                                 <div class="small text-muted">
-                                  Vender carne + tempero
+                                  Realizar 3 vendas casadas de cortes premium com temperos especiais
                                 </div>
-                                <div class="d-flex gap-2 mt-2">
-                                  <button
-                                    class="btn btn-sm btn-primary"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#entregarEvidenciaModal"
-                                  >
-                                    Entregar evidência
-                                  </button>
-                                  <a
-                                    class="btn btn-sm btn-outline-secondary"
-                                    href="missoes.html"
-                                    >Detalhes</a
-                                  >
+                                <div class="progress mt-2" style="height: 5px;">
+                                  <div class="progress-bar bg-success" style="width: 33%"></div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-1">
+                                  <small class="text-muted">1 de 3</small>
+                                  <small class="text-muted">Expira hoje às 23:59</small>
+                                </div>
+                                <div class="d-flex justify-content-end mt-2">
+                                  <a href="missoes.html" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                                 </div>
                               </div>
+
                               <div class="mission-item">
                                 <div
                                   class="d-flex justify-content-between align-items-center"
                                 >
-                                  <strong>NPS 9+</strong>
-                                  <span class="badge bg-light text-dark"
-                                    >+50 pts</span
-                                  >
+                                  <div>
+                                    <strong>Desafio NPS Excelente</strong>
+                                    <span class="badge bg-primary-subtle text-primary ms-2">Semanal</span>
+                                  </div>
+                                  <span class="badge bg-warning-subtle text-dark">+100 pts</span>
                                 </div>
                                 <div class="small text-muted">
-                                  Garantir ótima experiência
+                                  Manter média de NPS acima de 9.5 durante a semana
+                                </div>
+                                <div class="progress mt-2" style="height: 5px;">
+                                  <div class="progress-bar bg-success" style="width: 80%"></div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-1">
+                                  <small class="text-muted">NPS atual: 9.6</small>
+                                  <small class="text-muted">5 dias restantes</small>
+                                </div>
+                                <div class="d-flex justify-content-end mt-2">
+                                  <a href="missoes.html" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                                 </div>
                               </div>
+
                               <div class="mission-item">
                                 <div
                                   class="d-flex justify-content-between align-items-center"
                                 >
-                                  <strong>Ticket Médio R$80+</strong>
-                                  <span class="badge bg-light text-dark"
-                                    >+30 pts</span
-                                  >
+                                  <div>
+                                    <strong>Especialista em Cortes Nobres</strong>
+                                    <span class="badge bg-success-subtle text-success ms-2">Mensal</span>
+                                  </div>
+                                  <span class="badge bg-warning-subtle text-dark">+500 pts</span>
                                 </div>
                                 <div class="small text-muted">
-                                  Oferecer cortes premium
+                                  Atingir meta de R$ 15.000 em vendas de cortes premium no mês
+                                </div>
+                                <div class="progress mt-2" style="height: 5px;">
+                                  <div class="progress-bar bg-success" style="width: 45%"></div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-1">
+                                  <small class="text-muted">R$ 6.750 / R$ 15.000</small>
+                                  <small class="text-muted">18 dias restantes</small>
+                                </div>
+                                <div class="d-flex justify-content-end mt-2">
+                                  <a href="missoes.html" class="btn btn-sm btn-outline-secondary">Detalhes</a>
                                 </div>
                               </div>
                             </div>
                           </div>
                           <div class="card-footer bg-transparent text-end">
-                            <a
-                              href="missoes.html"
-                              class="btn btn-sm btn-outline-secondary"
-                              >Ver todas</a
-                            >
+                            <a href="missoes.html" class="btn btn-sm btn-outline-secondary">Ver todas</a>
                           </div>
                         </div>
                       </div>
-                      <div class="col-12 col-md-6">
-                        <div class="card h-100">
-                          <div class="card-header">Atalhos</div>
-                          <div class="card-body">
-                            <div class="row g-2">
-                              <div class="col-6">
-                                <a
-                                  href="ranking.html"
-                                  class="btn w-100 btn-outline-secondary"
-                                  ><i class="bi bi-trophy me-1"></i> Ranking</a
-                                >
-                              </div>
-                              <div class="col-6">
-                                <a
-                                  href="plano.html"
-                                  class="btn w-100 btn-outline-secondary"
-                                  ><i class="bi bi-mortarboard me-1"></i> Plano
-                                  de Carreira</a
-                                >
-                              </div>
-                              <div class="col-6">
-                                <a
-                                  href="historico.html"
-                                  class="btn w-100 btn-outline-secondary"
-                                  ><i class="bi bi-clock-history me-1"></i>
-                                  Histórico</a
-                                >
-                              </div>
-                              <div class="col-6">
-                                <a
-                                  href="config.html"
-                                  class="btn w-100 btn-outline-secondary"
-                                  ><i class="bi bi-gear me-1"></i>
-                                  Configurações</a
-                                >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+
                     </div>
                   </div>
 
@@ -400,6 +395,7 @@
                     id="gerente"
                     role="tabpanel"
                     aria-labelledby="gerente-tab"
+                    data-manager-only
                   >
                     <div class="row g-3">
                       <div class="col-12 col-lg-7">
@@ -560,8 +556,7 @@
                   <h3 class="h6 m-0">Missões & Cross-sell</h3>
                 </div>
                 <p class="text-muted mb-2">
-                  Missões com evidência e bônus 2× para vendas combinadas (ex.:
-                  carne + tempero).
+                  Missões Relampago e vendas combinadas (ex.: carne + tempero), Recebem 2x de pontos.
                 </p>
                 <a href="missoes.html" class="btn btn-sm btn-outline-secondary"
                   >Ver missões</a
@@ -799,6 +794,114 @@
                     <td>Ana</td>
                     <td>Combo da Semana</td>
                     <td>2 imagens</td>
+                    <td class="d-flex gap-2">
+                      <button class="btn btn-sm btn-outline-success">
+                        Aprovar</button
+                      ><button class="btn btn-sm btn-outline-danger">
+                        Rejeitar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Lucas</td>
+                    <td>Venda Casada Premium</td>
+                    <td>1 imagem</td>
+                    <td class="d-flex gap-2">
+                      <button class="btn btn-sm btn-outline-success">
+                        Aprovar</button
+                      ><button class="btn btn-sm btn-outline-danger">
+                        Rejeitar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Evelyn</td>
+                    <td>Desafio NPS Excelente</td>
+                    <td>Relatório</td>
+                    <td class="d-flex gap-2">
+                      <button class="btn btn-sm btn-outline-success">
+                        Aprovar</button
+                      ><button class="btn btn-sm btn-outline-danger">
+                        Rejeitar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Davi</td>
+                    <td>Especialista em Cortes Nobres</td>
+                    <td>Nota fiscal</td>
+                    <td class="d-flex gap-2">
+                      <button class="btn btn-sm btn-outline-success">
+                        Aprovar</button
+                      ><button class="btn btn-sm btn-outline-danger">
+                        Rejeitar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>João</td>
+                    <td>Missão Relâmpago</td>
+                    <td>3 imagens</td>
+                    <td class="d-flex gap-2">
+                      <button class="btn btn-sm btn-outline-success">
+                        Aprovar</button
+                      ><button class="btn btn-sm btn-outline-danger">
+                        Rejeitar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Marina</td>
+                    <td>Meta de Vendas</td>
+                    <td>Planilha</td>
+                    <td class="d-flex gap-2">
+                      <button class="btn btn-sm btn-outline-success">
+                        Aprovar</button
+                      ><button class="btn btn-sm btn-outline-danger">
+                        Rejeitar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Rafael</td>
+                    <td>Atendimento 5 Estrelas</td>
+                    <td>Feedback</td>
+                    <td class="d-flex gap-2">
+                      <button class="btn btn-sm btn-outline-success">
+                        Aprovar</button
+                      ><button class="btn btn-sm btn-outline-danger">
+                        Rejeitar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Patrícia</td>
+                    <td>Missão de Satisfação</td>
+                    <td>Vídeo</td>
+                    <td class="d-flex gap-2">
+                      <button class="btn btn-sm btn-outline-success">
+                        Aprovar</button
+                      ><button class="btn btn-sm btn-outline-danger">
+                        Rejeitar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>André</td>
+                    <td>Desafio de Cross-sell</td>
+                    <td>Imagem</td>
+                    <td class="d-flex gap-2">
+                      <button class="btn btn-sm btn-outline-success">
+                        Aprovar</button
+                      ><button class="btn btn-sm btn-outline-danger">
+                        Rejeitar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Camila</td>
+                    <td>Meta Mensal</td>
+                    <td>Relatório</td>
                     <td class="d-flex gap-2">
                       <button class="btn btn-sm btn-outline-success">
                         Aprovar</button

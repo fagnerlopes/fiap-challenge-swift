@@ -1,3 +1,18 @@
+// Redireciona automaticamente gerente para gerente.html se acessar outra página logado,
+// exceto se for a página de configuração (config.html) ou perfil de colaborador (?colaborador=)
+if (
+  typeof window !== 'undefined' &&
+  window.location &&
+  !window.location.pathname.endsWith('gerente.html') &&
+  !window.location.pathname.endsWith('config.html')
+) {
+  const params = new URLSearchParams(window.location.search);
+  const isPerfilColaborador = !!params.get('colaborador');
+  const user = getCurrentUser && getCurrentUser();
+  if (user && user.role === 'gerente' && !isPerfilColaborador) {
+    window.location.href = 'gerente.html';
+  }
+}
 // ============================================
 // SISTEMA DE AUTENTICAÇÃO E CONTROLE DE ACESSO
 // ============================================
