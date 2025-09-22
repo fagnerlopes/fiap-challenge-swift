@@ -65,16 +65,14 @@
                 <a class="nav-link" href="missoes.html">Missões</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="plano.html">Plano de Carreira</a>
+                <a class="nav-link" href="plano.html">Trilha de Aprendizagem</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="gerente.html">Área do Gerente</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="config.html">Configurações</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="historico.html">Histórico</a>
               </li>
             </ul>
             <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
@@ -87,7 +85,7 @@
                   aria-expanded="false"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face&auto=format"
+                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop"
                     alt="Avatar do usuário"
                     width="32"
                     height="32"
@@ -160,28 +158,29 @@
           </div>
         </div>
         <div class="row g-3">
+          <!-- Missões de Vendas (já existentes) -->
           <div class="col-12 col-lg-4">
             <div class="card h-100">
               <div class="card-body d-flex flex-column">
-                <div class="d-flex align-items-center gap-2 mb-1">
-                  <i class="bi bi-bag-check text-brand"></i>
-                  <h3 class="h6 m-0">Combo da Semana</h3>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div>
+                    <strong>Venda Casada Premium</strong>
+                    <span class="badge bg-danger-subtle text-danger ms-2">Diária</span>
+                  </div>
+                  <span class="badge bg-warning-subtle text-dark">+30 pts</span>
                 </div>
-                <p class="text-muted">
-                  Venda carne + tempero. Bônus <strong>2×</strong> pontos
-                  (cross-sell).
-                </p>
+                <div class="small text-muted mb-2">
+                  Realizar 3 vendas casadas de cortes premium com temperos especiais
+                </div>
+                <div class="progress mb-2" style="height: 5px;">
+                  <div class="progress-bar bg-success" style="width: 33%"></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <small class="text-muted">1 de 3</small>
+                  <small class="text-muted">Expira hoje às 23:59</small>
+                </div>
                 <div class="mt-auto d-flex gap-2">
-                  <button
-                    class="btn btn-sm btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#entregarEvidenciaModal"
-                  >
-                    Entregar evidência
-                  </button>
-                  <button class="btn btn-sm btn-outline-secondary">
-                    Detalhes
-                  </button>
+                  <button class="btn btn-sm btn-outline-secondary">Detalhes</button>
                 </div>
               </div>
             </div>
@@ -189,17 +188,25 @@
           <div class="col-12 col-lg-4">
             <div class="card h-100">
               <div class="card-body d-flex flex-column">
-                <div class="d-flex align-items-center gap-2 mb-1">
-                  <i class="bi bi-emoji-smile text-brand"></i>
-                  <h3 class="h6 m-0">NPS 9+</h3>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div>
+                    <strong>Desafio NPS Excelente</strong>
+                    <span class="badge bg-primary-subtle text-primary ms-2">Semanal</span>
+                  </div>
+                  <span class="badge bg-warning-subtle text-dark">+100 pts</span>
                 </div>
-                <p class="text-muted">
-                  Garanta avaliação de clientes com nota ≥ 9.
-                </p>
+                <div class="small text-muted mb-2">
+                  Manter média de NPS acima de 9.5 durante a semana
+                </div>
+                <div class="progress mb-2" style="height: 5px;">
+                  <div class="progress-bar bg-success" style="width: 80%"></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <small class="text-muted">NPS atual: 9.6</small>
+                  <small class="text-muted">5 dias restantes</small>
+                </div>
                 <div class="mt-auto d-flex gap-2">
-                  <button class="btn btn-sm btn-outline-secondary">
-                    Boas práticas
-                  </button>
+                  <button class="btn btn-sm btn-outline-secondary">Detalhes</button>
                 </div>
               </div>
             </div>
@@ -207,17 +214,105 @@
           <div class="col-12 col-lg-4">
             <div class="card h-100">
               <div class="card-body d-flex flex-column">
-                <div class="d-flex align-items-center gap-2 mb-1">
-                  <i class="bi bi-cash-coin text-brand"></i>
-                  <h3 class="h6 m-0">Ticket Médio R$80+</h3>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div>
+                    <strong>Especialista em Cortes Nobres</strong>
+                    <span class="badge bg-success-subtle text-success ms-2">Mensal</span>
+                  </div>
+                  <span class="badge bg-warning-subtle text-dark">+500 pts</span>
                 </div>
-                <p class="text-muted">
-                  Ofereça cortes premium e combos de valor.
-                </p>
+                <div class="small text-muted mb-2">
+                  Atingir meta de R$ 15.000 em vendas de cortes premium no mês
+                </div>
+                <div class="progress mb-2" style="height: 5px;">
+                  <div class="progress-bar bg-success" style="width: 45%"></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <small class="text-muted">R$ 6.750 / R$ 15.000</small>
+                  <small class="text-muted">18 dias restantes</small>
+                </div>
                 <div class="mt-auto d-flex gap-2">
-                  <button class="btn btn-sm btn-outline-secondary">
-                    Dicas de venda
-                  </button>
+                  <button class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Missões de Estoque para Estoquistas -->
+          <div class="col-12 col-lg-4">
+            <div class="card h-100 border-info">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div>
+                    <strong>Inventário Perfeito</strong>
+                    <span class="badge bg-info-subtle text-info ms-2">Semanal</span>
+                  </div>
+                  <span class="badge bg-warning-subtle text-dark">+80 pts</span>
+                </div>
+                <div class="small text-muted mb-2">
+                  Realizar inventário semanal sem divergências de estoque.
+                </div>
+                <div class="progress mb-2" style="height: 5px;">
+                  <div class="progress-bar bg-info" style="width: 60%"></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <small class="text-muted">3 de 5 setores</small>
+                  <small class="text-muted">4 dias restantes</small>
+                </div>
+                <div class="mt-auto d-flex gap-2">
+                  <button class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="card h-100 border-info">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div>
+                    <strong>Reposição Ágil</strong>
+                    <span class="badge bg-info-subtle text-info ms-2">Diária</span>
+                  </div>
+                  <span class="badge bg-warning-subtle text-dark">+20 pts</span>
+                </div>
+                <div class="small text-muted mb-2">
+                  Garantir reposição de todos os produtos nas gôndolas até 10h.
+                </div>
+                <div class="progress mb-2" style="height: 5px;">
+                  <div class="progress-bar bg-info" style="width: 90%"></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <small class="text-muted">Concluído</small>
+                  <small class="text-muted">Expira hoje às 10:00</small>
+                </div>
+                <div class="mt-auto d-flex gap-2">
+                  <button class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="card h-100 border-info">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div>
+                    <strong>Controle de Validade</strong>
+                    <span class="badge bg-info-subtle text-info ms-2">Mensal</span>
+                  </div>
+                  <span class="badge bg-warning-subtle text-dark">+150 pts</span>
+                </div>
+                <div class="small text-muted mb-2">
+                  Conferir e registrar validade de todos os produtos do estoque.
+                </div>
+                <div class="progress mb-2" style="height: 5px;">
+                  <div class="progress-bar bg-info" style="width: 25%"></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <small class="text-muted">20% concluído</small>
+                  <small class="text-muted">20 dias restantes</small>
+                </div>
+                <div class="mt-auto d-flex gap-2">
+                  <button class="btn btn-sm btn-outline-secondary">Detalhes</button>
                 </div>
               </div>
             </div>
@@ -226,9 +321,7 @@
       </div>
     </section>
     <footer class="py-4 mt-4">
-      <div
-        class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
-      >
+      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
         <div class="text-muted small">
           © 2025 SwiftPro. Todos os direitos reservados.
         </div>
