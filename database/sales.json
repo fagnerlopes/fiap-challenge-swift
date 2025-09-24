@@ -1,0 +1,197 @@
+{
+  "sales": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "store_id": 1,
+      "amount": 89.5,
+      "products": [
+        {
+          "name": "Picanha Premium",
+          "category": "carnes_bovinas",
+          "price": 65.9,
+          "quantity": 1
+        },
+        {
+          "name": "Tempero Especial",
+          "category": "temperos",
+          "price": 23.6,
+          "quantity": 1
+        }
+      ],
+      "is_cross_sell": true,
+      "points_earned": 18,
+      "commission": 4.48,
+      "payment_method": "credit_card",
+      "customer_rating": 5,
+      "created_at": "2025-01-23T14:30:00Z"
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "store_id": 1,
+      "amount": 45.3,
+      "products": [
+        {
+          "name": "Contra-filé",
+          "category": "carnes_bovinas",
+          "price": 45.3,
+          "quantity": 1
+        }
+      ],
+      "is_cross_sell": false,
+      "points_earned": 4,
+      "commission": 2.27,
+      "payment_method": "debit_card",
+      "customer_rating": 4,
+      "created_at": "2025-01-23T11:15:00Z"
+    },
+    {
+      "id": 3,
+      "user_id": 1,
+      "store_id": 1,
+      "amount": 156.8,
+      "products": [
+        {
+          "name": "Costela Bovina",
+          "category": "carnes_bovinas",
+          "price": 89.4,
+          "quantity": 1
+        },
+        {
+          "name": "Linguiça Toscana",
+          "category": "embutidos",
+          "price": 32.9,
+          "quantity": 1
+        },
+        {
+          "name": "Sal Grosso",
+          "category": "temperos",
+          "price": 12.5,
+          "quantity": 1
+        },
+        {
+          "name": "Carvão Especial",
+          "category": "acessorios",
+          "price": 22.0,
+          "quantity": 1
+        }
+      ],
+      "is_cross_sell": true,
+      "points_earned": 31,
+      "commission": 7.84,
+      "payment_method": "credit_card",
+      "customer_rating": 5,
+      "created_at": "2025-01-23T16:45:00Z"
+    },
+    {
+      "id": 4,
+      "user_id": 3,
+      "store_id": 2,
+      "amount": 78.9,
+      "products": [
+        {
+          "name": "Lombo Suíno",
+          "category": "carnes_suinas",
+          "price": 56.4,
+          "quantity": 1
+        },
+        {
+          "name": "Bacon Defumado",
+          "category": "embutidos",
+          "price": 22.5,
+          "quantity": 1
+        }
+      ],
+      "is_cross_sell": true,
+      "points_earned": 16,
+      "commission": 3.95,
+      "payment_method": "pix",
+      "customer_rating": 4,
+      "created_at": "2025-01-23T13:20:00Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Picanha Premium",
+      "category": "carnes_bovinas",
+      "price": 65.9,
+      "commission_rate": 5.0,
+      "points_per_real": 1.0,
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Contra-filé",
+      "category": "carnes_bovinas",
+      "price": 45.3,
+      "commission_rate": 5.0,
+      "points_per_real": 1.0,
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Costela Bovina",
+      "category": "carnes_bovinas",
+      "price": 89.4,
+      "commission_rate": 5.0,
+      "points_per_real": 1.0,
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "Lombo Suíno",
+      "category": "carnes_suinas",
+      "price": 56.4,
+      "commission_rate": 4.5,
+      "points_per_real": 1.0,
+      "active": true
+    },
+    {
+      "id": 5,
+      "name": "Linguiça Toscana",
+      "category": "embutidos",
+      "price": 32.9,
+      "commission_rate": 6.0,
+      "points_per_real": 1.2,
+      "active": true
+    },
+    {
+      "id": 6,
+      "name": "Bacon Defumado",
+      "category": "embutidos",
+      "price": 22.5,
+      "commission_rate": 6.0,
+      "points_per_real": 1.2,
+      "active": true
+    },
+    {
+      "id": 7,
+      "name": "Tempero Especial",
+      "category": "temperos",
+      "price": 23.6,
+      "commission_rate": 8.0,
+      "points_per_real": 1.5,
+      "active": true
+    },
+    {
+      "id": 8,
+      "name": "Sal Grosso",
+      "category": "temperos",
+      "price": 12.5,
+      "commission_rate": 8.0,
+      "points_per_real": 1.5,
+      "active": true
+    },
+    {
+      "id": 9,
+      "name": "Carvão Especial",
+      "category": "acessorios",
+      "price": 22.0,
+      "commission_rate": 10.0,
+      "points_per_real": 2.0,
+      "active": true
+    }
+  ]
+}

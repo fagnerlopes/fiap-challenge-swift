@@ -70,10 +70,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="gerente.html">Área do Gerente</a>
               </li>
-              <li class="nav-item">
-              </li>
-              <li class="nav-item">
-              </li>
+              <li class="nav-item"></li>
+              <li class="nav-item"></li>
             </ul>
             <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
               <!-- Menu dropdown do usuário -->
@@ -136,71 +134,79 @@
       </div>
     </nav>
 
-  <section id="trilha" class="py-5">
+    <section id="trilha" class="py-5">
       <div class="container">
-  <h2 class="h4">Trilha de Aprendizagem</h2>
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h2 class="h4 m-0">Trilha de Aprendizagem</h2>
+          <div class="d-flex gap-2">
+            <select
+              id="filter-category"
+              class="form-select form-select-sm"
+              aria-label="Filtrar categoria"
+            >
+              <option value="">Todas as categorias</option>
+              <option value="vendas">Vendas</option>
+              <option value="atendimento">Atendimento</option>
+              <option value="gestao">Gestão</option>
+            </select>
+            <select
+              id="filter-difficulty"
+              class="form-select form-select-sm"
+              aria-label="Filtrar dificuldade"
+            >
+              <option value="">Todas as dificuldades</option>
+              <option value="iniciante">Iniciante</option>
+              <option value="intermediario">Intermediário</option>
+              <option value="avancado">Avançado</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Loading state -->
+        <div id="tracks-loading" class="text-center py-5">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Carregando trilhas...</span>
+          </div>
+          <p class="mt-2 text-muted">
+            Carregando suas trilhas de aprendizagem...
+          </p>
+        </div>
+
+        <!-- Error state -->
+        <div id="tracks-error" class="alert alert-danger d-none" role="alert">
+          <i class="bi bi-exclamation-triangle me-2"></i>
+          <strong>Erro ao carregar trilhas</strong>
+          <p class="mb-0">
+            Não foi possível carregar suas trilhas. Tente recarregar a página.
+          </p>
+        </div>
+
         <div class="row g-3">
           <div class="col-12 col-lg-8">
             <div class="card h-100">
-              <div class="card-header">Trilha</div>
+              <div
+                class="card-header d-flex justify-content-between align-items-center"
+              >
+                <span>Suas Trilhas</span>
+                <span
+                  id="progress-summary"
+                  class="badge bg-primary-subtle text-primary"
+                ></span>
+              </div>
               <div class="card-body">
-                <div class="row g-3">
-                  <div class="col-12 col-md-6">
-                    <div class="p-3 border rounded-4 h-100">
-                      <div class="fw-semibold mb-1">
-                        <i class="bi bi-mortarboard text-brand me-1"></i>
-                        Introdução à Swift
-                      </div>
-                      <div class="small text-muted">
-                        Vídeo • 12 min • 80 pts
-                      </div>
-                      <button class="btn btn-sm btn-outline-secondary mt-2">
-                        Assistir
-                      </button>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="p-3 border rounded-4 h-100">
-                      <div class="fw-semibold mb-1">
-                        <i class="bi bi-graph-up text-brand me-1"></i> Técnicas
-                        de Venda
-                      </div>
-                      <div class="small text-muted">
-                        Vídeo • 15 min • 100 pts
-                      </div>
-                      <button class="btn btn-sm btn-outline-secondary mt-2">
-                        Assistir
-                      </button>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="p-3 border rounded-4 h-100">
-                      <div class="fw-semibold mb-1">
-                        <i class="bi bi-people text-brand me-1"></i> Atendimento
-                        & NPS
-                      </div>
-                      <div class="small text-muted">
-                        Artigo • 10 min • 60 pts
-                      </div>
-                      <button class="btn btn-sm btn-outline-secondary mt-2">
-                        Ler
-                      </button>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="p-3 border rounded-4 h-100">
-                      <div class="fw-semibold mb-1">
-                        <i class="bi bi-basket text-brand me-1"></i> Cortes &
-                        Preparos
-                      </div>
-                      <div class="small text-muted">
-                        Vídeo • 18 min • 120 pts
-                      </div>
-                      <button class="btn btn-sm btn-outline-secondary mt-2">
-                        Assistir
-                      </button>
-                    </div>
-                  </div>
+                <!-- Tracks container -->
+                <div id="tracks-container" class="row g-3 d-none"></div>
+
+                <!-- Empty state -->
+                <div id="tracks-empty" class="text-center py-4 d-none">
+                  <i
+                    class="bi bi-mortarboard text-muted"
+                    style="font-size: 3rem"
+                  ></i>
+                  <h3 class="h5 mt-3 text-muted">Nenhuma trilha encontrada</h3>
+                  <p class="text-muted">
+                    Não há trilhas disponíveis para os filtros selecionados.
+                  </p>
                 </div>
               </div>
               <div class="card-footer bg-transparent">
@@ -212,41 +218,52 @@
           </div>
           <div class="col-12 col-lg-4">
             <div class="card h-100">
-              <div class="card-header">Conquistas</div>
-              <div class="card-body d-flex flex-wrap gap-2">
-                <div class="d-flex flex-wrap justify-content-center w-100 gap-4">
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="bi bi-stars text-brand mb-2" style="font-size: 2.5rem;"></i>
-                    <span class="fw-semibold">Atendente 5⭐</span>
+              <div
+                class="card-header d-flex justify-content-between align-items-center"
+              >
+                <span>Conquistas</span>
+                <span
+                  id="achievements-count"
+                  class="badge bg-success-subtle text-success"
+                ></span>
+              </div>
+              <div class="card-body">
+                <!-- Achievements container -->
+                <div
+                  id="achievements-container"
+                  class="d-flex flex-wrap justify-content-center w-100 gap-4 d-none"
+                ></div>
+
+                <!-- Loading achievements -->
+                <div id="achievements-loading" class="text-center py-3">
+                  <div
+                    class="spinner-border spinner-border-sm text-primary"
+                    role="status"
+                  >
+                    <span class="visually-hidden"
+                      >Carregando conquistas...</span
+                    >
                   </div>
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="bi bi-bag-check text-brand mb-2" style="font-size: 2.5rem;"></i>
-                    <span class="fw-semibold">Combo Master</span>
-                  </div>
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="bi bi-emoji-smile text-brand mb-2" style="font-size: 2.5rem;"></i>
-                    <span class="fw-semibold">NPS Expert</span>
-                  </div>
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="bi bi-rocket-takeoff text-brand mb-2" style="font-size: 2.5rem;"></i>
-                    <span class="fw-semibold">Growth Seller</span>
-                  </div>
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="bi bi-award text-brand mb-2" style="font-size: 2.5rem;"></i>
-                    <span class="fw-semibold">Destaque do Mês</span>
-                  </div>
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="bi bi-lightning-charge text-brand mb-2" style="font-size: 2.5rem;"></i>
-                    <span class="fw-semibold">Meta Relâmpago</span>
-                  </div>
+                </div>
+
+                <!-- No achievements -->
+                <div id="achievements-empty" class="text-center py-3 d-none">
+                  <i
+                    class="bi bi-trophy text-muted"
+                    style="font-size: 2rem"
+                  ></i>
+                  <p class="text-muted mb-0 mt-2">
+                    Complete trilhas para ganhar conquistas!
+                  </p>
                 </div>
               </div>
               <div class="card-footer bg-transparent text-end">
-                <a
-                  href="plano.html#todas"
+                <button
+                  id="view-all-achievements"
                   class="btn btn-sm btn-outline-secondary"
-                  >Ver todas</a
                 >
+                  Ver todas
+                </button>
               </div>
             </div>
           </div>
@@ -254,7 +271,9 @@
       </div>
     </section>
     <footer class="py-4 mt-4">
-      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+      <div
+        class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
+      >
         <div class="text-muted small">
           © 2025 SwiftPro. Todos os direitos reservados.
         </div>
@@ -266,7 +285,406 @@
       </div>
     </footer>
 
+    <!-- Sistema de Banco de Dados -->
+    <script src="assets/js/database.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- JavaScript para carregar trilhas de aprendizagem -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async function () {
+        // Elements
+        const tracksLoadingEl = document.getElementById("tracks-loading");
+        const tracksErrorEl = document.getElementById("tracks-error");
+        const tracksEmptyEl = document.getElementById("tracks-empty");
+        const tracksContainerEl = document.getElementById("tracks-container");
+        const filterCategoryEl = document.getElementById("filter-category");
+        const filterDifficultyEl = document.getElementById("filter-difficulty");
+        const progressSummaryEl = document.getElementById("progress-summary");
+
+        const achievementsLoadingEl = document.getElementById(
+          "achievements-loading"
+        );
+        const achievementsEmptyEl =
+          document.getElementById("achievements-empty");
+        const achievementsContainerEl = document.getElementById(
+          "achievements-container"
+        );
+        const achievementsCountEl =
+          document.getElementById("achievements-count");
+        const viewAllAchievementsBtn = document.getElementById(
+          "view-all-achievements"
+        );
+
+        let currentUser = null;
+        let allTracks = [];
+        let userProgress = [];
+
+        // Initialize page
+        await initializePage();
+
+        // Event listeners
+        filterCategoryEl.addEventListener("change", renderTracks);
+        filterDifficultyEl.addEventListener("change", renderTracks);
+        viewAllAchievementsBtn.addEventListener("click", showAllAchievements);
+
+        async function initializePage() {
+          try {
+            // Get current user
+            currentUser = window.SwiftAuth.getCurrentUser();
+            if (!currentUser) {
+              throw new Error("Usuário não encontrado");
+            }
+
+            // Load learning tracks data
+            const learningData = await window.SwiftDB.loadData(
+              "learning_tracks"
+            );
+            allTracks = learningData.learning_tracks || [];
+            userProgress = learningData.user_progress || [];
+
+            console.log("Trilhas carregadas:", allTracks);
+            console.log("Progresso do usuário:", userProgress);
+
+            // Render tracks and achievements
+            renderTracks();
+            renderAchievements();
+          } catch (error) {
+            console.error("Erro ao carregar trilhas:", error);
+            showTracksError(
+              "Erro ao carregar suas trilhas. Tente recarregar a página."
+            );
+          }
+        }
+
+        function renderTracks() {
+          try {
+            hideAllTracksStates();
+
+            // Filter tracks
+            let filteredTracks = allTracks.filter((track) => track.active);
+
+            const categoryFilter = filterCategoryEl.value;
+            const difficultyFilter = filterDifficultyEl.value;
+
+            if (categoryFilter) {
+              filteredTracks = filteredTracks.filter(
+                (track) => track.category === categoryFilter
+              );
+            }
+
+            if (difficultyFilter) {
+              filteredTracks = filteredTracks.filter(
+                (track) => track.difficulty === difficultyFilter
+              );
+            }
+
+            // Get user progress for filtered tracks
+            const userTracksProgress = userProgress.filter(
+              (progress) =>
+                progress.user_id === currentUser.id &&
+                filteredTracks.some((track) => track.id === progress.track_id)
+            );
+
+            // Update progress summary
+            updateProgressSummary(userTracksProgress, filteredTracks);
+
+            if (filteredTracks.length === 0) {
+              showTracksEmpty();
+              return;
+            }
+
+            // Render tracks
+            tracksContainerEl.innerHTML = "";
+            filteredTracks.forEach((track) => {
+              const trackProgress = userProgress.find(
+                (p) => p.user_id === currentUser.id && p.track_id === track.id
+              );
+              const trackCard = createTrackCard(track, trackProgress);
+              tracksContainerEl.appendChild(trackCard);
+            });
+
+            showTracksContainer();
+          } catch (error) {
+            console.error("Erro ao renderizar trilhas:", error);
+            showTracksError("Erro ao exibir trilhas.");
+          }
+        }
+
+        function createTrackCard(track, progress) {
+          const col = document.createElement("div");
+          col.className = "col-12 col-md-6";
+
+          const progressPercent = progress ? progress.progress_percentage : 0;
+          const isCompleted = progress && progress.status === "completed";
+          const isInProgress = progress && progress.status === "in_progress";
+
+          const difficultyBadge = getDifficultyBadge(track.difficulty);
+          const categoryIcon = getCategoryIcon(track.category);
+          const statusBadge = getStatusBadge(progress);
+
+          col.innerHTML = `
+            <div class="p-3 border rounded-4 h-100 ${
+              isCompleted ? "border-success bg-success-subtle" : ""
+            }">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <div class="fw-semibold mb-1">
+                  ${categoryIcon} ${track.title}
+                </div>
+                ${difficultyBadge}
+              </div>
+              
+              <div class="small text-muted mb-2">
+                ${track.description}
+              </div>
+              
+              <div class="small text-muted mb-2">
+                <i class="bi bi-clock me-1"></i>${track.estimated_hours}h • 
+                <i class="bi bi-trophy me-1"></i>${track.points_reward} pts • 
+                ${track.modules.length} módulos
+              </div>
+
+              ${
+                progress
+                  ? `
+                <div class="progress mb-2" style="height: 6px;">
+                  <div class="progress-bar ${
+                    isCompleted ? "bg-success" : "bg-primary"
+                  }" 
+                       style="width: ${progressPercent}%"></div>
+                </div>
+                <div class="small text-muted mb-2">
+                  Progresso: ${progressPercent}% (${
+                      progress.modules_completed.length
+                    }/${track.modules.length} módulos)
+                </div>
+              `
+                  : ""
+              }
+
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <button class="btn btn-sm ${
+                  isCompleted
+                    ? "btn-success"
+                    : isInProgress
+                    ? "btn-primary"
+                    : "btn-outline-primary"
+                }" 
+                        onclick="openTrack(${track.id})">
+                  ${
+                    isCompleted
+                      ? "Revisar"
+                      : isInProgress
+                      ? "Continuar"
+                      : "Iniciar"
+                  }
+                </button>
+                ${statusBadge}
+              </div>
+            </div>
+          `;
+
+          return col;
+        }
+
+        function renderAchievements() {
+          // Show loading initially
+          achievementsLoadingEl.classList.remove("d-none");
+          achievementsEmptyEl.classList.add("d-none");
+          achievementsContainerEl.classList.add("d-none");
+
+          // Simulate achievements based on completed tracks
+          const completedTracks = userProgress.filter(
+            (progress) =>
+              progress.user_id === currentUser.id &&
+              progress.status === "completed"
+          );
+
+          const achievements = generateAchievements(completedTracks);
+
+          setTimeout(() => {
+            achievementsLoadingEl.classList.add("d-none");
+
+            if (achievements.length === 0) {
+              achievementsEmptyEl.classList.remove("d-none");
+              achievementsCountEl.textContent = "0 conquistas";
+            } else {
+              achievementsContainerEl.innerHTML = "";
+              achievements.slice(0, 6).forEach((achievement) => {
+                const achievementEl = createAchievementElement(achievement);
+                achievementsContainerEl.appendChild(achievementEl);
+              });
+              achievementsContainerEl.classList.remove("d-none");
+              achievementsCountEl.textContent = `${
+                achievements.length
+              } conquista${achievements.length > 1 ? "s" : ""}`;
+            }
+          }, 500);
+        }
+
+        function generateAchievements(completedTracks) {
+          const achievements = [];
+
+          if (completedTracks.length >= 1) {
+            achievements.push({
+              icon: "bi-mortarboard",
+              title: "Primeiro Passo",
+              description: "Completou sua primeira trilha",
+            });
+          }
+
+          if (completedTracks.length >= 3) {
+            achievements.push({
+              icon: "bi-stars",
+              title: "Estudioso",
+              description: "Completou 3 trilhas",
+            });
+          }
+
+          // Check for specific track completions
+          const salesTrackCompleted = completedTracks.some((progress) => {
+            const track = allTracks.find((t) => t.id === progress.track_id);
+            return track && track.category === "vendas";
+          });
+
+          if (salesTrackCompleted) {
+            achievements.push({
+              icon: "bi-graph-up",
+              title: "Vendedor Expert",
+              description: "Dominou técnicas de vendas",
+            });
+          }
+
+          return achievements;
+        }
+
+        function createAchievementElement(achievement) {
+          const div = document.createElement("div");
+          div.className = "d-flex flex-column align-items-center";
+          div.innerHTML = `
+            <i class="${achievement.icon} text-brand mb-2" style="font-size: 2.5rem;"></i>
+            <span class="fw-semibold text-center small">${achievement.title}</span>
+          `;
+          div.title = achievement.description;
+          return div;
+        }
+
+        function updateProgressSummary(userTracksProgress, allFilteredTracks) {
+          const totalTracks = allFilteredTracks.length;
+          const completedTracks = userTracksProgress.filter(
+            (p) => p.status === "completed"
+          ).length;
+
+          if (totalTracks === 0) {
+            progressSummaryEl.textContent = "";
+            return;
+          }
+
+          progressSummaryEl.textContent = `${completedTracks}/${totalTracks} concluídas`;
+        }
+
+        function getDifficultyBadge(difficulty) {
+          const badges = {
+            iniciante:
+              '<span class="badge bg-success-subtle text-success">Iniciante</span>',
+            intermediario:
+              '<span class="badge bg-warning-subtle text-warning">Intermediário</span>',
+            avancado:
+              '<span class="badge bg-danger-subtle text-danger">Avançado</span>',
+          };
+          return badges[difficulty] || "";
+        }
+
+        function getCategoryIcon(category) {
+          const icons = {
+            vendas: '<i class="bi bi-graph-up text-brand me-1"></i>',
+            atendimento: '<i class="bi bi-people text-brand me-1"></i>',
+            gestao: '<i class="bi bi-briefcase text-brand me-1"></i>',
+          };
+          return (
+            icons[category] ||
+            '<i class="bi bi-mortarboard text-brand me-1"></i>'
+          );
+        }
+
+        function getStatusBadge(progress) {
+          if (!progress) return "";
+
+          switch (progress.status) {
+            case "completed":
+              return '<span class="badge bg-success-subtle text-success">Concluída</span>';
+            case "in_progress":
+              return '<span class="badge bg-primary-subtle text-primary">Em andamento</span>';
+            default:
+              return "";
+          }
+        }
+
+        function hideAllTracksStates() {
+          tracksLoadingEl.classList.add("d-none");
+          tracksErrorEl.classList.add("d-none");
+          tracksEmptyEl.classList.add("d-none");
+          tracksContainerEl.classList.add("d-none");
+        }
+
+        function showTracksContainer() {
+          hideAllTracksStates();
+          tracksContainerEl.classList.remove("d-none");
+        }
+
+        function showTracksEmpty() {
+          hideAllTracksStates();
+          tracksEmptyEl.classList.remove("d-none");
+        }
+
+        function showTracksError(message) {
+          hideAllTracksStates();
+          tracksErrorEl.querySelector("p").textContent = message;
+          tracksErrorEl.classList.remove("d-none");
+        }
+
+        function showAllAchievements() {
+          const completedTracks = userProgress.filter(
+            (progress) =>
+              progress.user_id === currentUser.id &&
+              progress.status === "completed"
+          );
+          const achievements = generateAchievements(completedTracks);
+
+          alert(
+            `Suas Conquistas (${achievements.length}):\n\n` +
+              achievements
+                .map((a) => `🏆 ${a.title}: ${a.description}`)
+                .join("\n")
+          );
+        }
+
+        // Global function for opening tracks
+        window.openTrack = function (trackId) {
+          const track = allTracks.find((t) => t.id === trackId);
+          const progress = userProgress.find(
+            (p) => p.user_id === currentUser.id && p.track_id === trackId
+          );
+
+          if (track) {
+            let message = `Trilha: ${track.title}\n\n${track.description}\n\n`;
+            message += `Dificuldade: ${track.difficulty}\n`;
+            message += `Duração estimada: ${track.estimated_hours}h\n`;
+            message += `Pontos: ${track.points_reward}\n`;
+            message += `Módulos: ${track.modules.length}\n\n`;
+
+            if (progress) {
+              message += `Seu progresso: ${progress.progress_percentage}%\n`;
+              message += `Módulos concluídos: ${progress.modules_completed.length}/${track.modules.length}`;
+            } else {
+              message += "Trilha não iniciada. Deseja começar agora?";
+            }
+
+            alert(message);
+          }
+        };
+      });
+    </script>
   </body>
 </html>

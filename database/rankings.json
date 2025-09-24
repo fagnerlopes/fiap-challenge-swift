@@ -1,0 +1,121 @@
+{
+  "rankings": {
+    "levels": [
+      {
+        "id": 1,
+        "name": "Iniciante",
+        "min_points": 0,
+        "max_points": 499,
+        "color": "#6c757d",
+        "badge_icon": "🥉",
+        "benefits": [
+          "Acesso básico ao sistema",
+          "Participação em missões padrão"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Bronze",
+        "min_points": 500,
+        "max_points": 999,
+        "color": "#cd7f32",
+        "badge_icon": "🥉",
+        "benefits": ["Desconto de 5% em produtos", "Missões exclusivas Bronze"]
+      },
+      {
+        "id": 3,
+        "name": "Prata",
+        "min_points": 1000,
+        "max_points": 1999,
+        "color": "#c0c0c0",
+        "badge_icon": "🥈",
+        "benefits": [
+          "Desconto de 10% em produtos",
+          "Acesso a treinamentos avançados"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Ouro",
+        "min_points": 2000,
+        "max_points": 3999,
+        "color": "#ffd700",
+        "badge_icon": "🥇",
+        "benefits": [
+          "Desconto de 15% em produtos",
+          "Bônus mensal de performance"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Diamante",
+        "min_points": 4000,
+        "max_points": 7999,
+        "color": "#b9f2ff",
+        "badge_icon": "💎",
+        "benefits": [
+          "Desconto de 20% em produtos",
+          "Participação no programa VIP"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Lenda Swift",
+        "min_points": 8000,
+        "max_points": null,
+        "color": "#ff6b35",
+        "badge_icon": "👑",
+        "benefits": [
+          "Desconto de 25% em produtos",
+          "Acesso total a recursos premium"
+        ]
+      }
+    ],
+    "user_rankings": [
+      {
+        "user_id": 1,
+        "current_points": 3250,
+        "level_id": 4,
+        "local_position": 1,
+        "global_position": 1,
+        "store_id": 1,
+        "monthly_points": 850,
+        "total_lifetime_points": 8750,
+        "last_updated": "2025-01-23T15:30:00Z"
+      },
+      {
+        "user_id": 2,
+        "current_points": 1280,
+        "level_id": 3,
+        "local_position": 2,
+        "global_position": 5,
+        "store_id": 1,
+        "monthly_points": 380,
+        "total_lifetime_points": 4280,
+        "last_updated": "2025-01-23T14:20:00Z"
+      },
+      {
+        "user_id": 3,
+        "current_points": 2150,
+        "level_id": 4,
+        "local_position": 1,
+        "global_position": 3,
+        "store_id": 2,
+        "monthly_points": 450,
+        "total_lifetime_points": 5890,
+        "last_updated": "2025-01-23T16:10:00Z"
+      },
+      {
+        "user_id": 4,
+        "current_points": 950,
+        "level_id": 2,
+        "local_position": 3,
+        "global_position": 8,
+        "store_id": 1,
+        "monthly_points": 290,
+        "total_lifetime_points": 2950,
+        "last_updated": "2025-01-23T13:45:00Z"
+      }
+    ]
+  }
+}

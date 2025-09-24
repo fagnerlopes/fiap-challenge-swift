@@ -1,0 +1,115 @@
+{
+  "missions": [
+    {
+      "id": 1,
+      "title": "Vendedor do Dia",
+      "description": "Realize 5 vendas em um único dia",
+      "type": "daily",
+      "category": "vendas",
+      "points_reward": 100,
+      "requirements": {
+        "sales_count": 5,
+        "time_limit": "1 day"
+      },
+      "active": true,
+      "created_at": "2025-01-20T08:00:00Z",
+      "expires_at": "2025-01-23T23:59:59Z"
+    },
+    {
+      "id": 2,
+      "title": "Cross-sell Master",
+      "description": "Realize 3 vendas com cross-sell (produtos combinados)",
+      "type": "weekly",
+      "category": "cross-sell",
+      "points_reward": 250,
+      "requirements": {
+        "cross_sell_count": 3,
+        "time_limit": "1 week"
+      },
+      "active": true,
+      "created_at": "2025-01-20T08:00:00Z",
+      "expires_at": "2025-01-27T23:59:59Z"
+    },
+    {
+      "id": 3,
+      "title": "Especialista em Carnes",
+      "description": "Venda R$ 2.000 em produtos da categoria carnes bovinas",
+      "type": "weekly",
+      "category": "produtos",
+      "points_reward": 300,
+      "requirements": {
+        "category": "carnes_bovinas",
+        "sales_amount": 2000.0,
+        "time_limit": "1 week"
+      },
+      "active": true,
+      "created_at": "2025-01-20T08:00:00Z",
+      "expires_at": "2025-01-27T23:59:59Z"
+    },
+    {
+      "id": 4,
+      "title": "Atendimento 5 Estrelas",
+      "description": "Receba 10 avaliações positivas de clientes",
+      "type": "monthly",
+      "category": "atendimento",
+      "points_reward": 500,
+      "requirements": {
+        "positive_reviews": 10,
+        "time_limit": "1 month"
+      },
+      "active": true,
+      "created_at": "2025-01-01T08:00:00Z",
+      "expires_at": "2025-01-31T23:59:59Z"
+    },
+    {
+      "id": 5,
+      "title": "Meta Mensal",
+      "description": "Atinja sua meta individual de vendas do mês",
+      "type": "monthly",
+      "category": "metas",
+      "points_reward": 1000,
+      "requirements": {
+        "achieve_monthly_goal": true,
+        "time_limit": "1 month"
+      },
+      "active": true,
+      "created_at": "2025-01-01T08:00:00Z",
+      "expires_at": "2025-01-31T23:59:59Z"
+    }
+  ],
+  "user_missions": [
+    {
+      "user_id": 2,
+      "mission_id": 1,
+      "status": "in_progress",
+      "progress": {
+        "sales_count": 3,
+        "target": 5
+      },
+      "started_at": "2025-01-23T08:00:00Z",
+      "completed_at": null
+    },
+    {
+      "user_id": 2,
+      "mission_id": 2,
+      "status": "completed",
+      "progress": {
+        "cross_sell_count": 3,
+        "target": 3
+      },
+      "started_at": "2025-01-20T08:00:00Z",
+      "completed_at": "2025-01-22T16:30:00Z"
+    },
+    {
+      "user_id": 1,
+      "mission_id": 4,
+      "status": "in_progress",
+      "progress": {
+        "positive_reviews": 7,
+        "target": 10
+      },
+      "started_at": "2025-01-01T08:00:00Z",
+      "completed_at": null
+    }
+  ]
+}
