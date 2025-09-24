@@ -1,3 +1,17 @@
+// Diminui o número do sininho ao clicar em uma notificação
+window.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.dropdown-menu[aria-labelledby="notificationDropdown"] .dropdown-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      const badge = document.querySelector('.nav-item .badge');
+      if (badge) {
+        let num = parseInt(badge.textContent);
+        if (!isNaN(num) && num > 0) {
+          badge.textContent = num - 1;
+        }
+      }
+    });
+  });
+});
 // Oculta navegação para gerente ao visualizar perfil de colaborador
 window.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);

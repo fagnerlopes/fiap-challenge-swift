@@ -1,3 +1,26 @@
+/* Botão Abrir Disputa laranja */
+.btn-disputa {
+  background: var(--swift-primary);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.btn-disputa:hover, .btn-disputa:focus {
+  background: #d95e13;
+  color: #fff;
+}
+.nav-item .bi-bell {
+  color: var(--swift-primary) !important;
+  transition: color 0.2s;
+}
+.nav-item .bi-bell:hover {
+  filter: brightness(1.2);
+}
+.badge.bg-danger {
+  background: #dc3545 !important;
+  color: #fff;
+}
 :root{
   --swift-primary:#FF7420;
   --swift-dark:#1b1b1b;

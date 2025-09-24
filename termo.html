@@ -3,35 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SwiftPro – Gamificação para Lojas</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <title>Termo de Uso - SwiftPro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css" />
-
-    <!-- Sistema de Autenticação -->
-    <script src="assets/js/auth.js"></script>
-    <script>
-      // Proteger página - qualquer usuário logado pode acessar
-      window.checkPageAccess();
-    </script>
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand-lg sticky-top"
-      aria-label="Navegação principal"
-    >
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Navegação principal">
       <div class="container">
-        <a
-          class="navbar-brand d-flex align-items-center gap-2"
-          href="index.html"
-        >
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
           <i class="bi bi-fire text-brand"></i>
           <strong>Home</strong>
         </a>
@@ -154,105 +134,39 @@
         </div>
       </div>
     </nav>
-
-    <section id="ranking" class="py-5">
-      <div class="container">
-        <div class="d-flex align-items-center justify-content-between mb-3">
-          <h2 class="h4 m-0">Ranking</h2>
-          <div class="d-flex gap-2">
-            <select
-              class="form-select form-select-sm"
-              aria-label="Filtrar período"
-            >
-              <option>Mês vigente</option>
-              <option>Último mês</option>
-              <option>Últimos 3 meses</option>
-            </select>
-            <select
-              class="form-select form-select-sm"
-              aria-label="Filtrar por loja"
-            >
-              <option>Todas as lojas</option>
-              <option>Vila Mariana</option>
-              <option>Moema</option>
-            </select>
-          </div>
-        </div>
-        <div class="row g-3">
-          <div class="col-12 col-lg-6">
-            <div class="card h-100">
-              <div class="card-header">Local (Loja)</div>
-              <div class="table-responsive">
-                <table class="table align-middle mb-0 table-ranking">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Colaborador</th>
-                      <th>Pontos</th>
-                      <th>Nível</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>1</td><td>Lucas</td><td>1.280</td><td><span class="badge bg-warning text-dark">Ouro</span></td></tr>
-                    <tr><td>2</td><td>Evelyn</td><td>1.110</td><td><span class="badge bg-warning text-dark">Ouro</span></td></tr>
-                    <tr><td>3</td><td>Davi</td><td>980</td><td><span class="badge bg-secondary">Prata</span></td></tr>
-                    <tr><td>4</td><td>João</td><td>950</td><td><span class="badge bg-secondary">Prata</span></td></tr>
-                    <tr><td>5</td><td>Marina</td><td>900</td><td><span class="badge bg-info">Bronze</span></td></tr>
-                    <tr><td>6</td><td>Rafael</td><td>870</td><td><span class="badge bg-info">Bronze</span></td></tr>
-                    <tr><td>7</td><td>Patrícia</td><td>850</td><td><span class="badge bg-light text-dark">Participante</span></td></tr>
-                    <tr><td>8</td><td>André</td><td>820</td><td><span class="badge bg-light text-dark">Participante</span></td></tr>
-                    <tr><td>9</td><td>Camila</td><td>800</td><td><span class="badge bg-light text-dark">Participante</span></td></tr>
-                    <tr><td>10</td><td>Thiago</td><td>780</td><td><span class="badge bg-light text-dark">Participante</span></td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-6">
-            <div class="card h-100">
-              <div class="card-header">Geral (Regional)</div>
-              <div class="table-responsive">
-                <table class="table align-middle mb-0 table-ranking">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Colaborador</th>
-                      <th>Pontos</th>
-                      <th>Título</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>1</td><td>Fagner</td><td>2.250</td><td><span class="badge bg-dark">Lenda Swift</span></td></tr>
-                    <tr><td>2</td><td>Lucas</td><td>2.020</td><td><span class="badge bg-dark">Lenda Swift</span></td></tr>
-                    <tr><td>3</td><td>Evelyn</td><td>1.720</td><td><span class="badge bg-secondary">Mestre</span></td></tr>
-                    <tr><td>4</td><td>João</td><td>1.500</td><td><span class="badge bg-secondary">Mestre</span></td></tr>
-                    <tr><td>5</td><td>Marina</td><td>1.320</td><td><span class="badge bg-warning">Ouro</span></td></tr>
-                    <tr><td>6</td><td>Rafael</td><td>1.200</td><td><span class="badge bg-warning">Ouro</span></td></tr>
-                    <tr><td>7</td><td>Patrícia</td><td>1.050</td><td><span class="badge bg-info">Prata</span></td></tr>
-                    <tr><td>8</td><td>André</td><td>980</td><td><span class="badge bg-info">Prata</span></td></tr>
-                    <tr><td>9</td><td>Camila</td><td>900</td><td><span class="badge bg-light text-dark">Bronze</span></td></tr>
-                    <tr><td>10</td><td>Thiago</td><td>850</td><td><span class="badge bg-light text-dark">Bronze</span></td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+    <main class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="mb-4">Termo de Uso</h1>
+          <p>Bem-vindo ao SwiftPro! Antes de utilizar nossa plataforma, leia atentamente os termos abaixo:</p>
+          <h5>1. Aceitação dos Termos</h5>
+          <p>Ao acessar ou usar o SwiftPro, você concorda com estes Termos de Uso e com nossa Política de Privacidade.</p>
+          <h5>2. Uso da Plataforma</h5>
+          <p>Você se compromete a utilizar a plataforma de forma ética, respeitando as leis vigentes e os demais usuários.</p>
+          <h5>3. Privacidade e Dados</h5>
+          <p>Seus dados serão tratados conforme nossa Política de Privacidade. Não compartilhamos informações pessoais sem consentimento.</p>
+          <h5>4. Propriedade Intelectual</h5>
+          <p>Todo o conteúdo da plataforma é protegido por direitos autorais. É proibida a reprodução sem autorização.</p>
+          <h5>5. Responsabilidades</h5>
+          <p>O SwiftPro não se responsabiliza por danos decorrentes do uso indevido da plataforma.</p>
+          <h5>6. Alterações nos Termos</h5>
+          <p>Reservamo-nos o direito de alterar estes termos a qualquer momento. As mudanças serão comunicadas na plataforma.</p>
+          <h5>7. Contato</h5>
+          <p>Em caso de dúvidas, entre em contato pelo e-mail: suporte@swiftpro.com.br</p>
+          <hr />
+          <p class="text-muted small">Última atualização: 24 de setembro de 2025</p>
         </div>
       </div>
-    </section>
-    <footer class="py-4 mt-4">
+    </main>
+    <footer class="py-4 mt-4 bg-light border-top">
       <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
-        <div class="text-muted small">
-          © 2025 SwiftPro. Todos os direitos reservados.
-        </div>
+        <div class="text-muted small">© 2025 SwiftPro. Todos os direitos reservados.</div>
         <div class="d-flex align-items-center gap-3">
           <a class="small text-decoration-none" href="termo.html">Termos</a>
           <a class="small text-decoration-none" href="#">Ajuda</a>
         </div>
       </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
   </body>
 </html>
