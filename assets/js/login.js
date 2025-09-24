@@ -49,11 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isValid) {
       showLoadingState();
 
-      setTimeout(() => {
+      setTimeout(async () => {
         hideLoadingState();
 
-        // Verificar credenciais mockadas
-        const loginResult = authenticateUser(email, password);
+        // Verificar credenciais usando o sistema de banco de dados
+        const loginResult = await window.SwiftDB.authenticateUser(
+          email,
+          password
+        );
 
         if (loginResult.success) {
           // Salvar dados da sessão usando a nova função
@@ -251,53 +254,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ============================================
-// SISTEMA DE AUTENTICAÇÃO MOCKADO
+// SISTEMA DE AUTENTICAÇÃO - Migrado para SwiftDB
 // ============================================
-
-// Credenciais mockadas para o sistema acadêmico
-const MOCK_USERS = {
-  "gerente@swift.com": {
-    email: "gerente@swift.com",
-    password: "123456",
-    name: "Évelyn Rodrigues",
-    role: "gerente",
-    id: 1,
-  },
-  "vendedor@swift.com": {
-    email: "vendedor@swift.com",
-    password: "123456",
-    name: "Lucas Fernando",
-    role: "vendedor",
-    id: 2,
-  },
-};
-
-/**
- * Autentica o usuário com as credenciais mockadas
- * @param {string} email
- * @param {string} password
- * @returns {object} Resultado da autenticação
- */
-function authenticateUser(email, password) {
-  const user = MOCK_USERS[email.toLowerCase()];
-
-  if (user && user.password === password) {
-    return {
-      success: true,
-      user: {
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        role: user.role,
-      },
-    };
-  }
-
-  return {
-    success: false,
-    message: "Credenciais inválidas",
-  };
-}
 
 /**
  * Redireciona o usuário baseado na sua role

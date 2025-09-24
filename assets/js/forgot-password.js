@@ -29,11 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
       showLoadingState();
 
       // Simular envio de e-mail de recuperação
-      setTimeout(() => {
+      setTimeout(async () => {
         hideLoadingState();
 
-        // Verificar se o e-mail existe no sistema (usar os mesmos dados mockados do login)
-        const emailExists = checkEmailExists(email);
+        // Verificar se o e-mail existe no sistema usando o banco de dados
+        const emailExists = await checkEmailExists(email);
 
         if (emailExists) {
           showSuccessMessage(
@@ -86,14 +86,19 @@ document.addEventListener("DOMContentLoaded", function () {
     return email.toLowerCase().endsWith("@swift.com");
   }
 
-  function checkEmailExists(email) {
-    // Usar os mesmos dados mockados do sistema de login
-    const MOCK_USERS = {
-      "gerente@swift.com": true,
-      "vendedor@swift.com": true,
-    };
-
-    return MOCK_USERS[email.toLowerCase()] === true;
+  async function checkEmailExists(email) {
+    try {
+      // Verificar se o e-mail existe usando o sistema de banco de dados
+      const users = await window.SwiftDB.findBy(
+        "users",
+        "email",
+        email.toLowerCase()
+      );
+      return users.length > 0 && users[0].active;
+    } catch (error) {
+      console.error("Erro ao verificar e-mail:", error);
+      return false;
+    }
   }
 
   function showError(input, message) {

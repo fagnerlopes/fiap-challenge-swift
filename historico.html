@@ -23,222 +23,236 @@
     </script>
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand-lg sticky-top"
-      aria-label="Navegação principal"
-    >
-      <div class="container">
-        <a
-          class="navbar-brand d-flex align-items-center gap-2"
-          href="index.html"
-        >
-          <i class="bi bi-fire text-brand"></i>
-          <strong>SwiftPro</strong>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#navOffcanvas"
-          aria-controls="navOffcanvas"
-          aria-label="Abrir menu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="main-content">
+      <nav
+        class="navbar navbar-expand-lg sticky-top"
+        aria-label="Navegação principal"
+      >
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center gap-2"
+            href="index.html"
+          >
+            <i class="bi bi-fire text-brand"></i>
+            <strong>SwiftPro</strong>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#navOffcanvas"
+            aria-controls="navOffcanvas"
+            aria-label="Abrir menu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menu</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Fechar"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-              <li class="nav-item">
-                <a class="nav-link" href="ranking.html">Ranking</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="missoes.html">Missões</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="plano.html">Trilha de Aprendizagem</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="gerente.html">Área do Gerente</a>
-              </li>
-              <li class="nav-item">
-              </li>
-              <li class="nav-item">
-              </li>
-            </ul>
-            <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
-              <!-- Menu dropdown do usuário -->
-              <div class="dropdown text-end">
-                <a
-                  href="#"
-                  class="d-flex align-items-center text-decoration-none dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face&auto=format"
-                    alt="Avatar do usuário"
-                    width="32"
-                    height="32"
-                    class="rounded-circle me-2"
-                    data-user-avatar
-                  />
-                  <span class="d-none d-lg-inline-block" data-user-name
-                    >Usuário</span
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">Menu</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Fechar"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="ranking.html">Ranking</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="missoes.html">Missões</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="plano.html"
+                    >Trilha de Aprendizagem</a
                   >
-                </a>
-                <ul class="dropdown-menu text-small">
-                  <li class="dropdown-header">
-                    <div class="fw-semibold" data-user-name>Usuário</div>
-                    <small class="text-muted" data-user-email
-                      >usuario@swift.com</small
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="gerente.html">Área do Gerente</a>
+                </li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+              </ul>
+              <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
+                <!-- Menu dropdown do usuário -->
+                <div class="dropdown text-end">
+                  <a
+                    href="#"
+                    class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face&auto=format"
+                      alt="Avatar do usuário"
+                      width="32"
+                      height="32"
+                      class="rounded-circle me-2"
+                      data-user-avatar
+                    />
+                    <span class="d-none d-lg-inline-block" data-user-name
+                      >Usuário</span
                     >
-                    <small class="text-muted d-block" data-user-role
-                      >Carregando...</small
-                    >
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="config.html"
-                      ><i class="bi bi-gear me-2"></i>Configurações</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="historico.html"
-                      ><i class="bi bi-clock-history me-2"></i>Histórico</a
-                    >
-                  </li>
-                  <li data-manager-only>
-                    <a class="dropdown-item" href="gerente.html"
-                      ><i class="bi bi-person-gear me-2"></i>Área do Gerente</a
-                    >
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#" data-logout
-                      ><i class="bi bi-box-arrow-right me-2"></i>Sair</a
-                    >
-                  </li>
-                </ul>
+                  </a>
+                  <ul class="dropdown-menu text-small">
+                    <li class="dropdown-header">
+                      <div class="fw-semibold" data-user-name>Usuário</div>
+                      <small class="text-muted" data-user-email
+                        >usuario@swift.com</small
+                      >
+                      <small class="text-muted d-block" data-user-role
+                        >Carregando...</small
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="config.html"
+                        ><i class="bi bi-gear me-2"></i>Configurações</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="historico.html"
+                        ><i class="bi bi-clock-history me-2"></i>Histórico</a
+                      >
+                    </li>
+                    <li data-manager-only>
+                      <a class="dropdown-item" href="gerente.html"
+                        ><i class="bi bi-person-gear me-2"></i>Área do
+                        Gerente</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#" data-logout
+                        ><i class="bi bi-box-arrow-right me-2"></i>Sair</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <section id="historico" class="py-5">
-      <div class="container">
-        <h2 class="h4 mb-3">Histórico</h2>
-        <div class="mb-3">
-          <label for="filtroTipo" class="form-label mb-1">Filtrar por:</label>
-          <select class="form-select w-auto d-inline-block" id="filtroTipo" onchange="filtrarHistorico()">
-            <option value="">Todos</option>
-            <option value="Venda">Vendas</option>
-            <option value="Missão">Missões</option>
-            <option value="NPS">NPS</option>
-          </select>
-        </div>
-        <div class="card">
-          <div class="table-responsive">
-            <table class="table align-middle mb-0" id="tabelaHistorico">
-              <thead>
-                <tr>
-                  <th>Data</th>
-                  <th>Tipo</th>
-                  <th>Detalhe</th>
-                  <th>Pontos</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>07/09</td>
-                  <td>Venda</td>
-                  <td>R$ 126 • Cross-sell</td>
-                  <td>+40</td>
-                  <td><span class="badge bg-success">Computado</span></td>
-                </tr>
-                <tr>
-                  <td>06/09</td>
-                  <td>Missão</td>
-                  <td>Combo da Semana</td>
-                  <td>+60</td>
-                  <td><span class="badge bg-warning text-dark">Em revisão</span></td>
-                </tr>
-                <tr>
-                  <td>06/09</td>
-                  <td>NPS</td>
-                  <td>Avaliação 10</td>
-                  <td>+50</td>
-                  <td><span class="badge bg-success">Computado</span></td>
-                </tr>
-                <tr>
-                  <td>05/09</td>
-                  <td>Venda</td>
-                  <td>R$ 210 • Venda simples</td>
-                  <td>+30</td>
-                  <td><span class="badge bg-success">Computado</span></td>
-                </tr>
-                <tr>
-                  <td>05/09</td>
-                  <td>Missão</td>
-                  <td>Desafio NPS Excelente</td>
-                  <td>+80</td>
-                  <td><span class="badge bg-success">Computado</span></td>
-                </tr>
-                <tr>
-                  <td>04/09</td>
-                  <td>NPS</td>
-                  <td>Avaliação 9</td>
-                  <td>+40</td>
-                  <td><span class="badge bg-success">Computado</span></td>
-                </tr>
-                <tr>
-                  <td>03/09</td>
-                  <td>Venda</td>
-                  <td>R$ 95 • Cross-sell</td>
-                  <td>+20</td>
-                  <td><span class="badge bg-success">Computado</span></td>
-                </tr>
-                <tr>
-                  <td>03/09</td>
-                  <td>Missão</td>
-                  <td>Meta de Vendas</td>
-                  <td>+100</td>
-                  <td><span class="badge bg-warning text-dark">Em revisão</span></td>
-                </tr>
-                <tr>
-                  <td>02/09</td>
-                  <td>NPS</td>
-                  <td>Avaliação 8</td>
-                  <td>+30</td>
-                  <td><span class="badge bg-success">Computado</span></td>
-                </tr>
-                <tr>
-                  <td>01/09</td>
-                  <td>Venda</td>
-                  <td>R$ 180 • Venda simples</td>
-                  <td>+25</td>
-                  <td><span class="badge bg-success">Computado</span></td>
-                </tr>
-              </tbody>
-            </table>
+      <section id="historico" class="py-5">
+        <div class="container">
+          <h2 class="h4 mb-3">Histórico</h2>
+          <div class="mb-3">
+            <label for="filtroTipo" class="form-label mb-1">Filtrar por:</label>
+            <select
+              class="form-select w-auto d-inline-block"
+              id="filtroTipo"
+              onchange="filtrarHistorico()"
+            >
+              <option value="">Todos</option>
+              <option value="Venda">Vendas</option>
+              <option value="Missão">Missões</option>
+              <option value="NPS">NPS</option>
+            </select>
+          </div>
+          <div class="card">
+            <div class="table-responsive">
+              <table class="table align-middle mb-0" id="tabelaHistorico">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Tipo</th>
+                    <th>Detalhe</th>
+                    <th>Pontos</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>07/09</td>
+                    <td>Venda</td>
+                    <td>R$ 126 • Cross-sell</td>
+                    <td>+40</td>
+                    <td><span class="badge bg-success">Computado</span></td>
+                  </tr>
+                  <tr>
+                    <td>06/09</td>
+                    <td>Missão</td>
+                    <td>Combo da Semana</td>
+                    <td>+60</td>
+                    <td>
+                      <span class="badge bg-warning text-dark">Em revisão</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>06/09</td>
+                    <td>NPS</td>
+                    <td>Avaliação 10</td>
+                    <td>+50</td>
+                    <td><span class="badge bg-success">Computado</span></td>
+                  </tr>
+                  <tr>
+                    <td>05/09</td>
+                    <td>Venda</td>
+                    <td>R$ 210 • Venda simples</td>
+                    <td>+30</td>
+                    <td><span class="badge bg-success">Computado</span></td>
+                  </tr>
+                  <tr>
+                    <td>05/09</td>
+                    <td>Missão</td>
+                    <td>Desafio NPS Excelente</td>
+                    <td>+80</td>
+                    <td><span class="badge bg-success">Computado</span></td>
+                  </tr>
+                  <tr>
+                    <td>04/09</td>
+                    <td>NPS</td>
+                    <td>Avaliação 9</td>
+                    <td>+40</td>
+                    <td><span class="badge bg-success">Computado</span></td>
+                  </tr>
+                  <tr>
+                    <td>03/09</td>
+                    <td>Venda</td>
+                    <td>R$ 95 • Cross-sell</td>
+                    <td>+20</td>
+                    <td><span class="badge bg-success">Computado</span></td>
+                  </tr>
+                  <tr>
+                    <td>03/09</td>
+                    <td>Missão</td>
+                    <td>Meta de Vendas</td>
+                    <td>+100</td>
+                    <td>
+                      <span class="badge bg-warning text-dark">Em revisão</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>02/09</td>
+                    <td>NPS</td>
+                    <td>Avaliação 8</td>
+                    <td>+30</td>
+                    <td><span class="badge bg-success">Computado</span></td>
+                  </tr>
+                  <tr>
+                    <td>01/09</td>
+                    <td>Venda</td>
+                    <td>R$ 180 • Venda simples</td>
+                    <td>+25</td>
+                    <td><span class="badge bg-success">Computado</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
+
     <footer class="py-4 mt-4">
-      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+      <div
+        class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
+      >
         <div class="text-muted small">
           © 2025 SwiftPro. Todos os direitos reservados.
         </div>
@@ -254,14 +268,14 @@
     <script src="assets/js/main.js"></script>
     <script>
       function filtrarHistorico() {
-        const filtro = document.getElementById('filtroTipo').value;
-        const linhas = document.querySelectorAll('#tabelaHistorico tbody tr');
-        linhas.forEach(linha => {
+        const filtro = document.getElementById("filtroTipo").value;
+        const linhas = document.querySelectorAll("#tabelaHistorico tbody tr");
+        linhas.forEach((linha) => {
           const tipo = linha.children[1].textContent;
           if (!filtro || tipo === filtro) {
-            linha.style.display = '';
+            linha.style.display = "";
           } else {
-            linha.style.display = 'none';
+            linha.style.display = "none";
           }
         });
       }

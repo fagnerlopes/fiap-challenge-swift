@@ -14,7 +14,54 @@
     />
     <script defer src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      /* Estilos para mensagens de erro do formulário */
+      .error-message-container {
+        height: 1.5rem;
+        display: flex;
+        align-items: flex-start;
+        margin-top: 0.25rem;
+      }
 
+      .error-message-container .invalid-feedback {
+        display: block !important;
+        font-size: 0.875rem;
+        color: #dc3545;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+      }
+
+      .error-message-container .invalid-feedback.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Efeito visual para campos com erro */
+      .form-control.is-invalid {
+        border-color: #dc3545;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 4.6a.4.4 0 0 1 .6 0l.6.6.6-.6a.4.4 0 0 1 .6.6l-.6.6.6.6a.4.4 0 0 1-.6.6L8 7.4l-.6.6a.4.4 0 0 1-.6-.6l.6-.6-.6-.6Z'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right calc(0.375em + 0.1875rem) center;
+        background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+      }
+
+      /* Animação suave para alertas */
+      .alert {
+        transition: all 0.3s ease;
+      }
+
+      /* Estilo para loading no botão */
+      .spinner-border-sm {
+        width: 1rem;
+        height: 1rem;
+      }
+    </style>
+
+    <!-- Sistema de Banco de Dados -->
+    <script src="assets/js/database.js"></script>
     <!-- Sistema de Autenticação -->
     <script src="assets/js/auth.js"></script>
     <!-- Sistema de Avatar -->
@@ -25,227 +72,266 @@
     </script>
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand-lg sticky-top"
-      aria-label="Navegação principal"
-    >
-      <div class="container">
-        <a
-          class="navbar-brand d-flex align-items-center gap-2"
-          href="index.html"
-        >
-          <i class="bi bi-fire text-brand"></i>
-          <strong>SwiftPro</strong>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#navOffcanvas"
-          aria-controls="navOffcanvas"
-          aria-label="Abrir menu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="main-content">
+      <nav
+        class="navbar navbar-expand-lg sticky-top"
+        aria-label="Navegação principal"
+      >
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center gap-2"
+            href="index.html"
+          >
+            <i class="bi bi-fire text-brand"></i>
+            <strong>SwiftPro</strong>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#navOffcanvas"
+            aria-controls="navOffcanvas"
+            aria-label="Abrir menu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menu</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Fechar"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-              <li class="nav-item">
-                <a class="nav-link" href="ranking.html">Ranking</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="missoes.html">Missões</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="plano.html">Trilha de Aprendizagem</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="gerente.html">Área do Gerente</a>
-              </li>
-              <li class="nav-item"></li>
-              <li class="nav-item"></li>
-            </ul>
-            <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
-              <!-- Menu dropdown do usuário -->
-              <div class="dropdown text-end">
-                <a
-                  href="#"
-                  class="d-flex align-items-center text-decoration-none dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face&auto=format"
-                    alt="Avatar do usuário"
-                    width="32"
-                    height="32"
-                    class="rounded-circle me-2"
-                    data-user-avatar
-                  />
-                  <span class="d-none d-lg-inline-block" data-user-name
-                    >Usuário</span
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">Menu</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Fechar"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="ranking.html">Ranking</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="missoes.html">Missões</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="plano.html"
+                    >Trilha de Aprendizagem</a
                   >
-                </a>
-                <ul class="dropdown-menu text-small">
-                  <li class="dropdown-header">
-                    <div class="fw-semibold" data-user-name>Usuário</div>
-                    <small class="text-muted" data-user-email
-                      >usuario@swift.com</small
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="gerente.html">Área do Gerente</a>
+                </li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+              </ul>
+              <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
+                <!-- Menu dropdown do usuário -->
+                <div class="dropdown text-end">
+                  <a
+                    href="#"
+                    class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face&auto=format"
+                      alt="Avatar do usuário"
+                      width="32"
+                      height="32"
+                      class="rounded-circle me-2"
+                      data-user-avatar
+                    />
+                    <span class="d-none d-lg-inline-block" data-user-name
+                      >Usuário</span
                     >
-                    <small class="text-muted d-block" data-user-role
-                      >Carregando...</small
-                    >
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="config.html"
-                      ><i class="bi bi-gear me-2"></i>Configurações</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="historico.html"
-                      ><i class="bi bi-clock-history me-2"></i>Histórico</a
-                    >
-                  </li>
-                  <li data-manager-only>
-                    <a class="dropdown-item" href="gerente.html"
-                      ><i class="bi bi-person-gear me-2"></i>Área do Gerente</a
-                    >
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#" data-logout
-                      ><i class="bi bi-box-arrow-right me-2"></i>Sair</a
-                    >
-                  </li>
-                </ul>
+                  </a>
+                  <ul class="dropdown-menu text-small">
+                    <li class="dropdown-header">
+                      <div class="fw-semibold" data-user-name>Usuário</div>
+                      <small class="text-muted" data-user-email
+                        >usuario@swift.com</small
+                      >
+                      <small class="text-muted d-block" data-user-role
+                        >Carregando...</small
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="config.html"
+                        ><i class="bi bi-gear me-2"></i>Configurações</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="historico.html"
+                        ><i class="bi bi-clock-history me-2"></i>Histórico</a
+                      >
+                    </li>
+                    <li data-manager-only>
+                      <a class="dropdown-item" href="gerente.html"
+                        ><i class="bi bi-person-gear me-2"></i>Área do
+                        Gerente</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#" data-logout
+                        ><i class="bi bi-box-arrow-right me-2"></i>Sair</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <section id="config" class="py-5">
-      <div class="container">
-        <h2 class="h4 mb-3">Configurações</h2>
-        <div class="row g-3">
-          <div class="col-12 col-lg-6">
-            <div class="card h-100">
-              <div class="card-header">Perfil</div>
-              <div class="card-body">
-                <form class="row g-3">
-                  <div class="col-12">
-                    <label class="form-label">Nome</label>
-                    <input
-                      class="form-control"
-                      placeholder="Seu nome"
-                      value="Lucas"
-                    />
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label">Loja</label>
-                    <input
-                      id="storeInput"
-                      class="form-control"
-                      placeholder="Loja Swift"
-                      value="Vila Mariana"
-                    />
-                    <small
-                      class="text-muted"
-                      id="storeHelp"
-                      style="display: none"
-                    >
-                      Apenas gerentes podem alterar a loja.
-                    </small>
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label">Foto de Perfil</label>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                      <img
-                        id="profileImagePreview"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face&auto=format"
-                        alt="Foto de perfil atual"
-                        width="64"
-                        height="64"
-                        class="rounded-circle border"
+      <section id="config" class="py-5">
+        <div class="container">
+          <h2 class="h4 mb-3">Configurações</h2>
+          <div class="row g-3">
+            <div class="col-12 col-lg-6">
+              <div class="card h-100">
+                <div class="card-header">Perfil</div>
+                <div class="card-body">
+                  <form id="profileForm" class="row g-3">
+                    <div class="col-12">
+                      <label class="form-label">Nome</label>
+                      <input
+                        id="nameInput"
+                        class="form-control"
+                        placeholder="Seu nome"
+                        value=""
                       />
-                      <div class="flex-grow-1">
-                        <input
-                          id="profileImageInput"
-                          type="file"
-                          class="form-control"
-                          accept="image/*"
+                      <div
+                        class="error-message-container"
+                        id="name-error"
+                      ></div>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Loja</label>
+                      <input
+                        id="storeInput"
+                        class="form-control"
+                        placeholder="Loja Swift"
+                        value=""
+                        readonly
+                      />
+                      <small
+                        class="text-muted"
+                        id="storeHelp"
+                        style="display: none"
+                      >
+                        Apenas gerentes podem alterar a loja.
+                      </small>
+                      <div
+                        class="error-message-container"
+                        id="store-error"
+                      ></div>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Foto de Perfil</label>
+                      <div class="d-flex align-items-center gap-3 mb-3">
+                        <img
+                          id="profileImagePreview"
+                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face&auto=format"
+                          alt="Foto de perfil atual"
+                          width="64"
+                          height="64"
+                          class="rounded-circle border"
                         />
-                        <small class="text-muted"
-                          >Recomendado: imagem quadrada, máximo 2MB.</small
+                        <div class="flex-grow-1">
+                          <input
+                            id="profileImageInput"
+                            type="file"
+                            class="form-control"
+                            accept="image/*"
+                          />
+                          <small class="text-muted"
+                            >Recomendado: imagem quadrada, máximo 2MB.</small
+                          >
+                        </div>
+                      </div>
+                      <div class="alert alert-info d-none" id="uploadStatus">
+                        <small>
+                          <i class="bi bi-info-circle me-1"></i>
+                          <span id="uploadMessage">Processando imagem...</span>
+                        </small>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button
+                        type="submit"
+                        id="saveProfileBtn"
+                        class="btn btn-primary"
+                      >
+                        <i class="bi bi-check-circle me-2"></i>
+                        Salvar Perfil
+                      </button>
+                    </div>
+                    <div class="col-12">
+                      <div class="alert alert-success d-none" id="saveSuccess">
+                        <i class="bi bi-check-circle me-2"></i>
+                        <span id="saveSuccessMessage"
+                          >Perfil salvo com sucesso!</span
+                        >
+                      </div>
+                      <div class="alert alert-danger d-none" id="saveError">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        <span id="saveErrorMessage"
+                          >Erro ao salvar perfil.</span
                         >
                       </div>
                     </div>
-                    <div class="alert alert-info d-none" id="uploadStatus">
-                      <small>
-                        <i class="bi bi-info-circle me-1"></i>
-                        <span id="uploadMessage">Processando imagem...</span>
-                      </small>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <button type="button" class="btn btn-primary">
-                      Salvar
-                    </button>
-                  </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-6">
-            <div class="card h-100">
-              <div class="card-header">Preferências</div>
-              <div class="card-body">
-                <div class="form-check form-switch">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="notif1"
-                    checked
-                  />
-                  <label class="form-check-label" for="notif1"
-                    >Notificar novas missões</label
-                  >
-                </div>
-                <div class="form-check form-switch">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="notif2"
-                    checked
-                  />
-                  <label class="form-check-label" for="notif2"
-                    >Notificar mudanças no ranking</label
-                  >
-                </div>
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" id="notif3" />
-                  <label class="form-check-label" for="notif3"
-                    >Resumo semanal por email</label
-                  >
+            <div class="col-12 col-lg-6">
+              <div class="card h-100">
+                <div class="card-header">Preferências</div>
+                <div class="card-body">
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="notif1"
+                      checked
+                    />
+                    <label class="form-check-label" for="notif1"
+                      >Notificar novas missões</label
+                    >
+                  </div>
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="notif2"
+                      checked
+                    />
+                    <label class="form-check-label" for="notif2"
+                      >Notificar mudanças no ranking</label
+                    >
+                  </div>
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="notif3"
+                    />
+                    <label class="form-check-label" for="notif3"
+                      >Resumo semanal por email</label
+                    >
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
+
     <footer class="py-4 mt-4">
       <div
         class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
@@ -269,61 +355,406 @@
       document.addEventListener("DOMContentLoaded", function () {
         const storeInput = document.getElementById("storeInput");
         const storeHelp = document.getElementById("storeHelp");
+        const nameInput = document.getElementById("nameInput");
+        const profileForm = document.getElementById("profileForm");
         const profileImageInput = document.getElementById("profileImageInput");
         const profileImagePreview = document.getElementById(
           "profileImagePreview"
         );
         const uploadStatus = document.getElementById("uploadStatus");
         const uploadMessage = document.getElementById("uploadMessage");
+        const saveSuccess = document.getElementById("saveSuccess");
+        const saveError = document.getElementById("saveError");
+        const saveSuccessMessage =
+          document.getElementById("saveSuccessMessage");
+        const saveErrorMessage = document.getElementById("saveErrorMessage");
 
         // Obter dados do usuário atual
         let currentUser = null;
 
-        try {
-          // Tentar usar a função do sistema de autenticação
-          if (window.SwiftAuth && window.SwiftAuth.getCurrentUser) {
-            currentUser = window.SwiftAuth.getCurrentUser();
-          } else {
-            // Fallback para compatibilidade
-            const userData =
-              sessionStorage.getItem("swift_user") ||
-              localStorage.getItem("swift_user");
-            if (userData) {
-              currentUser = JSON.parse(userData);
-            }
-          }
-
-          if (currentUser) {
-            console.log("Usuário atual:", currentUser);
-
-            // Verificar se é vendedor
-            if (currentUser.role === "vendedor") {
-              // Desabilitar input para vendedores
-              storeInput.disabled = true;
-              storeInput.classList.add("bg-light");
-              storeHelp.style.display = "block";
-
-              console.log("Campo 'Loja' desabilitado para vendedor");
-            } else if (currentUser.role === "gerente") {
-              // Manter habilitado para gerentes
-              storeInput.disabled = false;
-              storeInput.classList.remove("bg-light");
-              storeHelp.style.display = "none";
-
-              console.log("Campo 'Loja' habilitado para gerente");
+        async function initializePage() {
+          try {
+            // Tentar usar a função do sistema de autenticação
+            if (window.SwiftAuth && window.SwiftAuth.getCurrentUser) {
+              currentUser = window.SwiftAuth.getCurrentUser();
+            } else {
+              // Fallback para compatibilidade
+              const userData =
+                sessionStorage.getItem("swift_user") ||
+                localStorage.getItem("swift_user");
+              if (userData) {
+                currentUser = JSON.parse(userData);
+              }
             }
 
-            // O avatar será carregado automaticamente pelo sistema de avatar global
-          } else {
-            console.warn("Usuário não encontrado, redirecionando para login");
-            window.location.href = "login.html";
+            if (currentUser) {
+              console.log("Usuário atual:", currentUser);
+
+              // Carregar dados do usuário nos campos
+              await loadUserData(currentUser);
+
+              // Verificar se é vendedor
+              if (currentUser.role === "vendedor") {
+                // Desabilitar input para vendedores
+                storeInput.disabled = true;
+                storeInput.classList.add("bg-light");
+                storeHelp.style.display = "block";
+
+                console.log("Campo 'Loja' desabilitado para vendedor");
+              } else if (currentUser.role === "gerente") {
+                // Manter habilitado para gerentes
+                storeInput.disabled = false;
+                storeInput.classList.remove("bg-light");
+                storeInput.removeAttribute("readonly");
+                storeHelp.style.display = "none";
+
+                console.log("Campo 'Loja' habilitado para gerente");
+              }
+
+              // O avatar será carregado automaticamente pelo sistema de avatar global
+            } else {
+              console.warn("Usuário não encontrado, redirecionando para login");
+              window.location.href = "login.html";
+            }
+          } catch (error) {
+            console.error("Erro ao verificar permissões do usuário:", error);
+            // Em caso de erro, desabilitar por segurança
+            storeInput.disabled = true;
+            storeInput.classList.add("bg-light");
+            storeHelp.style.display = "block";
           }
-        } catch (error) {
-          console.error("Erro ao verificar permissões do usuário:", error);
-          // Em caso de erro, desabilitar por segurança
-          storeInput.disabled = true;
-          storeInput.classList.add("bg-light");
-          storeHelp.style.display = "block";
+        }
+
+        // Inicializar página
+        initializePage();
+
+        // === FUNÇÕES DE CARREGAMENTO E SALVAMENTO ===
+
+        async function loadUserData(user) {
+          try {
+            // Buscar dados completos do usuário no banco de dados
+            const fullUser = await window.SwiftDB.findById("users", user.id);
+            if (!fullUser) {
+              throw new Error("Usuário não encontrado no banco de dados");
+            }
+
+            // Carregar nome
+            nameInput.value = fullUser.name || "";
+
+            // Carregar loja
+            if (fullUser.store_id) {
+              const store = await window.SwiftDB.findById(
+                "stores",
+                fullUser.store_id
+              );
+              if (store) {
+                storeInput.value = store.name || "";
+              }
+            }
+
+            console.log("Dados do usuário carregados:", {
+              name: fullUser.name,
+              store: storeInput.value,
+              role: fullUser.role,
+            });
+          } catch (error) {
+            console.error("Erro ao carregar dados do usuário:", error);
+            showSaveError("Erro ao carregar dados do perfil");
+          }
+        }
+
+        // Formulário de salvamento
+        profileForm.addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          if (!currentUser) {
+            showSaveError("Usuário não identificado");
+            return;
+          }
+
+          const saveBtn = document.getElementById("saveProfileBtn");
+          const originalText = saveBtn.innerHTML;
+
+          try {
+            // Mostrar loading
+            saveBtn.disabled = true;
+            saveBtn.innerHTML =
+              '<span class="spinner-border spinner-border-sm me-2"></span>Salvando...';
+
+            // Validar dados
+            const name = nameInput.value.trim();
+            if (!name) {
+              showFieldError(nameInput, "Nome é obrigatório");
+              return;
+            }
+
+            // Preparar dados para atualização
+            const updateData = {
+              name: name,
+            };
+
+            // Se for gerente, pode alterar a loja
+            if (currentUser.role === "gerente" && !storeInput.disabled) {
+              const storeName = storeInput.value.trim();
+              if (storeName) {
+                // Buscar a loja pelo nome
+                const stores = await window.SwiftDB.findAll("stores");
+                const store = stores.find(
+                  (s) => s.name.toLowerCase() === storeName.toLowerCase()
+                );
+                if (store) {
+                  updateData.store_id = store.id;
+                } else {
+                  showFieldError(storeInput, "Loja não encontrada");
+                  return;
+                }
+              }
+            }
+
+            // Incluir avatar se houver
+            if (window.SwiftAvatar && window.SwiftAvatar.getUserAvatarUrl) {
+              const avatarUrl =
+                window.SwiftAvatar.getUserAvatarUrl(currentUser);
+              if (avatarUrl) {
+                updateData.avatar = avatarUrl;
+              }
+            }
+
+            // Atualizar usuário no banco
+            const updatedUser = await window.SwiftDB.update(
+              "users",
+              currentUser.id,
+              updateData
+            );
+
+            if (updatedUser) {
+              // Atualizar dados na sessão
+              const sessionData = {
+                ...currentUser,
+                name: updatedUser.name,
+                store_id: updatedUser.store_id,
+              };
+
+              sessionStorage.setItem("swift_user", JSON.stringify(sessionData));
+              if (localStorage.getItem("swift_user")) {
+                localStorage.setItem("swift_user", JSON.stringify(sessionData));
+              }
+
+              // Atualizar variável local
+              currentUser = sessionData;
+
+              // Usar sistema global de atualização
+              if (window.SwiftAuth && window.SwiftAuth.updateUserSessionData) {
+                window.SwiftAuth.updateUserSessionData(updateData);
+              } else {
+                // Fallback local
+                updatePageElements(sessionData, updateData);
+              }
+
+              // Mostrar sucesso
+              showSaveSuccess("Perfil atualizado com sucesso!");
+
+              console.log("Perfil salvo:", {
+                userId: currentUser.id,
+                updates: updateData,
+              });
+            } else {
+              throw new Error("Falha ao atualizar usuário");
+            }
+          } catch (error) {
+            console.error("Erro ao salvar perfil:", error);
+            showSaveError("Erro ao salvar perfil. Tente novamente.");
+          } finally {
+            // Restaurar botão
+            saveBtn.disabled = false;
+            saveBtn.innerHTML = originalText;
+          }
+        });
+
+        function showSaveSuccess(message) {
+          hideAlerts();
+          saveSuccessMessage.textContent = message;
+          saveSuccess.classList.remove("d-none");
+
+          // Auto-ocultar após 5 segundos
+          setTimeout(() => {
+            saveSuccess.classList.add("d-none");
+          }, 5000);
+        }
+
+        function showSaveError(message) {
+          hideAlerts();
+          saveErrorMessage.textContent = message;
+          saveError.classList.remove("d-none");
+        }
+
+        function hideAlerts() {
+          saveSuccess.classList.add("d-none");
+          saveError.classList.add("d-none");
+          clearFieldErrors();
+        }
+
+        function showFieldError(input, message) {
+          clearFieldError(input);
+          input.classList.add("is-invalid");
+
+          const fieldContainer = input.closest(".col-12");
+          const errorContainer = fieldContainer.querySelector(
+            ".error-message-container"
+          );
+
+          if (errorContainer) {
+            const errorDiv = document.createElement("div");
+            errorDiv.classList.add("invalid-feedback");
+            errorDiv.textContent = message;
+            errorContainer.appendChild(errorDiv);
+
+            requestAnimationFrame(() => {
+              errorDiv.classList.add("show");
+            });
+          }
+        }
+
+        function clearFieldError(input) {
+          input.classList.remove("is-invalid");
+          const fieldContainer = input.closest(".col-12");
+          const errorContainer = fieldContainer.querySelector(
+            ".error-message-container"
+          );
+
+          if (errorContainer) {
+            const errorMsg = errorContainer.querySelector(".invalid-feedback");
+            if (errorMsg) {
+              errorMsg.remove();
+            }
+          }
+        }
+
+        function clearFieldErrors() {
+          document.querySelectorAll(".is-invalid").forEach((input) => {
+            input.classList.remove("is-invalid");
+          });
+          document
+            .querySelectorAll(".error-message-container .invalid-feedback")
+            .forEach((error) => {
+              error.remove();
+            });
+        }
+
+        // === ATUALIZAÇÃO GLOBAL DE ELEMENTOS ===
+
+        function updatePageElements(userData, updateData) {
+          try {
+            // Atualizar nome do usuário em todos os elementos
+            if (updateData.name) {
+              updateUserNameElements(updateData.name);
+            }
+
+            // Atualizar avatar se foi alterado
+            if (updateData.avatar) {
+              updateUserAvatarElements(updateData.avatar);
+            }
+
+            // Atualizar informações de loja se aplicável
+            if (updateData.store_id && userData.role === "gerente") {
+              updateStoreElements(updateData.store_id);
+            }
+
+            console.log("Elementos da página atualizados:", {
+              name: updateData.name,
+              avatar: !!updateData.avatar,
+              store: !!updateData.store_id,
+            });
+          } catch (error) {
+            console.error("Erro ao atualizar elementos da página:", error);
+          }
+        }
+
+        function updateUserNameElements(newName) {
+          // Atualizar elementos com atributo data-user-name
+          const nameElements = document.querySelectorAll("[data-user-name]");
+          nameElements.forEach((element) => {
+            element.textContent = newName;
+          });
+
+          // Atualizar outros elementos comuns de nome de usuário
+          const commonSelectors = [
+            ".navbar .dropdown-toggle span",
+            ".user-name",
+            ".profile-name",
+            "h1.h4 span:first-child",
+            ".fw-semibold[data-user-name]",
+          ];
+
+          commonSelectors.forEach((selector) => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach((element) => {
+              if (
+                element.textContent.trim() &&
+                !element.textContent.includes("@")
+              ) {
+                element.textContent = newName;
+              }
+            });
+          });
+
+          console.log(`Nome atualizado para: ${newName}`);
+        }
+
+        function updateUserAvatarElements(avatarUrl) {
+          // Usar o sistema de avatar global se disponível
+          if (window.SwiftAvatar && window.SwiftAvatar.updateAllAvatars) {
+            window.SwiftAvatar.updateAllAvatars(avatarUrl);
+          } else {
+            // Fallback manual
+            const avatarElements = document.querySelectorAll(
+              "[data-user-avatar], .user-avatar, #profileImagePreview"
+            );
+            avatarElements.forEach((element) => {
+              if (element.tagName === "IMG") {
+                element.src = avatarUrl;
+              } else {
+                element.style.backgroundImage = `url(${avatarUrl})`;
+              }
+            });
+          }
+
+          console.log("Avatar atualizado globalmente");
+        }
+
+        async function updateStoreElements(storeId) {
+          try {
+            // Buscar dados da nova loja
+            const store = await window.SwiftDB.findById("stores", storeId);
+            if (!store) return;
+
+            // Atualizar elementos relacionados à loja
+            const storeElements =
+              document.querySelectorAll("[data-user-store]");
+            storeElements.forEach((element) => {
+              element.textContent = store.name;
+            });
+
+            // Atualizar outros elementos comuns de loja
+            const storeSelectors = [
+              ".store-name",
+              ".user-store",
+              'small:contains("Loja")',
+            ];
+
+            storeSelectors.forEach((selector) => {
+              const elements = document.querySelectorAll(selector);
+              elements.forEach((element) => {
+                if (element.textContent.includes("Loja")) {
+                  element.textContent = `Loja Swift – ${store.name}`;
+                }
+              });
+            });
+
+            console.log(`Loja atualizada para: ${store.name}`);
+          } catch (error) {
+            console.error("Erro ao atualizar elementos da loja:", error);
+          }
         }
 
         // === FUNCIONALIDADE DE UPLOAD DE FOTO ===
@@ -401,7 +832,19 @@
                     "success"
                   );
 
-                  console.log("Upload processado pelo sistema de avatar");
+                  // Atualizar dados da sessão com novo avatar
+                  if (
+                    window.SwiftAuth &&
+                    window.SwiftAuth.updateUserSessionData
+                  ) {
+                    window.SwiftAuth.updateUserSessionData({
+                      avatar: imageData.dataUrl,
+                    });
+                  }
+
+                  console.log(
+                    "Upload processado e avatar atualizado globalmente"
+                  );
 
                   // Ocultar status após 3 segundos
                   setTimeout(() => {
