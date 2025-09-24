@@ -23,177 +23,187 @@
     </script>
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand-lg sticky-top"
-      aria-label="Navegação principal"
-    >
-      <div class="container">
-        <a
-          class="navbar-brand d-flex align-items-center gap-2"
-          href="index.html"
-        >
-          <i class="bi bi-fire text-brand"></i>
-          <strong>SwiftPro</strong>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#navOffcanvas"
-          aria-controls="navOffcanvas"
-          aria-label="Abrir menu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="main-content">
+      <nav
+        class="navbar navbar-expand-lg sticky-top"
+        aria-label="Navegação principal"
+      >
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center gap-2"
+            href="index.html"
+          >
+            <i class="bi bi-fire text-brand"></i>
+            <strong>SwiftPro</strong>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#navOffcanvas"
+            aria-controls="navOffcanvas"
+            aria-label="Abrir menu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menu</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Fechar"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-              <li class="nav-item">
-                <a class="nav-link" href="ranking.html">Ranking</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="missoes.html">Missões</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="plano.html">Trilha de Aprendizagem</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="gerente.html">Área do Gerente</a>
-              </li>
-              <li class="nav-item"></li>
-              <li class="nav-item"></li>
-            </ul>
-            <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
-              <!-- Menu dropdown do usuário -->
-              <div class="dropdown text-end">
-                <a
-                  href="#"
-                  class="d-flex align-items-center text-decoration-none dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop"
-                    alt="Avatar do usuário"
-                    width="32"
-                    height="32"
-                    class="rounded-circle me-2"
-                    data-user-avatar
-                  />
-                  <span class="d-none d-lg-inline-block" data-user-name
-                    >Usuário</span
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">Menu</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Fechar"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="ranking.html">Ranking</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="missoes.html">Missões</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="plano.html"
+                    >Trilha de Aprendizagem</a
                   >
-                </a>
-                <ul class="dropdown-menu text-small">
-                  <li class="dropdown-header">
-                    <div class="fw-semibold" data-user-name>Usuário</div>
-                    <small class="text-muted" data-user-email
-                      >usuario@swift.com</small
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="gerente.html">Área do Gerente</a>
+                </li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+              </ul>
+              <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
+                <!-- Menu dropdown do usuário -->
+                <div class="dropdown text-end">
+                  <a
+                    href="#"
+                    class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop"
+                      alt="Avatar do usuário"
+                      width="32"
+                      height="32"
+                      class="rounded-circle me-2"
+                      data-user-avatar
+                    />
+                    <span class="d-none d-lg-inline-block" data-user-name
+                      >Usuário</span
                     >
-                    <small class="text-muted d-block" data-user-role
-                      >Carregando...</small
-                    >
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="config.html"
-                      ><i class="bi bi-gear me-2"></i>Configurações</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="historico.html"
-                      ><i class="bi bi-clock-history me-2"></i>Histórico</a
-                    >
-                  </li>
-                  <li data-manager-only>
-                    <a class="dropdown-item" href="gerente.html"
-                      ><i class="bi bi-person-gear me-2"></i>Área do Gerente</a
-                    >
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#" data-logout
-                      ><i class="bi bi-box-arrow-right me-2"></i>Sair</a
-                    >
-                  </li>
-                </ul>
+                  </a>
+                  <ul class="dropdown-menu text-small">
+                    <li class="dropdown-header">
+                      <div class="fw-semibold" data-user-name>Usuário</div>
+                      <small class="text-muted" data-user-email
+                        >usuario@swift.com</small
+                      >
+                      <small class="text-muted d-block" data-user-role
+                        >Carregando...</small
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="config.html"
+                        ><i class="bi bi-gear me-2"></i>Configurações</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="historico.html"
+                        ><i class="bi bi-clock-history me-2"></i>Histórico</a
+                      >
+                    </li>
+                    <li data-manager-only>
+                      <a class="dropdown-item" href="gerente.html"
+                        ><i class="bi bi-person-gear me-2"></i>Área do
+                        Gerente</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#" data-logout
+                        ><i class="bi bi-box-arrow-right me-2"></i>Sair</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <section id="missoes" class="py-5">
-      <div class="container">
-        <div class="d-flex align-items-center justify-content-between mb-3">
-          <h2 class="h4 m-0">Missões</h2>
-          <div class="d-flex gap-2">
-            <select
-              id="filter-type"
-              class="form-select form-select-sm"
-              aria-label="Filtrar tipo"
-            >
-              <option value="">Todos os tipos</option>
-              <option value="vendas">Vendas</option>
-              <option value="cross-sell">Cross-sell</option>
-              <option value="produtos">Produtos</option>
-              <option value="atendimento">Atendimento</option>
-              <option value="metas">Metas</option>
-            </select>
-            <select
-              id="filter-period"
-              class="form-select form-select-sm"
-              aria-label="Filtrar período"
-            >
-              <option value="">Todos os períodos</option>
-              <option value="daily">Diárias</option>
-              <option value="weekly">Semanais</option>
-              <option value="monthly">Mensais</option>
-            </select>
+      <section id="missoes" class="py-5">
+        <div class="container">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h2 class="h4 m-0">Missões</h2>
+            <div class="d-flex gap-2">
+              <select
+                id="filter-type"
+                class="form-select form-select-sm"
+                aria-label="Filtrar tipo"
+              >
+                <option value="">Todos os tipos</option>
+                <option value="vendas">Vendas</option>
+                <option value="cross-sell">Cross-sell</option>
+                <option value="produtos">Produtos</option>
+                <option value="atendimento">Atendimento</option>
+                <option value="metas">Metas</option>
+              </select>
+              <select
+                id="filter-period"
+                class="form-select form-select-sm"
+                aria-label="Filtrar período"
+              >
+                <option value="">Todos os períodos</option>
+                <option value="daily">Diárias</option>
+                <option value="weekly">Semanais</option>
+                <option value="monthly">Mensais</option>
+              </select>
+            </div>
           </div>
-        </div>
 
-        <!-- Loading state -->
-        <div id="missions-loading" class="text-center py-5">
-          <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Carregando missões...</span>
+          <!-- Loading state -->
+          <div id="missions-loading" class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Carregando missões...</span>
+            </div>
+            <p class="mt-2 text-muted">Carregando suas missões...</p>
           </div>
-          <p class="mt-2 text-muted">Carregando suas missões...</p>
-        </div>
 
-        <!-- Error state -->
-        <div id="missions-error" class="alert alert-danger d-none" role="alert">
-          <i class="bi bi-exclamation-triangle me-2"></i>
-          <strong>Erro ao carregar missões</strong>
-          <p class="mb-0">
-            Não foi possível carregar suas missões. Tente recarregar a página.
-          </p>
-        </div>
+          <!-- Error state -->
+          <div
+            id="missions-error"
+            class="alert alert-danger d-none"
+            role="alert"
+          >
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            <strong>Erro ao carregar missões</strong>
+            <p class="mb-0">
+              Não foi possível carregar suas missões. Tente recarregar a página.
+            </p>
+          </div>
 
-        <!-- Empty state -->
-        <div id="missions-empty" class="text-center py-5 d-none">
-          <i class="bi bi-list-task text-muted" style="font-size: 3rem"></i>
-          <h3 class="h5 mt-3 text-muted">Nenhuma missão encontrada</h3>
-          <p class="text-muted">
-            Não há missões disponíveis para você no momento.
-          </p>
-        </div>
+          <!-- Empty state -->
+          <div id="missions-empty" class="text-center py-5 d-none">
+            <i class="bi bi-list-task text-muted" style="font-size: 3rem"></i>
+            <h3 class="h5 mt-3 text-muted">Nenhuma missão encontrada</h3>
+            <p class="text-muted">
+              Não há missões disponíveis para você no momento.
+            </p>
+          </div>
 
-        <!-- Missions container -->
-        <div id="missions-container" class="row g-3 d-none"></div>
-      </div>
-    </section>
+          <!-- Missions container -->
+          <div id="missions-container" class="row g-3 d-none"></div>
+        </div>
+      </section>
+    </div>
+
     <footer class="py-4 mt-4">
       <div
         class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"

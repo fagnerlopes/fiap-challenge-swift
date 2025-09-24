@@ -23,253 +23,262 @@
     </script>
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand-lg sticky-top"
-      aria-label="Navegação principal"
-    >
-      <div class="container">
-        <a
-          class="navbar-brand d-flex align-items-center gap-2"
-          href="index.html"
-        >
-          <i class="bi bi-fire text-brand"></i>
-          <strong>SwiftPro</strong>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#navOffcanvas"
-          aria-controls="navOffcanvas"
-          aria-label="Abrir menu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="main-content">
+      <nav
+        class="navbar navbar-expand-lg sticky-top"
+        aria-label="Navegação principal"
+      >
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center gap-2"
+            href="index.html"
+          >
+            <i class="bi bi-fire text-brand"></i>
+            <strong>SwiftPro</strong>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#navOffcanvas"
+            aria-controls="navOffcanvas"
+            aria-label="Abrir menu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menu</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Fechar"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-              <li class="nav-item">
-                <a class="nav-link" href="ranking.html">Ranking</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="missoes.html">Missões</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="plano.html">Trilha de Aprendizagem</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="gerente.html">Área do Gerente</a>
-              </li>
-              <li class="nav-item"></li>
-              <li class="nav-item"></li>
-            </ul>
-            <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
-              <!-- Menu dropdown do usuário -->
-              <div class="dropdown text-end">
-                <a
-                  href="#"
-                  class="d-flex align-items-center text-decoration-none dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face&auto=format"
-                    alt="Avatar do usuário"
-                    width="32"
-                    height="32"
-                    class="rounded-circle me-2"
-                    data-user-avatar
-                  />
-                  <span class="d-none d-lg-inline-block" data-user-name
-                    >Usuário</span
-                  >
-                </a>
-                <ul class="dropdown-menu text-small">
-                  <li class="dropdown-header">
-                    <div class="fw-semibold" data-user-name>Usuário</div>
-                    <small class="text-muted" data-user-email
-                      >usuario@swift.com</small
-                    >
-                    <small class="text-muted d-block" data-user-role
-                      >Carregando...</small
-                    >
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="config.html"
-                      ><i class="bi bi-gear me-2"></i>Configurações</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="historico.html"
-                      ><i class="bi bi-clock-history me-2"></i>Histórico</a
-                    >
-                  </li>
-                  <li data-manager-only>
-                    <a class="dropdown-item" href="gerente.html"
-                      ><i class="bi bi-person-gear me-2"></i>Área do Gerente</a
-                    >
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#" data-logout
-                      ><i class="bi bi-box-arrow-right me-2"></i>Sair</a
-                    >
-                  </li>
-                </ul>
-              </div>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">Menu</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Fechar"
+              ></button>
             </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <section id="trilha" class="py-5">
-      <div class="container">
-        <div class="d-flex align-items-center justify-content-between mb-3">
-          <h2 class="h4 m-0">Trilha de Aprendizagem</h2>
-          <div class="d-flex gap-2">
-            <select
-              id="filter-category"
-              class="form-select form-select-sm"
-              aria-label="Filtrar categoria"
-            >
-              <option value="">Todas as categorias</option>
-              <option value="vendas">Vendas</option>
-              <option value="atendimento">Atendimento</option>
-              <option value="gestao">Gestão</option>
-            </select>
-            <select
-              id="filter-difficulty"
-              class="form-select form-select-sm"
-              aria-label="Filtrar dificuldade"
-            >
-              <option value="">Todas as dificuldades</option>
-              <option value="iniciante">Iniciante</option>
-              <option value="intermediario">Intermediário</option>
-              <option value="avancado">Avançado</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Loading state -->
-        <div id="tracks-loading" class="text-center py-5">
-          <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Carregando trilhas...</span>
-          </div>
-          <p class="mt-2 text-muted">
-            Carregando suas trilhas de aprendizagem...
-          </p>
-        </div>
-
-        <!-- Error state -->
-        <div id="tracks-error" class="alert alert-danger d-none" role="alert">
-          <i class="bi bi-exclamation-triangle me-2"></i>
-          <strong>Erro ao carregar trilhas</strong>
-          <p class="mb-0">
-            Não foi possível carregar suas trilhas. Tente recarregar a página.
-          </p>
-        </div>
-
-        <div class="row g-3">
-          <div class="col-12 col-lg-8">
-            <div class="card h-100">
-              <div
-                class="card-header d-flex justify-content-between align-items-center"
-              >
-                <span>Suas Trilhas</span>
-                <span
-                  id="progress-summary"
-                  class="badge bg-primary-subtle text-primary"
-                ></span>
-              </div>
-              <div class="card-body">
-                <!-- Tracks container -->
-                <div id="tracks-container" class="row g-3 d-none"></div>
-
-                <!-- Empty state -->
-                <div id="tracks-empty" class="text-center py-4 d-none">
-                  <i
-                    class="bi bi-mortarboard text-muted"
-                    style="font-size: 3rem"
-                  ></i>
-                  <h3 class="h5 mt-3 text-muted">Nenhuma trilha encontrada</h3>
-                  <p class="text-muted">
-                    Não há trilhas disponíveis para os filtros selecionados.
-                  </p>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="ranking.html">Ranking</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="missoes.html">Missões</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="plano.html"
+                    >Trilha de Aprendizagem</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="gerente.html">Área do Gerente</a>
+                </li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+              </ul>
+              <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
+                <!-- Menu dropdown do usuário -->
+                <div class="dropdown text-end">
+                  <a
+                    href="#"
+                    class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face&auto=format"
+                      alt="Avatar do usuário"
+                      width="32"
+                      height="32"
+                      class="rounded-circle me-2"
+                      data-user-avatar
+                    />
+                    <span class="d-none d-lg-inline-block" data-user-name
+                      >Usuário</span
+                    >
+                  </a>
+                  <ul class="dropdown-menu text-small">
+                    <li class="dropdown-header">
+                      <div class="fw-semibold" data-user-name>Usuário</div>
+                      <small class="text-muted" data-user-email
+                        >usuario@swift.com</small
+                      >
+                      <small class="text-muted d-block" data-user-role
+                        >Carregando...</small
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="config.html"
+                        ><i class="bi bi-gear me-2"></i>Configurações</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="historico.html"
+                        ><i class="bi bi-clock-history me-2"></i>Histórico</a
+                      >
+                    </li>
+                    <li data-manager-only>
+                      <a class="dropdown-item" href="gerente.html"
+                        ><i class="bi bi-person-gear me-2"></i>Área do
+                        Gerente</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#" data-logout
+                        ><i class="bi bi-box-arrow-right me-2"></i>Sair</a
+                      >
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div class="card-footer bg-transparent">
-                <small class="text-muted"
-                  >Complete conteúdos para acelerar seu avanço de nível.</small
-                >
-              </div>
             </div>
           </div>
-          <div class="col-12 col-lg-4">
-            <div class="card h-100">
-              <div
-                class="card-header d-flex justify-content-between align-items-center"
-              >
-                <span>Conquistas</span>
-                <span
-                  id="achievements-count"
-                  class="badge bg-success-subtle text-success"
-                ></span>
-              </div>
-              <div class="card-body">
-                <!-- Achievements container -->
-                <div
-                  id="achievements-container"
-                  class="d-flex flex-wrap justify-content-center w-100 gap-4 d-none"
-                ></div>
+        </div>
+      </nav>
 
-                <!-- Loading achievements -->
-                <div id="achievements-loading" class="text-center py-3">
-                  <div
-                    class="spinner-border spinner-border-sm text-primary"
-                    role="status"
-                  >
-                    <span class="visually-hidden"
-                      >Carregando conquistas...</span
-                    >
+      <section id="trilha" class="py-5">
+        <div class="container">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h2 class="h4 m-0">Trilha de Aprendizagem</h2>
+            <div class="d-flex gap-2">
+              <select
+                id="filter-category"
+                class="form-select form-select-sm"
+                aria-label="Filtrar categoria"
+              >
+                <option value="">Todas as categorias</option>
+                <option value="vendas">Vendas</option>
+                <option value="atendimento">Atendimento</option>
+                <option value="gestao">Gestão</option>
+              </select>
+              <select
+                id="filter-difficulty"
+                class="form-select form-select-sm"
+                aria-label="Filtrar dificuldade"
+              >
+                <option value="">Todas as dificuldades</option>
+                <option value="iniciante">Iniciante</option>
+                <option value="intermediario">Intermediário</option>
+                <option value="avancado">Avançado</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Loading state -->
+          <div id="tracks-loading" class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Carregando trilhas...</span>
+            </div>
+            <p class="mt-2 text-muted">
+              Carregando suas trilhas de aprendizagem...
+            </p>
+          </div>
+
+          <!-- Error state -->
+          <div id="tracks-error" class="alert alert-danger d-none" role="alert">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            <strong>Erro ao carregar trilhas</strong>
+            <p class="mb-0">
+              Não foi possível carregar suas trilhas. Tente recarregar a página.
+            </p>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-12 col-lg-8">
+              <div class="card h-100">
+                <div
+                  class="card-header d-flex justify-content-between align-items-center"
+                >
+                  <span>Suas Trilhas</span>
+                  <span
+                    id="progress-summary"
+                    class="badge bg-primary-subtle text-primary"
+                  ></span>
+                </div>
+                <div class="card-body">
+                  <!-- Tracks container -->
+                  <div id="tracks-container" class="row g-3 d-none"></div>
+
+                  <!-- Empty state -->
+                  <div id="tracks-empty" class="text-center py-4 d-none">
+                    <i
+                      class="bi bi-mortarboard text-muted"
+                      style="font-size: 3rem"
+                    ></i>
+                    <h3 class="h5 mt-3 text-muted">
+                      Nenhuma trilha encontrada
+                    </h3>
+                    <p class="text-muted">
+                      Não há trilhas disponíveis para os filtros selecionados.
+                    </p>
                   </div>
                 </div>
-
-                <!-- No achievements -->
-                <div id="achievements-empty" class="text-center py-3 d-none">
-                  <i
-                    class="bi bi-trophy text-muted"
-                    style="font-size: 2rem"
-                  ></i>
-                  <p class="text-muted mb-0 mt-2">
-                    Complete trilhas para ganhar conquistas!
-                  </p>
+                <div class="card-footer bg-transparent">
+                  <small class="text-muted"
+                    >Complete conteúdos para acelerar seu avanço de
+                    nível.</small
+                  >
                 </div>
               </div>
-              <div class="card-footer bg-transparent text-end">
-                <button
-                  id="view-all-achievements"
-                  class="btn btn-sm btn-outline-secondary"
+            </div>
+            <div class="col-12 col-lg-4">
+              <div class="card h-100">
+                <div
+                  class="card-header d-flex justify-content-between align-items-center"
                 >
-                  Ver todas
-                </button>
+                  <span>Conquistas</span>
+                  <span
+                    id="achievements-count"
+                    class="badge bg-success-subtle text-success"
+                  ></span>
+                </div>
+                <div class="card-body">
+                  <!-- Achievements container -->
+                  <div
+                    id="achievements-container"
+                    class="d-flex flex-wrap justify-content-center w-100 gap-4 d-none"
+                  ></div>
+
+                  <!-- Loading achievements -->
+                  <div id="achievements-loading" class="text-center py-3">
+                    <div
+                      class="spinner-border spinner-border-sm text-primary"
+                      role="status"
+                    >
+                      <span class="visually-hidden"
+                        >Carregando conquistas...</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- No achievements -->
+                  <div id="achievements-empty" class="text-center py-3 d-none">
+                    <i
+                      class="bi bi-trophy text-muted"
+                      style="font-size: 2rem"
+                    ></i>
+                    <p class="text-muted mb-0 mt-2">
+                      Complete trilhas para ganhar conquistas!
+                    </p>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent text-end">
+                  <button
+                    id="view-all-achievements"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    Ver todas
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
+
     <footer class="py-4 mt-4">
       <div
         class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"

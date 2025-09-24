@@ -23,498 +23,617 @@
     </script>
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand-lg sticky-top"
-      aria-label="Navegação principal"
-    >
-      <div class="container">
-        <a
-          class="navbar-brand d-flex align-items-center gap-2"
-          href="index.html"
-        >
-          <i class="bi bi-fire text-brand"></i>
-          <strong>SwiftPro</strong>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#navOffcanvas"
-          aria-controls="navOffcanvas"
-          aria-label="Abrir menu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="main-content">
+      <nav
+        class="navbar navbar-expand-lg sticky-top"
+        aria-label="Navegação principal"
+      >
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center gap-2"
+            href="index.html"
+          >
+            <i class="bi bi-fire text-brand"></i>
+            <strong>SwiftPro</strong>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#navOffcanvas"
+            aria-controls="navOffcanvas"
+            aria-label="Abrir menu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menu</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Fechar"
-            ></button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">Menu</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Fechar"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="ranking.html">Ranking</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="missoes.html">Missões</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="plano.html"
+                    >Trilha de Aprendizagem</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="gerente.html">Área do Gerente</a>
+                </li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+              </ul>
+              <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
+                <!-- Menu dropdown do usuário -->
+                <div class="dropdown text-end">
+                  <a
+                    href="#"
+                    class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face&auto=format"
+                      alt="Avatar do usuário"
+                      width="32"
+                      height="32"
+                      class="rounded-circle me-2"
+                      data-user-avatar
+                    />
+                    <span class="d-none d-lg-inline-block" data-user-name
+                      >Usuário</span
+                    >
+                  </a>
+                  <ul class="dropdown-menu text-small">
+                    <li class="dropdown-header">
+                      <div class="fw-semibold" data-user-name>Usuário</div>
+                      <small class="text-muted" data-user-email
+                        >usuario@swift.com</small
+                      >
+                      <small class="text-muted d-block" data-user-role
+                        >Carregando...</small
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="config.html"
+                        ><i class="bi bi-gear me-2"></i>Configurações</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="historico.html"
+                        ><i class="bi bi-clock-history me-2"></i>Histórico</a
+                      >
+                    </li>
+                    <li data-manager-only>
+                      <a class="dropdown-item" href="gerente.html"
+                        ><i class="bi bi-person-gear me-2"></i>Área do
+                        Gerente</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#" data-logout
+                        ><i class="bi bi-box-arrow-right me-2"></i>Sair</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-              <li class="nav-item">
-                <a class="nav-link" href="ranking.html">Ranking</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="missoes.html">Missões</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="plano.html">Trilha de Aprendizagem</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="gerente.html">Área do Gerente</a>
-              </li>
-              <li class="nav-item">
-              </li>
-              <li class="nav-item">
-              </li>
-            </ul>
-            <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
-              <!-- Menu dropdown do usuário -->
-              <div class="dropdown text-end">
-                <a
-                  href="#"
-                  class="d-flex align-items-center text-decoration-none dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+        </div>
+      </nav>
+
+      <header class="py-5 bg-brand-soft border-bottom">
+        <div class="container">
+          <div class="row align-items-start g-4">
+            <div class="col-12 col-lg-5">
+              <div class="card soft-shadow">
+                <div class="card-body d-flex align-items-center gap-3">
                   <img
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face&auto=format"
-                    alt="Avatar do usuário"
-                    width="32"
-                    height="32"
-                    class="rounded-circle me-2"
-                    data-user-avatar
+                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop"
+                    alt="Avatar do Colaborador"
+                    class="avatar-xl"
                   />
-                  <span class="d-none d-lg-inline-block" data-user-name
-                    >Usuário</span
-                  >
-                </a>
-                <ul class="dropdown-menu text-small">
-                  <li class="dropdown-header">
-                    <div class="fw-semibold" data-user-name>Usuário</div>
-                    <small class="text-muted" data-user-email
-                      >usuario@swift.com</small
-                    >
-                    <small class="text-muted d-block" data-user-role
-                      >Carregando...</small
-                    >
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="config.html"
-                      ><i class="bi bi-gear me-2"></i>Configurações</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="historico.html"
-                      ><i class="bi bi-clock-history me-2"></i>Histórico</a
-                    >
-                  </li>
-                  <li data-manager-only>
-                    <a class="dropdown-item" href="gerente.html"
-                      ><i class="bi bi-person-gear me-2"></i>Área do Gerente</a
-                    >
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#" data-logout
-                      ><i class="bi bi-box-arrow-right me-2"></i>Sair</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <header class="py-5 bg-brand-soft border-bottom">
-      <div class="container">
-        <div class="row align-items-start g-4">
-          <div class="col-12 col-lg-5">
-            <div class="card soft-shadow">
-              <div class="card-body d-flex align-items-center gap-3">
-                <img
-                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop"
-                  alt="Avatar do Colaborador"
-                  class="avatar-xl"
-                />
-                <div>
-                  <div class="d-flex align-items-center gap-2">
-                    <h1 class="h4 m-0">Lucas (Colaborador)</h1>
-                    <span class="badge badge-level">Ouro</span>
+                  <div>
+                    <div class="d-flex align-items-center gap-2">
+                      <h1 class="h4 m-0">Lucas (Colaborador)</h1>
+                      <span class="badge badge-level">Ouro</span>
+                    </div>
+                    <div class="text-muted small">
+                      Loja Swift – Vila Mariana
+                    </div>
+                    <div class="mt-3">
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Progresso para próximo nível"
+                        aria-valuenow="65"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div class="progress-bar" style="width: 65%"></div>
+                      </div>
+                      <div class="d-flex justify-content-between mt-1">
+                        <small class="text-muted">1.280 pts</small>
+                        <small class="text-muted">Próximo: Diamante</small>
+                      </div>
+                      <div class="mt-1">
+                        <div class="ranking-label">Posição no ranking</div>
+                        <div class="ranking-badges">
+                          <span
+                            class="badge bg-light text-dark"
+                            title="Ranking local"
+                            >1º local</span
+                          >
+                          <span
+                            class="badge bg-light text-dark"
+                            title="Ranking global"
+                            >2º global</span
+                          >
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="text-muted small">Loja Swift – Vila Mariana</div>
-                  <div class="mt-3">
+                </div>
+                <div class="card-footer bg-transparent d-flex flex-wrap gap-2">
+                  <button
+                    class="btn btn-outline-secondary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#abrirDisputaModal"
+                  >
+                    <i class="bi bi-shield-exclamation me-1"></i> Abrir disputa
+                  </button>
+                </div>
+              </div>
+
+              <!-- Card de Nova Missão criada pelo gerente -->
+              <div
+                class="card soft-shadow mt-3 border-0"
+                style="background: #ff7420"
+              >
+                <div
+                  class="card-header fw-semibold"
+                  style="
+                    background: #ff7420;
+                    color: #fff;
+                    border-radius: 16px 16px 0 0;
+                    border-bottom: 2px solid #fff;
+                  "
+                >
+                  Nova Missão do Gerente
+                </div>
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i
+                      class="bi bi-lightbulb"
+                      style="font-size: 2rem; color: #fff"
+                    ></i>
+                    <span class="fw-semibold" style="color: #fff"
+                      >Desafio Relâmpago de Vendas</span
+                    >
+                  </div>
+                  <div class="small mb-2" style="color: #fff">
+                    Venda 10 cortes premium até o final do dia e ganhe 200
+                    pontos extras!
+                  </div>
+                  <div
+                    class="progress mb-2"
+                    style="height: 5px; background: rgba(255, 255, 255, 0.3)"
+                  >
                     <div
-                      class="progress"
-                      role="progressbar"
-                      aria-label="Progresso para próximo nível"
-                      aria-valuenow="65"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    >
-                      <div class="progress-bar" style="width: 65%"></div>
-                    </div>
-                    <div class="d-flex justify-content-between mt-1">
-                      <small class="text-muted">1.280 pts</small>
-                      <small class="text-muted">Próximo: Diamante</small>
-                    </div>
-                    <div class="mt-1">
-                      <div class="ranking-label">Posição no ranking</div>
-                      <div class="ranking-badges">
-                        <span class="badge bg-light text-dark" title="Ranking local">1º local</span>
-                        <span class="badge bg-light text-dark" title="Ranking global">2º global</span>
-                      </div>
-                    </div>
+                      class="progress-bar"
+                      style="width: 40%; background: #fff"
+                    ></div>
                   </div>
-                </div>
-              </div>
-              <div class="card-footer bg-transparent d-flex flex-wrap gap-2">
-                <button
-                  class="btn btn-outline-secondary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#abrirDisputaModal"
-                >
-                  <i class="bi bi-shield-exclamation me-1"></i> Abrir disputa
-                </button>
-              </div>
-            </div>
-
-            <!-- Card de Nova Missão criada pelo gerente -->
-            <div class="card soft-shadow mt-3 border-0" style="background:#FF7420;">
-              <div class="card-header fw-semibold" style="background:#FF7420; color:#fff; border-radius:16px 16px 0 0; border-bottom: 2px solid #fff;">
-                Nova Missão do Gerente
-              </div>
-              <div class="card-body">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <i class="bi bi-lightbulb" style="font-size: 2rem; color:#fff;"></i>
-                  <span class="fw-semibold" style="color:#fff;">Desafio Relâmpago de Vendas</span>
-                </div>
-                <div class="small mb-2" style="color:#fff;">
-                  Venda 10 cortes premium até o final do dia e ganhe 200 pontos extras!
-                </div>
-                <div class="progress mb-2" style="height: 5px; background:rgba(255,255,255,0.3);">
-                  <div class="progress-bar" style="width: 40%; background:#fff;"></div>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <small style="color:#fff;">4 de 10</small>
-                  <small style="color:#fff;">Expira hoje às 23:59</small>
-                </div>
-                <div class="d-flex gap-2 justify-content-end">
-                  <button class="btn btn-sm" style="background:#fff; color:#FF7420; font-weight:600;">Iniciar missão</button>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <small style="color: #fff">4 de 10</small>
+                    <small style="color: #fff">Expira hoje às 23:59</small>
+                  </div>
+                  <div class="d-flex gap-2 justify-content-end">
+                    <button
+                      class="btn btn-sm"
+                      style="background: #fff; color: #ff7420; font-weight: 600"
+                    >
+                      Iniciar missão
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-7">
-            <div class="card soft-shadow">
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <h2 class="h5 m-0">Painel rápido</h2>
-                  <span class="text-brand"><i data-lucide="sparkles"></i></span>
-                </div>
-                <div class="row g-3 mt-1">
-                  <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded-4 text-center h-100">
-                      <div class="kpi">12</div>
-                      <div class="kpi-sub">Vendas hoje</div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded-4 text-center h-100">
-                      <div class="kpi">32%</div>
-                      <div class="kpi-sub">Cross-sell</div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded-4 text-center h-100">
-                      <div class="kpi">9.1</div>
-                      <div class="kpi-sub">NPS</div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded-4 text-center h-100">
-                      <div class="kpi">+120</div>
-                      <div class="kpi-sub">Pontos hoje</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Tabs de papéis: Colaborador x Gerente -->
-                <ul
-                  class="nav nav-pills role-tab gap-2 mt-4"
-                  id="roleTab"
-                  role="tablist"
-                >
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link active"
-                      id="colab-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#colab"
-                      type="button"
-                      role="tab"
-                      aria-controls="colab"
-                      aria-selected="true"
-                    >
-                      <i class="bi bi-person-badge me-1"></i> Colaborador
-                    </button>
-                  </li>
-                  <li class="nav-item" role="presentation" data-manager-only>
-                    <button
-                      class="nav-link"
-                      id="gerente-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#gerente"
-                      type="button"
-                      role="tab"
-                      aria-controls="gerente"
-                      aria-selected="false"
-                    >
-                      <i class="bi bi-person-gear me-1"></i> Gerente
-                    </button>
-                  </li>
-                </ul>
-
-                <div class="tab-content mt-3" id="roleTabContent">
-                  <!-- COLABORADOR -->
+            <div class="col-12 col-lg-7">
+              <div class="card soft-shadow">
+                <div class="card-body">
                   <div
-                    class="tab-pane fade show active"
-                    id="colab"
-                    role="tabpanel"
-                    aria-labelledby="colab-tab"
+                    class="d-flex justify-content-between align-items-center"
                   >
-                    <div class="row g-3">
-                      <div class="col-12">
-                        <div class="card h-100">
-                          <div
-                            class="card-header d-flex align-items-center justify-content-between"
-                          >
-                            Missões ativas
-                            <span class="badge bg-light text-dark">3</span>
-                          </div>
-                          <div class="card-body">
-                            <div class="d-flex flex-column gap-4">
-                              <div class="mission-item">
-                                <div
-                                  class="d-flex justify-content-between align-items-center"
-                                >
-                                  <div>
-                                    <strong>Venda Casada Premium</strong>
-                                    <span class="badge bg-danger-subtle text-danger ms-2">Diária</span>
-                                  </div>
-                                  <span class="badge bg-warning-subtle text-dark">+30 pts</span>
-                                </div>
-                                <div class="small text-muted">
-                                  Realizar 3 vendas casadas de cortes premium com temperos especiais
-                                </div>
-                                <div class="progress mt-2" style="height: 5px;">
-                                  <div class="progress-bar bg-success" style="width: 33%"></div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-1">
-                                  <small class="text-muted">1 de 3</small>
-                                  <small class="text-muted">Expira hoje às 23:59</small>
-                                </div>
-                                <div class="d-flex justify-content-end mt-2">
-                                  <a href="missoes.html" class="btn btn-sm btn-outline-secondary">Detalhes</a>
-                                </div>
-                              </div>
-
-                              <div class="mission-item">
-                                <div
-                                  class="d-flex justify-content-between align-items-center"
-                                >
-                                  <div>
-                                    <strong>Desafio NPS Excelente</strong>
-                                    <span class="badge bg-primary-subtle text-primary ms-2">Semanal</span>
-                                  </div>
-                                  <span class="badge bg-warning-subtle text-dark">+100 pts</span>
-                                </div>
-                                <div class="small text-muted">
-                                  Manter média de NPS acima de 9.5 durante a semana
-                                </div>
-                                <div class="progress mt-2" style="height: 5px;">
-                                  <div class="progress-bar bg-success" style="width: 80%"></div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-1">
-                                  <small class="text-muted">NPS atual: 9.6</small>
-                                  <small class="text-muted">5 dias restantes</small>
-                                </div>
-                                <div class="d-flex justify-content-end mt-2">
-                                  <a href="missoes.html" class="btn btn-sm btn-outline-secondary">Detalhes</a>
-                                </div>
-                              </div>
-
-                              <div class="mission-item">
-                                <div
-                                  class="d-flex justify-content-between align-items-center"
-                                >
-                                  <div>
-                                    <strong>Especialista em Cortes Nobres</strong>
-                                    <span class="badge bg-success-subtle text-success ms-2">Mensal</span>
-                                  </div>
-                                  <span class="badge bg-warning-subtle text-dark">+500 pts</span>
-                                </div>
-                                <div class="small text-muted">
-                                  Atingir meta de R$ 15.000 em vendas de cortes premium no mês
-                                </div>
-                                <div class="progress mt-2" style="height: 5px;">
-                                  <div class="progress-bar bg-success" style="width: 45%"></div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mt-1">
-                                  <small class="text-muted">R$ 6.750 / R$ 15.000</small>
-                                  <small class="text-muted">18 dias restantes</small>
-                                </div>
-                                <div class="d-flex justify-content-end mt-2">
-                                  <a href="missoes.html" class="btn btn-sm btn-outline-secondary">Detalhes</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card-footer bg-transparent text-end">
-                            <a href="missoes.html" class="btn btn-sm btn-outline-secondary">Ver todas</a>
-                          </div>
-                        </div>
+                    <h2 class="h5 m-0">Painel rápido</h2>
+                    <span class="text-brand"
+                      ><i data-lucide="sparkles"></i
+                    ></span>
+                  </div>
+                  <div class="row g-3 mt-1">
+                    <div class="col-6 col-md-3">
+                      <div class="p-3 border rounded-4 text-center h-100">
+                        <div class="kpi">12</div>
+                        <div class="kpi-sub">Vendas hoje</div>
                       </div>
-
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="p-3 border rounded-4 text-center h-100">
+                        <div class="kpi">32%</div>
+                        <div class="kpi-sub">Cross-sell</div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="p-3 border rounded-4 text-center h-100">
+                        <div class="kpi">9.1</div>
+                        <div class="kpi-sub">NPS</div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="p-3 border rounded-4 text-center h-100">
+                        <div class="kpi">+120</div>
+                        <div class="kpi-sub">Pontos hoje</div>
+                      </div>
                     </div>
                   </div>
 
-                  <!-- GERENTE -->
-                  <div
-                    class="tab-pane fade"
-                    id="gerente"
-                    role="tabpanel"
-                    aria-labelledby="gerente-tab"
-                    data-manager-only
+                  <!-- Tabs de papéis: Colaborador x Gerente -->
+                  <ul
+                    class="nav nav-pills role-tab gap-2 mt-4"
+                    id="roleTab"
+                    role="tablist"
                   >
-                    <div class="row g-3">
-                      <div class="col-12 col-lg-7">
-                        <div class="card h-100">
-                          <div class="card-header">KPIs da Loja</div>
-                          <div class="card-body">
-                            <div class="row g-3">
-                              <div class="col-6 col-md-4">
-                                <div
-                                  class="p-3 border rounded-4 text-center h-100"
-                                >
-                                  <div class="kpi">R$ 78</div>
-                                  <div class="kpi-sub">Ticket médio</div>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link active"
+                        id="colab-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#colab"
+                        type="button"
+                        role="tab"
+                        aria-controls="colab"
+                        aria-selected="true"
+                      >
+                        <i class="bi bi-person-badge me-1"></i> Colaborador
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation" data-manager-only>
+                      <button
+                        class="nav-link"
+                        id="gerente-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#gerente"
+                        type="button"
+                        role="tab"
+                        aria-controls="gerente"
+                        aria-selected="false"
+                      >
+                        <i class="bi bi-person-gear me-1"></i> Gerente
+                      </button>
+                    </li>
+                  </ul>
+
+                  <div class="tab-content mt-3" id="roleTabContent">
+                    <!-- COLABORADOR -->
+                    <div
+                      class="tab-pane fade show active"
+                      id="colab"
+                      role="tabpanel"
+                      aria-labelledby="colab-tab"
+                    >
+                      <div class="row g-3">
+                        <div class="col-12">
+                          <div class="card h-100">
+                            <div
+                              class="card-header d-flex align-items-center justify-content-between"
+                            >
+                              Missões ativas
+                              <span class="badge bg-light text-dark">3</span>
+                            </div>
+                            <div class="card-body">
+                              <div class="d-flex flex-column gap-4">
+                                <div class="mission-item">
+                                  <div
+                                    class="d-flex justify-content-between align-items-center"
+                                  >
+                                    <div>
+                                      <strong>Venda Casada Premium</strong>
+                                      <span
+                                        class="badge bg-danger-subtle text-danger ms-2"
+                                        >Diária</span
+                                      >
+                                    </div>
+                                    <span
+                                      class="badge bg-warning-subtle text-dark"
+                                      >+30 pts</span
+                                    >
+                                  </div>
+                                  <div class="small text-muted">
+                                    Realizar 3 vendas casadas de cortes premium
+                                    com temperos especiais
+                                  </div>
+                                  <div
+                                    class="progress mt-2"
+                                    style="height: 5px"
+                                  >
+                                    <div
+                                      class="progress-bar bg-success"
+                                      style="width: 33%"
+                                    ></div>
+                                  </div>
+                                  <div
+                                    class="d-flex justify-content-between align-items-center mt-1"
+                                  >
+                                    <small class="text-muted">1 de 3</small>
+                                    <small class="text-muted"
+                                      >Expira hoje às 23:59</small
+                                    >
+                                  </div>
+                                  <div class="d-flex justify-content-end mt-2">
+                                    <a
+                                      href="missoes.html"
+                                      class="btn btn-sm btn-outline-secondary"
+                                      >Detalhes</a
+                                    >
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="col-6 col-md-4">
-                                <div
-                                  class="p-3 border rounded-4 text-center h-100"
-                                >
-                                  <div class="kpi">35%</div>
-                                  <div class="kpi-sub">Cross-sell</div>
+
+                                <div class="mission-item">
+                                  <div
+                                    class="d-flex justify-content-between align-items-center"
+                                  >
+                                    <div>
+                                      <strong>Desafio NPS Excelente</strong>
+                                      <span
+                                        class="badge bg-primary-subtle text-primary ms-2"
+                                        >Semanal</span
+                                      >
+                                    </div>
+                                    <span
+                                      class="badge bg-warning-subtle text-dark"
+                                      >+100 pts</span
+                                    >
+                                  </div>
+                                  <div class="small text-muted">
+                                    Manter média de NPS acima de 9.5 durante a
+                                    semana
+                                  </div>
+                                  <div
+                                    class="progress mt-2"
+                                    style="height: 5px"
+                                  >
+                                    <div
+                                      class="progress-bar bg-success"
+                                      style="width: 80%"
+                                    ></div>
+                                  </div>
+                                  <div
+                                    class="d-flex justify-content-between align-items-center mt-1"
+                                  >
+                                    <small class="text-muted"
+                                      >NPS atual: 9.6</small
+                                    >
+                                    <small class="text-muted"
+                                      >5 dias restantes</small
+                                    >
+                                  </div>
+                                  <div class="d-flex justify-content-end mt-2">
+                                    <a
+                                      href="missoes.html"
+                                      class="btn btn-sm btn-outline-secondary"
+                                      >Detalhes</a
+                                    >
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="col-6 col-md-4">
-                                <div
-                                  class="p-3 border rounded-4 text-center h-100"
-                                >
-                                  <div class="kpi">9.0</div>
-                                  <div class="kpi-sub">NPS</div>
+
+                                <div class="mission-item">
+                                  <div
+                                    class="d-flex justify-content-between align-items-center"
+                                  >
+                                    <div>
+                                      <strong
+                                        >Especialista em Cortes Nobres</strong
+                                      >
+                                      <span
+                                        class="badge bg-success-subtle text-success ms-2"
+                                        >Mensal</span
+                                      >
+                                    </div>
+                                    <span
+                                      class="badge bg-warning-subtle text-dark"
+                                      >+500 pts</span
+                                    >
+                                  </div>
+                                  <div class="small text-muted">
+                                    Atingir meta de R$ 15.000 em vendas de
+                                    cortes premium no mês
+                                  </div>
+                                  <div
+                                    class="progress mt-2"
+                                    style="height: 5px"
+                                  >
+                                    <div
+                                      class="progress-bar bg-success"
+                                      style="width: 45%"
+                                    ></div>
+                                  </div>
+                                  <div
+                                    class="d-flex justify-content-between align-items-center mt-1"
+                                  >
+                                    <small class="text-muted"
+                                      >R$ 6.750 / R$ 15.000</small
+                                    >
+                                    <small class="text-muted"
+                                      >18 dias restantes</small
+                                    >
+                                  </div>
+                                  <div class="d-flex justify-content-end mt-2">
+                                    <a
+                                      href="missoes.html"
+                                      class="btn btn-sm btn-outline-secondary"
+                                      >Detalhes</a
+                                    >
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                            <hr />
-                            <div class="d-flex flex-wrap gap-2">
-                              <button
-                                class="btn btn-primary"
-                                data-bs-toggle="modal"
-                                data-bs-target="#aprovarEvidenciasModal"
-                              >
-                                <i class="bi bi-ui-checks me-1"></i> Aprovar
-                                evidências
-                              </button>
-                              <button
-                                class="btn btn-outline-secondary"
-                                data-bs-toggle="modal"
-                                data-bs-target="#gerirRecompensasModal"
-                              >
-                                <i class="bi bi-gift me-1"></i> Recompensas
-                              </button>
+                            <div class="card-footer bg-transparent text-end">
                               <a
-                                href="gerente.html#relatorios"
-                                class="btn btn-outline-secondary"
-                                ><i class="bi bi-filetype-pdf me-1"></i>
-                                Relatórios</a
+                                href="missoes.html"
+                                class="btn btn-sm btn-outline-secondary"
+                                >Ver todas</a
                               >
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="col-12 col-lg-5">
-                        <div class="card h-100">
-                          <div
-                            class="card-header d-flex align-items-center justify-content-between"
-                          >
-                            Disputas
-                            <span class="badge bg-light text-dark"
-                              >2 pendentes</span
-                            >
-                          </div>
-                          <div class="card-body">
-                            <div class="d-flex flex-column gap-3">
-                              <div class="d-flex align-items-start gap-3">
-                                <i
-                                  class="bi bi-shield-exclamation fs-4 text-brand"
-                                ></i>
-                                <div>
-                                  <div class="fw-semibold">
-                                    Venda não pontuada
-                                  </div>
-                                  <div class="small text-muted">
-                                    Colab.: Ana • 12:32 • R$ 126
-                                  </div>
-                                  <button
-                                    class="btn btn-sm btn-outline-secondary mt-2"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#resolverDisputaModal"
+                    </div>
+
+                    <!-- GERENTE -->
+                    <div
+                      class="tab-pane fade"
+                      id="gerente"
+                      role="tabpanel"
+                      aria-labelledby="gerente-tab"
+                      data-manager-only
+                    >
+                      <div class="row g-3">
+                        <div class="col-12 col-lg-7">
+                          <div class="card h-100">
+                            <div class="card-header">KPIs da Loja</div>
+                            <div class="card-body">
+                              <div class="row g-3">
+                                <div class="col-6 col-md-4">
+                                  <div
+                                    class="p-3 border rounded-4 text-center h-100"
                                   >
-                                    Analisar
-                                  </button>
+                                    <div class="kpi">R$ 78</div>
+                                    <div class="kpi-sub">Ticket médio</div>
+                                  </div>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                  <div
+                                    class="p-3 border rounded-4 text-center h-100"
+                                  >
+                                    <div class="kpi">35%</div>
+                                    <div class="kpi-sub">Cross-sell</div>
+                                  </div>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                  <div
+                                    class="p-3 border rounded-4 text-center h-100"
+                                  >
+                                    <div class="kpi">9.0</div>
+                                    <div class="kpi-sub">NPS</div>
+                                  </div>
                                 </div>
                               </div>
-                              <div class="d-flex align-items-start gap-3">
-                                <i
-                                  class="bi bi-shield-exclamation fs-4 text-brand"
-                                ></i>
-                                <div>
-                                  <div class="fw-semibold">
-                                    Evidência inválida
-                                  </div>
-                                  <div class="small text-muted">
-                                    Colab.: Davi • 10:05 • Missão Combo
-                                  </div>
-                                  <button
-                                    class="btn btn-sm btn-outline-secondary mt-2"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#resolverDisputaModal"
-                                  >
-                                    Analisar
-                                  </button>
-                                </div>
+                              <hr />
+                              <div class="d-flex flex-wrap gap-2">
+                                <button
+                                  class="btn btn-primary"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#aprovarEvidenciasModal"
+                                >
+                                  <i class="bi bi-ui-checks me-1"></i> Aprovar
+                                  evidências
+                                </button>
+                                <button
+                                  class="btn btn-outline-secondary"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#gerirRecompensasModal"
+                                >
+                                  <i class="bi bi-gift me-1"></i> Recompensas
+                                </button>
+                                <a
+                                  href="gerente.html#relatorios"
+                                  class="btn btn-outline-secondary"
+                                  ><i class="bi bi-filetype-pdf me-1"></i>
+                                  Relatórios</a
+                                >
                               </div>
                             </div>
                           </div>
-                          <div class="card-footer bg-transparent text-end">
-                            <a
-                              href="gerente.html#disputas"
-                              class="btn btn-sm btn-outline-secondary"
-                              >Ver todas</a
+                        </div>
+                        <div class="col-12 col-lg-5">
+                          <div class="card h-100">
+                            <div
+                              class="card-header d-flex align-items-center justify-content-between"
                             >
+                              Disputas
+                              <span class="badge bg-light text-dark"
+                                >2 pendentes</span
+                              >
+                            </div>
+                            <div class="card-body">
+                              <div class="d-flex flex-column gap-3">
+                                <div class="d-flex align-items-start gap-3">
+                                  <i
+                                    class="bi bi-shield-exclamation fs-4 text-brand"
+                                  ></i>
+                                  <div>
+                                    <div class="fw-semibold">
+                                      Venda não pontuada
+                                    </div>
+                                    <div class="small text-muted">
+                                      Colab.: Ana • 12:32 • R$ 126
+                                    </div>
+                                    <button
+                                      class="btn btn-sm btn-outline-secondary mt-2"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#resolverDisputaModal"
+                                    >
+                                      Analisar
+                                    </button>
+                                  </div>
+                                </div>
+                                <div class="d-flex align-items-start gap-3">
+                                  <i
+                                    class="bi bi-shield-exclamation fs-4 text-brand"
+                                  ></i>
+                                  <div>
+                                    <div class="fw-semibold">
+                                      Evidência inválida
+                                    </div>
+                                    <div class="small text-muted">
+                                      Colab.: Davi • 10:05 • Missão Combo
+                                    </div>
+                                    <button
+                                      class="btn btn-sm btn-outline-secondary mt-2"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#resolverDisputaModal"
+                                    >
+                                      Analisar
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer bg-transparent text-end">
+                              <a
+                                href="gerente.html#disputas"
+                                class="btn btn-sm btn-outline-secondary"
+                                >Ver todas</a
+                              >
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -525,65 +644,70 @@
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <section class="py-5" id="recursos">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-12 col-lg-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center gap-2 mb-1">
-                  <i class="bi bi-trophy text-brand"></i>
-                  <h3 class="h6 m-0">Ranking Duplo</h3>
+      <section class="py-5" id="recursos">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-12 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-1">
+                    <i class="bi bi-trophy text-brand"></i>
+                    <h3 class="h6 m-0">Ranking Duplo</h3>
+                  </div>
+                  <p class="text-muted mb-2">
+                    Local por loja (Iniciante → Diamante) e Geral (Especialista
+                    → Lenda Swift) com reinício mensal.
+                  </p>
+                  <a
+                    href="ranking.html"
+                    class="btn btn-sm btn-outline-secondary"
+                    >Ver ranking</a
+                  >
                 </div>
-                <p class="text-muted mb-2">
-                  Local por loja (Iniciante → Diamante) e Geral (Especialista →
-                  Lenda Swift) com reinício mensal.
-                </p>
-                <a href="ranking.html" class="btn btn-sm btn-outline-secondary"
-                  >Ver ranking</a
-                >
               </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center gap-2 mb-1">
-                  <i class="bi bi-check2-square text-brand"></i>
-                  <h3 class="h6 m-0">Missões & Cross-sell</h3>
+            <div class="col-12 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-1">
+                    <i class="bi bi-check2-square text-brand"></i>
+                    <h3 class="h6 m-0">Missões & Cross-sell</h3>
+                  </div>
+                  <p class="text-muted mb-2">
+                    Missões Relampago e vendas combinadas (ex.: carne +
+                    tempero), Recebem 2x de pontos.
+                  </p>
+                  <a
+                    href="missoes.html"
+                    class="btn btn-sm btn-outline-secondary"
+                    >Ver missões</a
+                  >
                 </div>
-                <p class="text-muted mb-2">
-                  Missões Relampago e vendas combinadas (ex.: carne + tempero), Recebem 2x de pontos.
-                </p>
-                <a href="missoes.html" class="btn btn-sm btn-outline-secondary"
-                  >Ver missões</a
-                >
               </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex align-items-center gap-2 mb-1">
-                  <i class="bi bi-emoji-smile text-brand"></i>
-                  <h3 class="h6 m-0">NPS & Experiência</h3>
+            <div class="col-12 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center gap-2 mb-1">
+                    <i class="bi bi-emoji-smile text-brand"></i>
+                    <h3 class="h6 m-0">NPS & Experiência</h3>
+                  </div>
+                  <p class="text-muted mb-2">
+                    Pontuação extra por encantar clientes e manter a loja com
+                    alto NPS.
+                  </p>
+                  <a href="plano.html" class="btn btn-sm btn-outline-secondary"
+                    >Plano de carreira</a
+                  >
                 </div>
-                <p class="text-muted mb-2">
-                  Pontuação extra por encantar clientes e manter a loja com alto
-                  NPS.
-                </p>
-                <a href="plano.html" class="btn btn-sm btn-outline-secondary"
-                  >Plano de carreira</a
-                >
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <footer class="py-4 mt-4">
       <div
