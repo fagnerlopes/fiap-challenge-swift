@@ -28,7 +28,15 @@
       <div class="row h-100">
         <div class="col-md-6 d-flex flex-column m-0 p-0">
           <header class="swift-header text-white p-4">
-            <h1 class="swift-logo mb-1">Swift Pro</h1>
+            <h1 class="swift-logo mb-1">
+              <a
+                href="https://www.swift.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./assets/images/logo.png" alt="Swift" />
+              </a>
+            </h1>
             <p class="swift-subtitle mb-0">
               Faça login e comece a ganhar pontos!
             </p>
@@ -109,7 +117,9 @@
                           Lembrar de mim
                         </label>
                       </div>
-                      <a href="#" class="text-decoration-none text-danger"
+                      <a
+                        href="recuperar-senha.html"
+                        class="text-decoration-none text-danger"
                         >Esqueceu a senha?</a
                       >
                     </div>
@@ -133,22 +143,13 @@
                     </div>
 
                     <div class="row mb-4">
-                      <div class="col-6">
+                      <div class="col-12">
                         <button
                           type="button"
                           class="btn btn-outline-secondary w-100 py-2"
                         >
                           <i data-lucide="chrome" class="me-2"></i>
                           Google
-                        </button>
-                      </div>
-                      <div class="col-6">
-                        <button
-                          type="button"
-                          class="btn btn-outline-secondary w-100 py-2"
-                        >
-                          <i data-lucide="facebook" class="me-2"></i>
-                          Facebook
                         </button>
                       </div>
                     </div>
@@ -166,14 +167,11 @@
               </section>
 
               <footer class="py-4 mt-4">
-                <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+                <div
+                  class="container d-flex flex-column flex-md-row align-items-center justify-content-center gap-2"
+                >
                   <div class="text-muted small">
                     © 2025 SwiftPro. Todos os direitos reservados.
-                  </div>
-                  <div class="d-flex align-items-center gap-3">
-                    <a class="small text-decoration-none" href="#">Termos</a>
-                    <a class="small text-decoration-none" href="#">Privacidade</a>
-                    <a class="small text-decoration-none" href="#">Ajuda</a>
                   </div>
                 </div>
               </footer>
@@ -208,27 +206,35 @@
     <script>
       lucide.createIcons();
       // Oculta links de navegação para gerente logado
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         try {
           var user = null;
           if (window.SwiftAuth && window.SwiftAuth.getCurrentUser) {
             user = window.SwiftAuth.getCurrentUser();
           } else {
             // fallback
-            var userData = sessionStorage.getItem('swift_user') || localStorage.getItem('swift_user');
+            var userData =
+              sessionStorage.getItem("swift_user") ||
+              localStorage.getItem("swift_user");
             if (userData) user = JSON.parse(userData);
           }
-          if (user && user.role === 'gerente') {
+          if (user && user.role === "gerente") {
             // Esconde links de navegação se existirem
-            var navLinks = document.querySelectorAll('a.nav-link');
-            navLinks.forEach(function(link) {
+            var navLinks = document.querySelectorAll("a.nav-link");
+            navLinks.forEach(function (link) {
               var txt = link.textContent.trim();
-              if (txt === 'Ranking' || txt === 'Missões' || txt === 'Trilha de Aprendizagem') {
-                link.style.display = 'none';
+              if (
+                txt === "Ranking" ||
+                txt === "Missões" ||
+                txt === "Trilha de Aprendizagem"
+              ) {
+                link.style.display = "none";
               }
             });
           }
-        } catch(e) { console.warn('Erro ao ocultar navegação para gerente:', e); }
+        } catch (e) {
+          console.warn("Erro ao ocultar navegação para gerente:", e);
+        }
       });
     </script>
   </body>
