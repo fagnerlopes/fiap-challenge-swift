@@ -54,7 +54,7 @@
           href="index.html"
         >
           <i class="bi bi-fire text-brand"></i>
-          <strong>Home</strong>
+          <strong>SwiftPro</strong>
         </a>
         <button
           class="navbar-toggler"
@@ -79,63 +79,11 @@
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-              <li class="nav-item">
-                <a class="nav-link" href="ranking.html">Ranking</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="missoes.html">Missões</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="plano.html">Trilha de Aprendizagem</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="gerente.html">Área do Gerente</a>
-              </li>
-              <li class="nav-item">
-              </li>
-              <li class="nav-item">
-              </li>
-            </ul>
-            <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
-              <!-- Menu dropdown do usuário -->
-              <div class="dropdown text-end">
-                <a
-                  href="#"
-                  class="d-flex align-items-center text-decoration-none dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face&auto=format"
-                    alt="Avatar do usuário"
-                    width="32"
-                    height="32"
-                    class="rounded-circle me-2"
-                    data-user-avatar
-                  />
-                  <span class="d-none d-lg-inline-block" data-user-name
-                    >Usuário</span
-                  >
-                </a>
-                <ul class="dropdown-menu text-small">
-                  <li class="dropdown-header">
-                    <div class="fw-semibold" data-user-name>Usuário</div>
-                    <small class="text-muted" data-user-email
-                      >usuario@swift.com</small
-                    >
-                    <small class="text-muted d-block" data-user-role
-                      >Carregando...</small
-                    >
-                  </li>
+          <!-- Card 'Gerenciamento de Funcionários' removido -->
                   <li><hr class="dropdown-divider" /></li>
                   <li>
                     <a class="dropdown-item" href="config.html"
                       ><i class="bi bi-gear me-2"></i>Configurações</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="historico.html"
-                      ><i class="bi bi-clock-history me-2"></i>Histórico</a
                     >
                   </li>
                   <li><hr class="dropdown-divider" /></li>
@@ -152,34 +100,180 @@
       </div>
     </nav>
 
-    <section id="gerente" class="py-5">
+    <section id="gerente" class="py-5 bg-brand-soft border-bottom">
       <div class="container">
-        <div class="d-flex align-items-center justify-content-between mb-3">
-          <h2 class="h4 m-0">Área do Gerente</h2>
-          <div class="d-flex gap-2">
-            <button
-              class="btn btn-outline-secondary"
-              data-bs-toggle="modal"
-              data-bs-target="#gerirRecompensasModal"
-            >
-              <i class="bi bi-gift me-1"></i> Recompensas
-            </button>
-            <a href="#relatorios" class="btn btn-outline-secondary"
-              ><i class="bi bi-filetype-csv me-1"></i> Exportar CSV</a
-            >
+        <div class="row align-items-center g-4 mb-3">
+          <div class="col-12 col-md-8">
+            <h2 class="h3 fw-bold mb-0">Painel do Gerente</h2>
+            <div class="text-muted">Acompanhe os principais indicadores e gerencie sua equipe.</div>
+          </div>
+          <div class="col-12 col-md-4 text-md-end">
           </div>
         </div>
 
-        <div class="row g-3">
-          <div class="col-12 col-lg-6">
-            <div class="card h-100">
-              <div class="card-header">Equipe (top da loja)</div>
+  <div class="row g-4 mb-4">
+          <div class="col-12 col-lg-8">
+            <div class="card soft-shadow border-0 rounded-4 p-3 bg-white mb-3">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="fw-bold mb-0">KPIs da Loja</h5>
+                <span class="text-brand"><i data-lucide="sparkles"></i></span>
+              </div>
+              <div class="row g-3 mt-1">
+                <div class="col-6 col-md-3">
+                  <div class="p-3 border rounded-4 text-center h-100 d-flex flex-column align-items-center justify-content-center gap-2">
+                    <span class="d-inline-flex align-items-center justify-content-center bg-brand-soft rounded-3 mb-1" style="width:40px;height:40px;">
+                      <i class="bi bi-cash-coin text-success fs-4"></i>
+                    </span>
+                    <div class="kpi text-success">R$ 120.000</div>
+                    <div class="kpi-sub">Vendas</div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="p-3 border rounded-4 text-center h-100 d-flex flex-column align-items-center justify-content-center gap-2">
+                    <span class="d-inline-flex align-items-center justify-content-center bg-brand-soft rounded-3 mb-1" style="width:40px;height:40px;">
+                      <i class="bi bi-emoji-smile text-primary fs-4"></i>
+                    </span>
+                    <div class="kpi text-primary">8,7</div>
+                    <div class="kpi-sub">NPS</div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="p-3 border rounded-4 text-center h-100 d-flex flex-column align-items-center justify-content-center gap-2">
+                    <span class="d-inline-flex align-items-center justify-content-center bg-brand-soft rounded-3 mb-1" style="width:40px;height:40px;">
+                      <i class="bi bi-receipt text-warning fs-4"></i>
+                    </span>
+                    <div class="kpi text-warning">R$ 320</div>
+                    <div class="kpi-sub">Ticket Médio</div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="p-3 border rounded-4 text-center h-100 d-flex flex-column align-items-center justify-content-center gap-2">
+                    <span class="d-inline-flex align-items-center justify-content-center bg-brand-soft rounded-3 mb-1" style="width:40px;height:40px;">
+                      <i class="bi bi-people text-info fs-4"></i>
+                    </span>
+                    <div class="kpi text-info">1.200</div>
+                    <div class="kpi-sub">Clientes Atendidos</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="card h-100 soft-shadow border-0 rounded-4 p-3 bg-white">
+              <div class="card-header bg-white fw-bold rounded-4 border-0 mb-3">Disputas</div>
+              <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                <div class="fs-1 fw-bold text-danger mb-2">2</div>
+                <div class="text-muted">Disputas em aberto</div>
+                <button type="button" class="btn btn-outline-danger btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#detalheDisputaModal">Ver detalhes</button>
+        <!-- Modal Detalhe Disputa -->
+        <div class="modal fade" id="detalheDisputaModal" tabindex="-1" aria-labelledby="detalheDisputaModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow rounded-4">
+              <div class="modal-header bg-brand-soft border-bottom-0 rounded-top-4">
+                <div>
+                  <h5 class="modal-title fw-bold mb-1" id="detalheDisputaModalLabel">Detalhes da Disputa</h5>
+                  <div class="small text-muted">Acompanhe e resolva a solicitação do colaborador</div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </div>
+              <div class="modal-body py-4">
+                <div class="mb-3">
+                  <span class="badge bg-brand-soft text-brand px-3 py-2 mb-2">Em aberto</span>
+                  <!-- Colaborador 1 -->
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar" width="48" height="48" class="rounded-circle border shadow-sm">
+                    <div>
+                      <div class="fw-semibold">Lucas Silva</div>
+                      <div class="small text-muted">Código: <span class="fw-bold">#C1023</span></div>
+                    </div>
+                  </div>
+                  <div class="mb-2">
+                    <strong>Motivo:</strong> Contestação de pontos na missão <span class="text-brand">"Combo da Semana"</span>.
+                  </div>
+                  <div class="mb-2">
+                    <strong>Data de abertura:</strong> 25/09/2025
+                  </div>
+                  <div class="mb-2">
+                    <strong>Descrição:</strong> O colaborador solicita revisão dos pontos atribuídos na missão, alegando envio correto das evidências.
+                  </div>
+                  <div class="d-flex gap-2 justify-content-end mt-3">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Recusar disputa</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceitar disputa</button>
+                  </div>
+                  <hr class="my-4">
+                  <!-- Colaborador 2 -->
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Avatar" width="48" height="48" class="rounded-circle border shadow-sm">
+                    <div>
+                      <div class="fw-semibold">Fagner Lopes</div>
+                      <div class="small text-muted">Código: <span class="fw-bold">#C2045</span></div>
+                    </div>
+                  </div>
+                  <div class="mb-2">
+                    <strong>Motivo:</strong> Contestação de pontos na missão <span class="text-brand">"Venda Relâmpago"</span>.
+                  </div>
+                  <div class="mb-2">
+                    <strong>Data de abertura:</strong> 26/09/2025
+                  </div>
+                  <div class="mb-2">
+                    <strong>Descrição:</strong> O colaborador alega que a venda foi registrada corretamente, mas não recebeu os pontos.
+                  </div>
+                  <div class="d-flex gap-2 justify-content-end mt-3">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Recusar disputa</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceitar disputa</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card único: Gestão de Colaboradores -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="card soft-shadow border-0 rounded-4 p-4 bg-white">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-brand-soft rounded-3 p-2 me-3 d-flex align-items-center justify-content-center" style="width:48px;height:48px;">
+                  <i class="bi bi-people text-brand fs-2"></i>
+                </div>
+                <div>
+                  <h5 class="fw-bold mb-0">Gestão de Colaboradores</h5>
+                  <div class="small text-muted">Adicione, visualize, edite e remova colaboradores da loja</div>
+                </div>
+              </div>
+              <form class="row g-3 mb-4">
+                <div class="col-12 col-md-3">
+                  <label for="novoColaboradorNome" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="novoColaboradorNome" placeholder="Nome completo" required>
+                </div>
+                <div class="col-12 col-md-3">
+                  <label for="novoColaboradorEmail" class="form-label">E-mail</label>
+                  <input type="email" class="form-control" id="novoColaboradorEmail" placeholder="email@exemplo.com" required>
+                </div>
+                <div class="col-12 col-md-3">
+                  <label for="novoColaboradorCargo" class="form-label">Cargo</label>
+                  <input type="text" class="form-control" id="novoColaboradorCargo" placeholder="Função/Cargo" required>
+                </div>
+                <div class="col-12 col-md-2">
+                  <label for="novoColaboradorCodigo" class="form-label">Código</label>
+                  <input type="text" class="form-control" id="novoColaboradorCodigo" placeholder="Ex.: C1234" required>
+                </div>
+                <div class="col-12 col-md-1 d-flex align-items-end justify-content-end">
+                  <button type="submit" class="btn btn-primary w-100">Adicionar</button>
+                </div>
+              </form>
               <div class="table-responsive">
                 <table class="table align-middle mb-0">
-                  <thead>
+                  <thead class="table-light">
                     <tr>
                       <th>#</th>
                       <th>Nome</th>
+                      <th>E-mail</th>
+                      <th>Cargo</th>
+                      <th>Código</th>
                       <th>Pontos</th>
                       <th>Ações</th>
                     </tr>
@@ -187,32 +281,41 @@
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>Lucas</td>
+                      <td>Lucas Silva</td>
+                      <td>lucas.silva@swift.com</td>
+                      <td>Vendedor</td>
+                      <td>C1023</td>
                       <td>1.280</td>
                       <td>
-                        <a href="index.html?colaborador=lucas" class="btn btn-sm btn-outline-secondary">
-                          Ver perfil
-                        </a>
+                        <a href="index.html?colaborador=lucas" class="btn btn-sm btn-outline-secondary me-1">Ver perfil</a>
+                        <button class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil"></i></button>
+                        <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
                       </td>
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td>Evelyn</td>
+                      <td>Fagner Lopes</td>
+                      <td>fagner.lopes@swift.com</td>
+                      <td>Caixa</td>
+                      <td>C2045</td>
                       <td>1.110</td>
                       <td>
-                        <button class="btn btn-sm btn-outline-secondary">
-                          Ver perfil
-                        </button>
+                        <button class="btn btn-sm btn-outline-secondary me-1">Ver perfil</button>
+                        <button class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil"></i></button>
+                        <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
                       </td>
                     </tr>
                     <tr>
                       <td>3</td>
-                      <td>Davi</td>
+                      <td>Evelyn Souza</td>
+                      <td>evelyn.souza@swift.com</td>
+                      <td>Estoquista</td>
+                      <td>C3098</td>
                       <td>980</td>
                       <td>
-                        <button class="btn btn-sm btn-outline-secondary">
-                          Ver perfil
-                        </button>
+                        <button class="btn btn-sm btn-outline-secondary me-1">Ver perfil</button>
+                        <button class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil"></i></button>
+                        <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
                       </td>
                     </tr>
                   </tbody>
@@ -220,86 +323,20 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-lg-6">
-            <div class="card h-100">
-              <div class="card-header">Aprovações pendentes</div>
-              <div class="card-body">
-                <ul class="list-unstyled m-0 d-flex flex-column gap-3">
-                  <li class="d-flex justify-content-between align-items-start">
-                    <div>
-                      <div class="fw-semibold">Evidência – Combo da Semana</div>
-                      <div class="small text-muted">
-                        Colab.: Ana • 2 fotos • 06/09
-                      </div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <button
-                        class="btn btn-sm btn-outline-secondary"
-                        data-bs-toggle="modal"
-                        data-bs-target="#aprovarEvidenciasModal"
-                      >
-                        Revisar
-                      </button>
-                    </div>
-                  </li>
-                  <li class="d-flex justify-content-between align-items-start">
-                    <div>
-                      <div class="fw-semibold">Ajuste de pontos</div>
-                      <div class="small text-muted">Colab.: Davi • 06/09</div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <button
-                        class="btn btn-sm btn-outline-secondary"
-                        data-bs-toggle="modal"
-                        data-bs-target="#resolverDisputaModal"
-                      >
-                        Analisar disputa
-                      </button>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div class="row g-3 mt-1" id="relatorios">
-          <div class="col-12">
-            <div class="card">
-              <div
-                class="card-header d-flex align-items-center justify-content-between"
-              >
-                Relatórios rápidos
-                <button
-                  class="btn btn-sm btn-outline-secondary"
-                  onclick="alert('CSV exportado (simulado).')"
-                >
-                  <i class="bi bi-download me-1"></i> Exportar
-                </button>
-              </div>
-              <div class="card-body">
-                <div class="row g-3">
-                  <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded-4 text-center">
-                      Ranking por período
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded-4 text-center">
-                      Pontos por missão
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded-4 text-center">
-                      NPS por colaborador
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded-4 text-center">
-                      Cross-sell por loja
-                    </div>
-                  </div>
-                </div>
+
+
+        <!-- Card: Adicionar novo colaborador -->
+        <div class="row justify-content-center mb-4">
+        <!-- Card 'Adicionar novo colaborador' removido -->
+        </div>
+
+        <!-- Data Table: Gerenciamento de Funcionários -->
+        <!-- Data Table: Gerenciamento de Funcionários removido -->
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -416,7 +453,7 @@
         </div>
         <div class="d-flex align-items-center gap-3">
           <a class="small text-decoration-none" href="termo.html">Termos</a>
-          <a class="small text-decoration-none" href="#">Ajuda</a>
+          <a class="small text-decoration-none" href="formulario_ajuda.html">Ajuda</a>
         </div>
       </div>
     </footer>
