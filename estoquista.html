@@ -4,30 +4,59 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SwiftPro – Estoquista Davi</title>
-    <link rel="shortcut icon" href="assets/images/favicon.ico.svg" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico.svg"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <script defer src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/auth.js"></script>
     <script>
-      window.checkPageAccess();
+      // Restringir acesso apenas para estoquistas e gerentes
+      window.checkPageAccess(["estoquista", "gerente"]);
     </script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Navegação principal">
+    <nav
+      class="navbar navbar-expand-lg sticky-top"
+      aria-label="Navegação principal"
+    >
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="estoquista.html">
+        <a
+          class="navbar-brand d-flex align-items-center gap-2"
+          href="estoquista.html"
+        >
           <i class="bi bi-fire text-brand"></i>
           <strong>SwiftPro</strong>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navOffcanvas" aria-controls="navOffcanvas" aria-label="Abrir menu">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navOffcanvas"
+          aria-controls="navOffcanvas"
+          aria-label="Abrir menu"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title">Menu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Fechar"
+            ></button>
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
@@ -46,41 +75,99 @@
             </ul>
             <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
               <div class="nav-item dropdown position-relative me-2">
-                <a href="#" class="nav-link p-0" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false" title="Notificações" role="button">
+                <a
+                  href="#"
+                  class="nav-link p-0"
+                  id="notificationDropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  title="Notificações"
+                  role="button"
+                >
                   <i class="bi bi-bell-fill fs-4 text-brand"></i>
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:0.7em;">3<span class="visually-hidden">notificações não lidas</span></span>
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    style="font-size: 0.7em"
+                    >3<span class="visually-hidden"
+                      >notificações não lidas</span
+                    ></span
+                  >
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="notificationDropdown" style="min-width: 280px;">
+                <ul
+                  class="dropdown-menu dropdown-menu-end mt-2"
+                  aria-labelledby="notificationDropdown"
+                  style="min-width: 280px"
+                >
                   <li class="dropdown-header">Notificações</li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="missoes.html"><strong>Nova missão criada pelo gerente</strong></a></li>
-                  <li><a class="dropdown-item" href="ranking.html"><strong>Você subiu de posição no ranking!</strong></a></li>
-                  <li><a class="dropdown-item" href="#"><strong>Disputa resolvida pelo gerente</strong></a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item text-center text-muted" href="#">Ver todas</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="missoes.html"
+                      ><strong>Nova missão criada pelo gerente</strong></a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="ranking.html"
+                      ><strong>Você subiu de posição no ranking!</strong></a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><strong>Disputa resolvida pelo gerente</strong></a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item text-center text-muted" href="#"
+                      >Ver todas</a
+                    >
+                  </li>
                 </ul>
               </div>
               <div class="dropdown text-end">
-                <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar do usuário" width="32" height="32" class="rounded-circle me-2" data-user-avatar />
-                  <span class="d-none d-lg-inline-block" data-user-name>Davi Sousa</span>
+                <a
+                  href="#"
+                  class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    alt="Avatar do usuário"
+                    width="32"
+                    height="32"
+                    class="rounded-circle me-2"
+                    data-user-avatar
+                  />
+                  <span class="d-none d-lg-inline-block" data-user-name
+                    >Davi Sousa</span
+                  >
                 </a>
                 <ul class="dropdown-menu text-small">
                   <li class="dropdown-header">
                     <div class="fw-semibold" data-user-name>Davi Sousa</div>
-                    <small class="text-muted" data-user-email>davi.sousa@swift.com</small>
-                    <small class="text-muted d-block" data-user-role>Estoquista</small>
+                    <small class="text-muted" data-user-email
+                      >davi.sousa@swift.com</small
+                    >
+                    <small class="text-muted d-block" data-user-role
+                      >Estoquista</small
+                    >
                   </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <a class="dropdown-item" href="config.html"><i class="bi bi-gear me-2"></i>Configurações</a>
+                    <a class="dropdown-item" href="config.html"
+                      ><i class="bi bi-gear me-2"></i>Configurações</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="historico.html"><i class="bi bi-clock-history me-2"></i>Histórico</a>
+                    <a class="dropdown-item" href="historico.html"
+                      ><i class="bi bi-clock-history me-2"></i>Histórico</a
+                    >
                   </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <a class="dropdown-item" href="#" data-logout><i class="bi bi-box-arrow-right me-2"></i>Sair</a>
+                    <a class="dropdown-item" href="#" data-logout
+                      ><i class="bi bi-box-arrow-right me-2"></i>Sair</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -90,192 +177,324 @@
       </div>
     </nav>
 
-    <header class="py-5 bg-brand-soft border-bottom">
-      <div class="container">
-        <div class="row align-items-start g-4">
-          <div class="col-12 col-lg-5">
-            <div class="card soft-shadow mb-4">
-              <div class="card-body d-flex align-items-center gap-3">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar do Estoquista" class="avatar-xl" />
-                <div>
-                  <div class="d-flex align-items-center gap-2">
-                    <h1 class="h4 m-0">Davi Sousa (Estoquista)</h1>
-                    <span class="badge badge-level">Prata</span>
-                  </div>
-                  <div class="text-muted small">Loja Swift – Vila Mariana</div>
-                  <div class="mt-3">
-                    <div class="progress" role="progressbar" aria-label="Progresso para próximo nível" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-                      <div class="progress-bar" style="width: 45%"></div>
+    <div class="main-content">
+      <header class="py-5 bg-brand-soft border-bottom">
+        <div class="container">
+          <div class="row align-items-start g-4">
+            <div class="col-12 col-lg-5">
+              <div class="card soft-shadow mb-4">
+                <div class="card-body d-flex align-items-center gap-3">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    alt="Avatar do Estoquista"
+                    class="avatar-xl"
+                  />
+                  <div>
+                    <div class="d-flex align-items-center gap-2">
+                      <h1 class="h4 m-0">Davi Sousa (Estoquista)</h1>
+                      <span class="badge badge-level">Prata</span>
                     </div>
-                    <div class="d-flex justify-content-between mt-1">
-                      <small class="text-muted">980 pts</small>
-                      <small class="text-muted">Próximo: Ouro</small>
+                    <div class="text-muted small">
+                      Loja Swift – Vila Mariana
                     </div>
-                    <div class="mt-1">
-                      <div class="ranking-label">Posição no ranking</div>
-                      <div class="ranking-badges">
-                          <div style="display:inline-flex;flex-direction:column;align-items:center;margin-right:14px;">
-                            <span style="display:flex;width:56px;height:56px;background:#FF7420;border-radius:12px;align-items:center;justify-content:center;font-size:24px;color:#fff;font-weight:700;text-align:center;">3º</span>
+                    <div class="mt-3">
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Progresso para próximo nível"
+                        aria-valuenow="45"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div class="progress-bar" style="width: 45%"></div>
+                      </div>
+                      <div class="d-flex justify-content-between mt-1">
+                        <small class="text-muted">980 pts</small>
+                        <small class="text-muted">Próximo: Ouro</small>
+                      </div>
+                      <div class="mt-1">
+                        <div class="ranking-label">Posição no ranking</div>
+                        <div class="ranking-badges">
+                          <div
+                            style="
+                              display: inline-flex;
+                              flex-direction: column;
+                              align-items: center;
+                              margin-right: 14px;
+                            "
+                          >
+                            <span
+                              style="
+                                display: flex;
+                                width: 56px;
+                                height: 56px;
+                                background: #ff7420;
+                                border-radius: 12px;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 24px;
+                                color: #fff;
+                                font-weight: 700;
+                                text-align: center;
+                              "
+                              >3º</span
+                            >
                           </div>
-                          <div style="display:inline-flex;flex-direction:column;align-items:center;">
-                            <span style="display:flex;width:56px;height:56px;background:#1b1b1b;border-radius:12px;align-items:center;justify-content:center;font-size:24px;color:#fff;font-weight:700;text-align:center;">4º</span>
+                          <div
+                            style="
+                              display: inline-flex;
+                              flex-direction: column;
+                              align-items: center;
+                            "
+                          >
+                            <span
+                              style="
+                                display: flex;
+                                width: 56px;
+                                height: 56px;
+                                background: #1b1b1b;
+                                border-radius: 12px;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 24px;
+                                color: #fff;
+                                font-weight: 700;
+                                text-align: center;
+                              "
+                              >4º</span
+                            >
                           </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div class="card-footer bg-transparent d-flex flex-wrap gap-2">
+                  <button
+                    class="btn btn-disputa"
+                    data-bs-toggle="modal"
+                    data-bs-target="#abrirDisputaModal"
+                  >
+                    <i class="bi bi-shield-exclamation me-1"></i> Abrir disputa
+                  </button>
+                </div>
               </div>
-              <div class="card-footer bg-transparent d-flex flex-wrap gap-2">
-                <button class="btn btn-disputa" data-bs-toggle="modal" data-bs-target="#abrirDisputaModal">
-                  <i class="bi bi-shield-exclamation me-1"></i> Abrir disputa
-                </button>
-              </div>
-            </div>
 
-            <div class="row g-3">
-              <div class="col-12 col-lg-8">
-                <div class="card soft-shadow border-0 rounded-4 p-4 bg-white h-100">
-                  <div class="d-flex align-items-center mb-2">
-                    <i class="bi bi-mortarboard text-brand fs-3 me-2"></i>
-                    <h5 class="fw-bold mb-0">Trilha de Aprendizagem</h5>
-                  </div>
-                  <div class="mb-2 text-muted">Resumo da sua jornada de aprendizado, missões e progresso na trilha.</div>
-                  <ul class="list-unstyled mb-3">
-                    <li><i class="bi bi-check-circle text-success me-1"></i> 2 módulos concluídos</li>
-                    <li><i class="bi bi-flag text-primary me-1"></i> 1 missão em andamento</li>
-                    <li><i class="bi bi-trophy text-warning me-1"></i> 1 conquista desbloqueada</li>
-                  </ul>
-                  <div class="d-flex gap-2 align-items-center">
-                    <a href="plano.html" class="btn btn-primary btn-sm rounded-0">Ver trilha completa</a>
+              <div class="row g-3">
+                <div class="col-12 col-lg-8">
+                  <div
+                    class="card soft-shadow border-0 rounded-4 p-4 bg-white h-100"
+                  >
+                    <div class="d-flex align-items-center mb-2">
+                      <i class="bi bi-mortarboard text-brand fs-3 me-2"></i>
+                      <h5 class="fw-bold mb-0">Trilha de Aprendizagem</h5>
+                    </div>
+                    <div class="mb-2 text-muted">
+                      Resumo da sua jornada de aprendizado, missões e progresso
+                      na trilha.
+                    </div>
+                    <ul class="list-unstyled mb-3">
+                      <li>
+                        <i class="bi bi-check-circle text-success me-1"></i> 2
+                        módulos concluídos
+                      </li>
+                      <li>
+                        <i class="bi bi-flag text-primary me-1"></i> 1 missão em
+                        andamento
+                      </li>
+                      <li>
+                        <i class="bi bi-trophy text-warning me-1"></i> 1
+                        conquista desbloqueada
+                      </li>
+                    </ul>
+                    <div class="d-flex gap-2 align-items-center">
+                      <a
+                        href="plano.html"
+                        class="btn btn-primary btn-sm rounded-0"
+                        >Ver trilha completa</a
+                      >
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-12 col-lg-4">
-                <div class="card soft-shadow border-0 rounded-4 p-4 bg-white h-100 text-center">
-                  <div class="mb-2">
-                    <i class="bi bi-star-fill text-warning fs-2"></i>
+                <div class="col-12 col-lg-4">
+                  <div
+                    class="card soft-shadow border-0 rounded-4 p-4 bg-white h-100 text-center"
+                  >
+                    <div class="mb-2">
+                      <i class="bi bi-star-fill text-warning fs-2"></i>
+                    </div>
+                    <div class="kpi text-brand mb-1">1.200</div>
+                    <div class="kpi-sub mb-2">Pontos na trilha</div>
+                    <div class="mb-2">
+                      <i class="bi bi-calendar-check text-success fs-5"></i>
+                    </div>
+                    <div class="kpi text-success mb-1">4</div>
+                    <div class="kpi-sub">Dias de estudo consecutivos</div>
                   </div>
-                  <div class="kpi text-brand mb-1">1.200</div>
-                  <div class="kpi-sub mb-2">Pontos na trilha</div>
-                  <div class="mb-2">
-                    <i class="bi bi-calendar-check text-success fs-5"></i>
-                  </div>
-                  <div class="kpi text-success mb-1">4</div>
-                  <div class="kpi-sub">Dias de estudo consecutivos</div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-7">
-            <div class="card soft-shadow mb-4">
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <h2 class="h5 m-0">Painel rápido</h2>
-                  <span class="text-brand"><i data-lucide="sparkles"></i></span>
-                </div>
-                <div class="row g-3 mt-1">
-                  <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded-4 text-center h-100">
-                      <div class="kpi">8</div>
-                      <div class="kpi-sub">Entradas hoje</div>
+            <div class="col-12 col-lg-7">
+              <div class="card soft-shadow mb-4">
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <h2 class="h5 m-0">Painel rápido</h2>
+                    <span class="text-brand"
+                      ><i data-lucide="sparkles"></i
+                    ></span>
+                  </div>
+                  <div class="row g-3 mt-1">
+                    <div class="col-6 col-md-3">
+                      <div class="p-3 border rounded-4 text-center h-100">
+                        <div class="kpi">8</div>
+                        <div class="kpi-sub">Entradas hoje</div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="p-3 border rounded-4 text-center h-100">
+                        <div class="kpi">5</div>
+                        <div class="kpi-sub">Saídas hoje</div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="p-3 border rounded-4 text-center h-100">
+                        <div class="kpi">20</div>
+                        <div class="kpi-sub">Produtos em estoque</div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="p-3 border rounded-4 text-center h-100">
+                        <div class="kpi">+50</div>
+                        <div class="kpi-sub">Pontos hoje</div>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded-4 text-center h-100">
-                      <div class="kpi">5</div>
-                      <div class="kpi-sub">Saídas hoje</div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded-4 text-center h-100">
-                      <div class="kpi">20</div>
-                      <div class="kpi-sub">Produtos em estoque</div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded-4 text-center h-100">
-                      <div class="kpi">+50</div>
-                      <div class="kpi-sub">Pontos hoje</div>
-                    </div>
-                  </div>
-                </div>
                   <!-- ...existing code... -->
+                </div>
               </div>
-            </div>
 
-            <div class="card soft-shadow">
-              <div class="card-header d-flex align-items-center justify-content-between">
-                Missões ativas
-                <span class="badge bg-light text-dark">3</span>
-              </div>
-              <div class="card-body">
-                <div class="d-flex flex-column gap-4">
-                  <div class="mission-item">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div>
-                        <strong>Inventário Rápido</strong>
-                        <span class="badge bg-danger-subtle text-danger ms-2">Diária</span>
+              <div class="card soft-shadow">
+                <div
+                  class="card-header d-flex align-items-center justify-content-between"
+                >
+                  Missões ativas
+                  <span class="badge bg-light text-dark">3</span>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex flex-column gap-4">
+                    <div class="mission-item">
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div>
+                          <strong>Inventário Rápido</strong>
+                          <span class="badge bg-danger-subtle text-danger ms-2"
+                            >Diária</span
+                          >
+                        </div>
+                        <span class="badge bg-warning-subtle text-dark"
+                          >+20 pts</span
+                        >
                       </div>
-                      <span class="badge bg-warning-subtle text-dark">+20 pts</span>
+                      <div class="small text-muted">
+                        Realizar conferência de estoque dos produtos Swift até o
+                        final do dia
+                      </div>
+                      <div class="progress mt-2" style="height: 5px">
+                        <div
+                          class="progress-bar bg-success"
+                          style="width: 60%"
+                        ></div>
+                      </div>
+                      <div
+                        class="d-flex justify-content-between align-items-center mt-1"
+                      >
+                        <small class="text-muted">3 de 5 setores</small>
+                        <small class="text-muted">Expira hoje às 23:59</small>
+                      </div>
+                      <div class="d-flex justify-content-end mt-2">
+                        <a href="missoes.html" class="btn btn-sm btn-disputa"
+                          >Detalhes</a
+                        >
+                      </div>
                     </div>
-                    <div class="small text-muted">
-                      Realizar conferência de estoque dos produtos Swift até o final do dia
-                    </div>
-                    <div class="progress mt-2" style="height: 5px;">
-                      <div class="progress-bar bg-success" style="width: 60%"></div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mt-1">
-                      <small class="text-muted">3 de 5 setores</small>
-                      <small class="text-muted">Expira hoje às 23:59</small>
-                    </div>
-                    <div class="d-flex justify-content-end mt-2">
-                      <a href="missoes.html" class="btn btn-sm btn-disputa">Detalhes</a>
-                    </div>
-                  </div>
 
-                  <div class="mission-item">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div>
-                        <strong>Controle de Vencimentos</strong>
-                        <span class="badge bg-primary-subtle text-primary ms-2">Semanal</span>
+                    <div class="mission-item">
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div>
+                          <strong>Controle de Vencimentos</strong>
+                          <span
+                            class="badge bg-primary-subtle text-primary ms-2"
+                            >Semanal</span
+                          >
+                        </div>
+                        <span class="badge bg-warning-subtle text-dark"
+                          >+60 pts</span
+                        >
                       </div>
-                      <span class="badge bg-warning-subtle text-dark">+60 pts</span>
+                      <div class="small text-muted">
+                        Verificar e registrar produtos próximos do vencimento
+                        durante a semana
+                      </div>
+                      <div class="progress mt-2" style="height: 5px">
+                        <div
+                          class="progress-bar bg-success"
+                          style="width: 40%"
+                        ></div>
+                      </div>
+                      <div
+                        class="d-flex justify-content-between align-items-center mt-1"
+                      >
+                        <small class="text-muted">8 de 20 produtos</small>
+                        <small class="text-muted">5 dias restantes</small>
+                      </div>
+                      <div class="d-flex justify-content-end mt-2">
+                        <a href="missoes.html" class="btn btn-sm btn-disputa"
+                          >Detalhes</a
+                        >
+                      </div>
                     </div>
-                    <div class="small text-muted">
-                      Verificar e registrar produtos próximos do vencimento durante a semana
-                    </div>
-                    <div class="progress mt-2" style="height: 5px;">
-                      <div class="progress-bar bg-success" style="width: 40%"></div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mt-1">
-                      <small class="text-muted">8 de 20 produtos</small>
-                      <small class="text-muted">5 dias restantes</small>
-                    </div>
-                    <div class="d-flex justify-content-end mt-2">
-                      <a href="missoes.html" class="btn btn-sm btn-disputa">Detalhes</a>
-                    </div>
-                  </div>
 
-                  <div class="mission-item">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div>
-                        <strong>Organização de Câmara Fria</strong>
-                        <span class="badge bg-success-subtle text-success ms-2">Mensal</span>
+                    <div class="mission-item">
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <div>
+                          <strong>Organização de Câmara Fria</strong>
+                          <span
+                            class="badge bg-success-subtle text-success ms-2"
+                            >Mensal</span
+                          >
+                        </div>
+                        <span class="badge bg-warning-subtle text-dark"
+                          >+100 pts</span
+                        >
                       </div>
-                      <span class="badge bg-warning-subtle text-dark">+100 pts</span>
-                    </div>
-                    <div class="small text-muted">
-                      Manter a câmara fria organizada e registrar auditoria semanal durante o mês
-                    </div>
-                    <div class="progress mt-2" style="height: 5px;">
-                      <div class="progress-bar bg-success" style="width: 25%"></div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mt-1">
-                      <small class="text-muted">1 de 4 auditorias</small>
-                      <small class="text-muted">18 dias restantes</small>
-                    </div>
-                    <div class="d-flex justify-content-end mt-2">
-                      <a href="missoes.html" class="btn btn-sm btn-disputa">Detalhes</a>
+                      <div class="small text-muted">
+                        Manter a câmara fria organizada e registrar auditoria
+                        semanal durante o mês
+                      </div>
+                      <div class="progress mt-2" style="height: 5px">
+                        <div
+                          class="progress-bar bg-success"
+                          style="width: 25%"
+                        ></div>
+                      </div>
+                      <div
+                        class="d-flex justify-content-between align-items-center mt-1"
+                      >
+                        <small class="text-muted">1 de 4 auditorias</small>
+                        <small class="text-muted">18 dias restantes</small>
+                      </div>
+                      <div class="d-flex justify-content-end mt-2">
+                        <a href="missoes.html" class="btn btn-sm btn-disputa"
+                          >Detalhes</a
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -283,22 +502,26 @@
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/js/main.js"></script>
 
-    <!-- ...existing code... -->
+      <!-- ...existing code... -->
+    </div>
 
     <footer class="py-4 mt-4">
-      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+      <div
+        class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
+      >
         <div class="text-muted small">
           © 2025 SwiftPro. Todos os direitos reservados.
         </div>
         <div class="d-flex align-items-center gap-3">
           <a class="small text-decoration-none" href="termo.html">Termos</a>
-          <a class="small text-decoration-none" href="formulario_ajuda.html">Ajuda</a>
+          <a class="small text-decoration-none" href="formulario_ajuda.html"
+            >Ajuda</a
+          >
         </div>
       </div>
     </footer>

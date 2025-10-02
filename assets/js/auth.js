@@ -1,16 +1,16 @@
 // Redireciona automaticamente gerente para gerente.html se acessar outra página logado,
 // exceto se for a página de configuração (config.html) ou perfil de colaborador (?colaborador=)
 if (
-  typeof window !== 'undefined' &&
+  typeof window !== "undefined" &&
   window.location &&
-  !window.location.pathname.endsWith('gerente.html') &&
-  !window.location.pathname.endsWith('config.html')
+  !window.location.pathname.endsWith("gerente.html") &&
+  !window.location.pathname.endsWith("config.html")
 ) {
   const params = new URLSearchParams(window.location.search);
-  const isPerfilColaborador = !!params.get('colaborador');
+  const isPerfilColaborador = !!params.get("colaborador");
   const user = getCurrentUser && getCurrentUser();
-  if (user && user.role === 'gerente' && !isPerfilColaborador) {
-    window.location.href = 'gerente.html';
+  if (user && user.role === "gerente" && !isPerfilColaborador) {
+    window.location.href = "gerente.html";
   }
 }
 // ============================================
@@ -163,6 +163,26 @@ function hasRole(requiredRole) {
 }
 
 /**
+ * Verifica se o usuário tem uma das roles especificadas
+ * @param {string|string[]} requiredRoles - Role ou array de roles necessárias
+ * @returns {boolean}
+ */
+function hasAnyRole(requiredRoles) {
+  const user = getCurrentUser();
+  if (!user) return false;
+
+  if (typeof requiredRoles === "string") {
+    return user.role === requiredRoles;
+  }
+
+  if (Array.isArray(requiredRoles)) {
+    return requiredRoles.includes(user.role);
+  }
+
+  return false;
+}
+
+/**
  * Faz logout do usuário
  */
 function logoutUser() {
@@ -184,6 +204,9 @@ function redirectUserByRole(role) {
     case "vendedor":
       window.location.href = "index.html"; // Dashboard principal
       break;
+    case "estoquista":
+      window.location.href = "estoquista.html";
+      break;
     default:
       window.location.href = "index.html";
   }
@@ -191,7 +214,7 @@ function redirectUserByRole(role) {
 
 /**
  * Protege uma página verificando se o usuário tem a role necessária
- * @param {string} requiredRole - Role necessária para acessar a página
+ * @param {string|string[]} requiredRole - Role ou array de roles necessárias para acessar a página
  * @param {string} redirectUrl - URL para redirecionar se não autorizado
  */
 function protectPage(requiredRole = null, redirectUrl = "login.html") {
@@ -204,7 +227,7 @@ function protectPage(requiredRole = null, redirectUrl = "login.html") {
   }
 
   // Se uma role específica for necessária, verificar
-  if (requiredRole && user.role !== requiredRole) {
+  if (requiredRole && !hasAnyRole(requiredRole)) {
     alert("Acesso negado. Você não tem permissão para acessar esta página.");
     // Redirecionar para página apropriada baseada na role do usuário
     redirectUserByRole(user.role);
@@ -374,6 +397,7 @@ window.SwiftAuth = {
   getCurrentUser,
   isUserLoggedIn,
   hasRole,
+  hasAnyRole,
   logoutUser,
   protectPage,
   redirectUserByRole,

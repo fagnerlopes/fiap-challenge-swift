@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const MOCK_USERS = {
       "gerente@swift.com": true,
       "vendedor@swift.com": true,
+      "estoquista@swift.com": true,
     };
 
     return MOCK_USERS[email.toLowerCase()] === true;

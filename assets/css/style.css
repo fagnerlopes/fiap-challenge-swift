@@ -27,7 +27,25 @@
   --swift-light:#fffaf7;
   --swift-muted:#f7f2ef;
 }
-body{ background: var(--swift-light); }
+
+/* Layout principal com sticky footer */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body { 
+  background: var(--swift-light);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Container principal que cresce para empurrar o footer */
+.main-content {
+  flex: 1;
+}
 .navbar{ background: white; border-bottom: 1px solid #eee; }
 .btn-primary{ background: var(--swift-primary); border-color: var(--swift-primary); }
 .btn-primary:hover{ filter: brightness(0.95); }
@@ -62,7 +80,11 @@ section{ scroll-margin-top: 84px; }
 .role-tab .nav-link{ border-radius: 999px; }
 .role-tab .nav-link.active{ background: var(--swift-primary); color: #fff; }
 .mission-item{ border: 1px dashed #e8e4e1; border-radius: 14px; padding: 14px; background: #fff; }
-footer{ background: #fff; border-top: 1px solid #eee; }
+footer{ 
+  background: #fff; 
+  border-top: 1px solid #eee;
+  margin-top: auto;
+}
 :focus-visible{ outline: 3px solid #ffb98a; outline-offset: 2px; }
 /* Garantir que a tabela de ranking mostre todos os 10 colaboradores */
 .table-responsive {
