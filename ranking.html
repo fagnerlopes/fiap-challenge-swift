@@ -22,6 +22,17 @@
     <!-- Sistema de Autenticação -->
     <script src="assets/js/auth.js"></script>
     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const user = window.getCurrentUser && window.getCurrentUser();
+        if (user && user.role === "estoquista") {
+          const navIndex = document.getElementById("navIndexColaborador");
+          if (navIndex) navIndex.style.display = "none";
+          const logo = document.getElementById("swiftproLogo");
+          if (logo) logo.setAttribute("href", "estoquista.html");
+        }
+      });
+    </script>
+    <script>
       // Proteger página - qualquer usuário logado pode acessar
       window.checkPageAccess();
     </script>
@@ -34,6 +45,7 @@
       <div class="container">
         <a
           class="navbar-brand d-flex align-items-center gap-2"
+          id="swiftproLogo"
           href="index.html"
         >
           <i class="bi bi-fire text-brand"></i>

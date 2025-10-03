@@ -1,3 +1,15 @@
+// Esconde o link para index.html e altera o logo SwiftPro para estoquista
+document.addEventListener("DOMContentLoaded", function () {
+  const user = getCurrentUser && getCurrentUser();
+  // Oculta link index para estoquista
+  if (user && user.role === "estoquista") {
+    const navIndex = document.getElementById("navIndexColaborador");
+    if (navIndex) navIndex.style.display = "none";
+    // Redireciona logo para estoquista
+    const logo = document.getElementById("swiftproLogo");
+    if (logo) logo.setAttribute("href", "estoquista.html");
+  }
+});
 // Redireciona automaticamente gerente para gerente.html se acessar outra página logado,
 // exceto se for a página de configuração (config.html) ou perfil de colaborador (?colaborador=)
 if (
