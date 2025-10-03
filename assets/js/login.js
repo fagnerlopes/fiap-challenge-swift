@@ -270,6 +270,13 @@ const MOCK_USERS = {
     role: "vendedor",
     id: 2,
   },
+  "estoquista@swift.com": {
+    email: "estoquista@swift.com",
+    password: "123456",
+    name: "Ana Silva",
+    role: "estoquista",
+    id: 3,
+  },
 };
 
 /**
@@ -310,6 +317,9 @@ function redirectUserByRole(role) {
       break;
     case "vendedor":
       window.location.href = "index.html"; // Dashboard principal
+      break;
+    case "estoquista":
+      window.location.href = "estoquista.html";
       break;
     default:
       window.location.href = "index.html";
