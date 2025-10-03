@@ -59,6 +59,12 @@ A aplicação possui um sistema de autenticação mockado para fins acadêmicos.
 - **Senha**: `123456`
 - **Acesso**: Todas as páginas, **exceto** a Área do Gerente
 
+### 👨‍💻 Estoquista
+
+- **E-mail**: `estoquista@swift.com`
+- **Senha**: `123456`
+- **Acesso**: Todas as páginas, **exceto** a Área do Gerente e a home do Vendedor
+
 ### 🔒 Controle de Acesso
 
 - **Página `gerente.html`**: Restrita apenas a usuários com role "gerente"
