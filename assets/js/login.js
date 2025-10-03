@@ -52,18 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         hideLoadingState();
 
-        // Verificar credenciais mockadas
         const loginResult = authenticateUser(email, password);
 
         if (loginResult.success) {
-          // Salvar dados da sessão usando a nova função
           if (window.SwiftAuth && window.SwiftAuth.saveUserSession) {
             window.SwiftAuth.saveUserSession(
               loginResult.user,
               rememberMeCheckbox.checked
             );
           } else {
-            // Fallback para compatibilidade
             if (rememberMeCheckbox.checked) {
               localStorage.setItem(
                 "swift_user",
@@ -80,13 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
           showSuccessMessage(`Bem-vindo(a), ${loginResult.user.name}!`);
 
-          console.log("Login successful:", {
-            email: loginResult.user.email,
-            role: loginResult.user.role,
-            rememberMe: rememberMeCheckbox.checked,
-          });
-
-          // Redirecionar após login bem-sucedido
           setTimeout(() => {
             redirectUserByRole(loginResult.user.role);
           }, 1500);
@@ -219,13 +209,6 @@ document.addEventListener("DOMContentLoaded", function () {
     loginForm.insertBefore(alertDiv, loginForm.firstChild);
   }
 
-  function hideSuccessMessage() {
-    const alert = loginForm.querySelector(".alert-success");
-    if (alert) {
-      alert.remove();
-    }
-  }
-
   const formElements = document.querySelectorAll(".form-control, .btn");
   formElements.forEach((element) => {
     element.addEventListener("focus", function () {
@@ -246,15 +229,8 @@ document.addEventListener("DOMContentLoaded", function () {
       this.style.transform = "translateY(0) scale(1)";
     });
   });
-
-  console.log("Swift Pro Login Page initialized successfully");
 });
 
-// ============================================
-// SISTEMA DE AUTENTICAÇÃO MOCKADO
-// ============================================
-
-// Credenciais mockadas para o sistema acadêmico
 const MOCK_USERS = {
   "gerente@swift.com": {
     email: "gerente@swift.com",
@@ -279,12 +255,6 @@ const MOCK_USERS = {
   },
 };
 
-/**
- * Autentica o usuário com as credenciais mockadas
- * @param {string} email
- * @param {string} password
- * @returns {object} Resultado da autenticação
- */
 function authenticateUser(email, password) {
   const user = MOCK_USERS[email.toLowerCase()];
 
@@ -306,17 +276,13 @@ function authenticateUser(email, password) {
   };
 }
 
-/**
- * Redireciona o usuário baseado na sua role
- * @param {string} role
- */
 function redirectUserByRole(role) {
   switch (role) {
     case "gerente":
       window.location.href = "gerente.html";
       break;
     case "vendedor":
-      window.location.href = "index.html"; // Dashboard principal
+      window.location.href = "index.html";
       break;
     case "estoquista":
       window.location.href = "estoquista.html";
@@ -326,15 +292,9 @@ function redirectUserByRole(role) {
   }
 }
 
-/**
- * Obtém o usuário atual da sessão
- * @returns {object|null} Dados do usuário ou null se não logado
- */
 function getCurrentUser() {
-  // Verificar sessionStorage primeiro
   let userData = sessionStorage.getItem("swift_user");
 
-  // Se não encontrar, verificar localStorage (remember me)
   if (!userData) {
     userData = localStorage.getItem("swift_user");
   }
@@ -343,7 +303,6 @@ function getCurrentUser() {
     try {
       return JSON.parse(userData);
     } catch (e) {
-      console.error("Erro ao processar dados do usuário:", e);
       return null;
     }
   }
@@ -351,27 +310,15 @@ function getCurrentUser() {
   return null;
 }
 
-/**
- * Verifica se o usuário está logado
- * @returns {boolean}
- */
 function isUserLoggedIn() {
   return getCurrentUser() !== null;
 }
 
-/**
- * Verifica se o usuário tem uma role específica
- * @param {string} requiredRole
- * @returns {boolean}
- */
 function hasRole(requiredRole) {
   const user = getCurrentUser();
   return user && user.role === requiredRole;
 }
 
-/**
- * Faz logout do usuário
- */
 function logoutUser() {
   sessionStorage.removeItem("swift_user");
   localStorage.removeItem("swift_user");
@@ -379,24 +326,16 @@ function logoutUser() {
   window.location.href = "login.html";
 }
 
-/**
- * Protege uma página verificando se o usuário tem a role necessária
- * @param {string} requiredRole - Role necessária para acessar a página
- * @param {string} redirectUrl - URL para redirecionar se não autorizado
- */
 function protectPage(requiredRole = null, redirectUrl = "login.html") {
   const user = getCurrentUser();
 
-  // Se não estiver logado, redirecionar para login
   if (!user) {
     window.location.href = redirectUrl;
     return false;
   }
 
-  // Se uma role específica for necessária, verificar
   if (requiredRole && user.role !== requiredRole) {
     alert("Acesso negado. Você não tem permissão para acessar esta página.");
-    // Redirecionar para página apropriada baseada na role do usuário
     redirectUserByRole(user.role);
     return false;
   }
@@ -404,7 +343,6 @@ function protectPage(requiredRole = null, redirectUrl = "login.html") {
   return true;
 }
 
-// Exportar funções para uso global
 window.SwiftAuth = {
   getCurrentUser,
   isUserLoggedIn,

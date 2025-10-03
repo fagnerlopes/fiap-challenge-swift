@@ -28,11 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isValid) {
       showLoadingState();
 
-      // Simular envio de e-mail de recuperação
       setTimeout(() => {
         hideLoadingState();
 
-        // Verificar se o e-mail existe no sistema (usar os mesmos dados mockados do login)
         const emailExists = checkEmailExists(email);
 
         if (emailExists) {
@@ -40,12 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
             `Um e-mail com instruções para redefinir sua senha foi enviado para ${email}`
           );
 
-          // Limpar o formulário após sucesso
           emailInput.value = "";
 
-          console.log("Password reset email sent to:", email);
-
-          // Redirecionar para login após alguns segundos
           setTimeout(() => {
             window.location.href = "login.html";
           }, 4000);
@@ -87,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function checkEmailExists(email) {
-    // Usar os mesmos dados mockados do sistema de login
     const MOCK_USERS = {
       "gerente@swift.com": true,
       "vendedor@swift.com": true,
@@ -192,7 +185,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     forgotPasswordForm.insertBefore(alertDiv, forgotPasswordForm.firstChild);
 
-    // Auto-remover após 4 segundos
     setTimeout(() => {
       if (alertDiv.parentNode) {
         alertDiv.remove();
@@ -200,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 4000);
   }
 
-  // Efeitos visuais similares ao login
   const formElements = document.querySelectorAll(".form-control, .btn");
   formElements.forEach((element) => {
     element.addEventListener("focus", function () {
@@ -211,6 +202,4 @@ document.addEventListener("DOMContentLoaded", function () {
       this.style.transform = "translateY(0)";
     });
   });
-
-  console.log("Swift Pro Forgot Password Page initialized successfully");
 });

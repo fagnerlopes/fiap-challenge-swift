@@ -6,8 +6,11 @@
     <title>Swift</title>
 
     <!-- Favicon -->
-     <link rel="shortcut icon" href="assets/images/favicon.ico.svg" type="image/x-icon">
-     
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico.svg"
+      type="image/x-icon"
+    />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -209,7 +212,6 @@
     <script src="assets/js/login.js"></script>
     <script>
       lucide.createIcons();
-      // Oculta links de navegação para gerente logado
       document.addEventListener("DOMContentLoaded", function () {
         try {
           var user = null;
@@ -223,7 +225,6 @@
             if (userData) user = JSON.parse(userData);
           }
           if (user && user.role === "gerente") {
-            // Esconde links de navegação se existirem
             var navLinks = document.querySelectorAll("a.nav-link");
             navLinks.forEach(function (link) {
               var txt = link.textContent.trim();
@@ -236,9 +237,7 @@
               }
             });
           }
-        } catch (e) {
-          console.warn("Erro ao ocultar navegação para gerente:", e);
-        }
+        } catch (e) {}
       });
     </script>
   </body>

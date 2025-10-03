@@ -24,10 +24,8 @@
     <script defer src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- Sistema de Autenticação -->
     <script src="assets/js/auth.js"></script>
     <script>
-      // Proteger página - qualquer usuário logado pode acessar
       window.checkPageAccess && window.checkPageAccess();
     </script>
   </head>
@@ -262,8 +260,6 @@
         .getElementById("formAjuda")
         .addEventListener("submit", function (event) {
           event.preventDefault();
-          // Aqui você pode integrar com um serviço de e-mail real, como EmailJS, Formspree, etc.
-          // Por enquanto, apenas exibe mensagem de sucesso
           document.getElementById("mensagemSucesso").classList.remove("d-none");
           document.getElementById("formAjuda").reset();
         });

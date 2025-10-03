@@ -19,12 +19,9 @@
   <script defer src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- Sistema de Autenticação -->
   <script src="assets/js/auth.js"></script>
     <script>
-      // Proteger página - apenas gerentes podem acessar
       window.checkPageAccess("gerente");
-      // Oculta links de navegação para gerente
       document.addEventListener('DOMContentLoaded', function() {
         try {
           var user = null;
@@ -43,7 +40,7 @@
               }
             });
           }
-        } catch(e) { console.warn('Erro ao ocultar navegação para gerente:', e); }
+        } catch(e) {}
       });
     </script>
   </head>

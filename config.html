@@ -23,7 +23,6 @@
     <script defer src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- Sistema de Autenticação -->
     <script src="assets/js/auth.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -55,15 +54,11 @@
               }
             });
           }
-        } catch (e) {
-          console.warn("Erro ao ocultar navegação para gerente:", e);
-        }
+        } catch (e) {}
       });
     </script>
-    <!-- Sistema de Avatar -->
     <script src="assets/js/avatar.js"></script>
     <script>
-      // Proteger página - qualquer usuário logado pode acessar
       window.checkPageAccess();
     </script>
   </head>
@@ -378,7 +373,6 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-      // Controle de acesso e funcionalidades da página de configurações
       document.addEventListener("DOMContentLoaded", function () {
         const storeInput = document.getElementById("storeInput");
         const storeHelp = document.getElementById("storeHelp");
@@ -390,15 +384,12 @@
         const uploadMessage = document.getElementById("uploadMessage");
         const userNameInput = document.getElementById("userNameInput");
 
-        // Obter dados do usuário atual
         let currentUser = null;
 
         try {
-          // Tentar usar a função do sistema de autenticação
           if (window.SwiftAuth && window.SwiftAuth.getCurrentUser) {
             currentUser = window.SwiftAuth.getCurrentUser();
           } else {
-            // Fallback para compatibilidade
             const userData =
               sessionStorage.getItem("swift_user") ||
               localStorage.getItem("swift_user");
@@ -408,66 +399,42 @@
           }
 
           if (currentUser) {
-            console.log("Usuário atual:", currentUser);
-
-            // Verificar se é vendedor
             if (currentUser.role === "vendedor") {
-              // Desabilitar input para vendedores
               storeInput.disabled = true;
               storeInput.classList.add("bg-light");
               storeHelp.style.display = "block";
-
-              console.log("Campo 'Loja' desabilitado para vendedor");
             } else if (currentUser.role === "gerente") {
-              // Manter habilitado para gerentes
               storeInput.disabled = false;
               storeInput.classList.remove("bg-light");
               storeHelp.style.display = "none";
-
-              console.log("Campo 'Loja' habilitado para gerente");
             }
 
-            // Preencher campo de nome com dados do usuário
             if (userNameInput && currentUser.name) {
               userNameInput.value = currentUser.name;
-              console.log("Campo nome preenchido com:", currentUser.name);
             }
-
-            // O avatar será carregado automaticamente pelo sistema de avatar global
           } else {
-            console.warn("Usuário não encontrado, redirecionando para login");
             window.location.href = "login.html";
           }
         } catch (error) {
-          console.error("Erro ao verificar permissões do usuário:", error);
-          // Em caso de erro, desabilitar por segurança
           storeInput.disabled = true;
           storeInput.classList.add("bg-light");
           storeHelp.style.display = "block";
         }
 
-        // === FUNCIONALIDADE DE UPLOAD DE FOTO ===
-
-        // Evento de mudança no input de arquivo
         profileImageInput.addEventListener("change", function (event) {
           const file = event.target.files[0];
 
           if (file) {
-            // Validar arquivo
             if (!validateImageFile(file)) {
               return;
             }
 
-            // Mostrar status de processamento
             showUploadStatus("Processando imagem...", "info");
-
-            // Processar a imagem
             processImageUpload(file);
           }
         });
 
         function validateImageFile(file) {
-          // Verificar tipo de arquivo
           const allowedTypes = [
             "image/jpeg",
             "image/jpg",
@@ -483,8 +450,7 @@
             return false;
           }
 
-          // Verificar tamanho (máximo 2MB)
-          const maxSize = 2 * 1024 * 1024; // 2MB
+          const maxSize = 2 * 1024 * 1024;
           if (file.size > maxSize) {
             showUploadStatus(
               "Arquivo muito grande. Máximo 2MB permitido.",
@@ -498,16 +464,13 @@
         }
 
         function processImageUpload(file) {
-          // Usar o sistema de avatar global
           if (window.SwiftAvatar && window.SwiftAvatar.saveUserAvatar) {
-            // Simular tempo de processamento
             setTimeout(() => {
               window.SwiftAvatar.saveUserAvatar(
                 currentUser,
                 file,
                 function (error, imageData) {
                   if (error) {
-                    console.error("Erro ao salvar avatar:", error);
                     showUploadStatus(
                       "Erro ao salvar imagem. Tente novamente.",
                       "danger"
@@ -515,15 +478,10 @@
                     return;
                   }
 
-                  // Sucesso
                   showUploadStatus(
                     `Foto salva como: uploads/${imageData.fileName}`,
                     "success"
                   );
-
-                  console.log("Upload processado pelo sistema de avatar");
-
-                  // Ocultar status após 3 segundos
                   setTimeout(() => {
                     hideUploadStatus();
                   }, 3000);
