@@ -20,6 +20,7 @@
     <script defer src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/auth.js"></script>
+    <script src="assets/js/avatar.js"></script>
     <script>
       // Restringir acesso apenas para estoquistas e gerentes
       window.checkPageAccess(["estoquista", "gerente"]);
@@ -185,10 +186,16 @@
                     src="https://randomuser.me/api/portraits/women/32.jpg"
                     alt="Avatar do Estoquista"
                     class="avatar-xl"
+                    data-user-avatar
                   />
                   <div>
                     <div class="d-flex align-items-center gap-2">
-                      <h1 class="h4 m-0">Ana Silva (Estoquista)</h1>
+                      <h1 class="h4 m-0">
+                        <span data-user-name>Ana Silva</span> (<span
+                          data-user-role-display
+                          >Estoquista</span
+                        >)
+                      </h1>
                       <span class="badge badge-level">Prata</span>
                     </div>
                     <div class="text-muted small">

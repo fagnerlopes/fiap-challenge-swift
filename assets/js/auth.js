@@ -109,7 +109,15 @@ function generateAvatarUrls(role, name) {
       fallback: `https://ui-avatars.com/api/?name=${encodeURIComponent(
         name
       )}&background=${swiftColor}&color=fff&size=${size}`,
-      description: "Avatar feminino profissional",
+      description: "Avatar feminino profissional - Gerente",
+    };
+  } else if (role === "estoquista") {
+    return {
+      primary: "https://randomuser.me/api/portraits/women/32.jpg",
+      fallback: `https://ui-avatars.com/api/?name=${encodeURIComponent(
+        name
+      )}&background=${swiftColor}&color=fff&size=${size}`,
+      description: "Avatar feminino profissional - Estoquista",
     };
   } else {
     return {
@@ -118,7 +126,7 @@ function generateAvatarUrls(role, name) {
       fallback: `https://ui-avatars.com/api/?name=${encodeURIComponent(
         name
       )}&background=${swiftColor}&color=fff&size=${size}`,
-      description: "Avatar masculino profissional",
+      description: "Avatar masculino profissional - Vendedor",
     };
   }
 }
@@ -284,7 +292,21 @@ function updateUserInterface() {
   // Atualizar role do usuário na interface (se existir elemento)
   const userRoleElements = document.querySelectorAll("[data-user-role]");
   userRoleElements.forEach((element) => {
-    element.textContent = user.role === "gerente" ? "Gerente" : "Vendedor";
+    let roleText = "Vendedor";
+    if (user.role === "gerente") roleText = "Gerente";
+    else if (user.role === "estoquista") roleText = "Estoquista";
+    element.textContent = roleText;
+  });
+
+  // Atualizar role display (formato específico para cards principais)
+  const userRoleDisplayElements = document.querySelectorAll(
+    "[data-user-role-display]"
+  );
+  userRoleDisplayElements.forEach((element) => {
+    let roleText = "Vendedor";
+    if (user.role === "gerente") roleText = "Gerente";
+    else if (user.role === "estoquista") roleText = "Estoquista";
+    element.textContent = roleText;
   });
 
   // Atualizar avatar baseado na role

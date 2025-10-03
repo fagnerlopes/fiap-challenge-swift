@@ -252,6 +252,7 @@
                     <div class="col-12">
                       <label class="form-label">Nome</label>
                       <input
+                        id="userNameInput"
                         class="form-control"
                         placeholder="Seu nome"
                         value="Lucas"
@@ -283,6 +284,7 @@
                           width="64"
                           height="64"
                           class="rounded-circle border"
+                          data-user-avatar
                         />
                         <div class="flex-grow-1">
                           <input
@@ -386,6 +388,7 @@
         );
         const uploadStatus = document.getElementById("uploadStatus");
         const uploadMessage = document.getElementById("uploadMessage");
+        const userNameInput = document.getElementById("userNameInput");
 
         // Obter dados do usuário atual
         let currentUser = null;
@@ -422,6 +425,12 @@
               storeHelp.style.display = "none";
 
               console.log("Campo 'Loja' habilitado para gerente");
+            }
+
+            // Preencher campo de nome com dados do usuário
+            if (userNameInput && currentUser.name) {
+              userNameInput.value = currentUser.name;
+              console.log("Campo nome preenchido com:", currentUser.name);
             }
 
             // O avatar será carregado automaticamente pelo sistema de avatar global
