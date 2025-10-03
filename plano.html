@@ -6,8 +6,12 @@
     <title>SwiftPro – Gamificação para Lojas</title>
 
     <!-- Favicon -->
-     <link rel="shortcut icon" href="assets/images/favicon.ico.svg" type="image/x-icon">
-     
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico.svg"
+      type="image/x-icon"
+    />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -86,29 +90,58 @@
               <li class="nav-item">
                 <a class="nav-link" href="gerente.html">Área do Gerente</a>
               </li>
-              <li class="nav-item">
-              </li>
-              <li class="nav-item">
-              </li>
+              <li class="nav-item"></li>
+              <li class="nav-item"></li>
             </ul>
             <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
               <!-- Sininho de notificação -->
               <div class="nav-item dropdown position-relative me-2">
-                <a href="#" class="nav-link p-0" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false" title="Notificações" role="button">
+                <a
+                  href="#"
+                  class="nav-link p-0"
+                  id="notificationDropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  title="Notificações"
+                  role="button"
+                >
                   <i class="bi bi-bell-fill fs-4 text-brand"></i>
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:0.7em;">
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    style="font-size: 0.7em"
+                  >
                     3
                     <span class="visually-hidden">notificações não lidas</span>
                   </span>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="notificationDropdown" style="min-width: 280px;">
+                <ul
+                  class="dropdown-menu dropdown-menu-end mt-2"
+                  aria-labelledby="notificationDropdown"
+                  style="min-width: 280px"
+                >
                   <li class="dropdown-header">Notificações</li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="missoes.html"><strong>Nova missão criada pelo gerente</strong></a></li>
-                  <li><a class="dropdown-item" href="ranking.html"><strong>Você subiu de posição no ranking!</strong></a></li>
-                  <li><a class="dropdown-item" href="#"><strong>Disputa resolvida pelo gerente</strong></a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item text-center text-muted" href="#">Ver todas</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="missoes.html"
+                      ><strong>Nova missão criada pelo gerente</strong></a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="ranking.html"
+                      ><strong>Você subiu de posição no ranking!</strong></a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><strong>Disputa resolvida pelo gerente</strong></a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item text-center text-muted" href="#"
+                      >Ver todas</a
+                    >
+                  </li>
                 </ul>
               </div>
               <!-- Menu dropdown do usuário -->
@@ -173,132 +206,153 @@
 
     <div class="main-content">
       <section id="trilha" class="py-5">
-      <div class="container">
-  <h2 class="h4">Trilha de Aprendizagem</h2>
-        <div class="row g-3">
-          <div class="col-12 col-lg-8">
-            <div class="card h-100">
-              <div class="card-header">Trilha</div>
-              <div class="card-body">
-                <div class="row g-3">
-                  <div class="col-12 col-md-6">
-                    <div class="p-3 border rounded-4 h-100">
-                      <div class="fw-semibold mb-1">
-                        <i class="bi bi-mortarboard text-brand me-1"></i>
-                        Introdução à Swift
+        <div class="container">
+          <h2 class="h4">Trilha de Aprendizagem</h2>
+          <div class="row g-3">
+            <div class="col-12 col-lg-8">
+              <div class="card h-100">
+                <div class="card-header">Trilha</div>
+                <div class="card-body">
+                  <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                      <div class="p-3 border rounded-4 h-100">
+                        <div class="fw-semibold mb-1">
+                          <i class="bi bi-mortarboard text-brand me-1"></i>
+                          Introdução à Swift
+                        </div>
+                        <div class="small text-muted">
+                          Vídeo • 12 min • 80 pts
+                        </div>
+                        <button class="btn btn-sm btn-disputa mt-2">
+                          Assistir
+                        </button>
                       </div>
-                      <div class="small text-muted">
-                        Vídeo • 12 min • 80 pts
-                      </div>
-                      <button class="btn btn-sm btn-disputa mt-2">
-                        Assistir
-                      </button>
                     </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="p-3 border rounded-4 h-100">
-                      <div class="fw-semibold mb-1">
-                        <i class="bi bi-graph-up text-brand me-1"></i> Técnicas
-                        de Venda
+                    <div class="col-12 col-md-6">
+                      <div class="p-3 border rounded-4 h-100">
+                        <div class="fw-semibold mb-1">
+                          <i class="bi bi-graph-up text-brand me-1"></i>
+                          Técnicas de Venda
+                        </div>
+                        <div class="small text-muted">
+                          Vídeo • 15 min • 100 pts
+                        </div>
+                        <button class="btn btn-sm btn-disputa mt-2">
+                          Assistir
+                        </button>
                       </div>
-                      <div class="small text-muted">
-                        Vídeo • 15 min • 100 pts
-                      </div>
-                      <button class="btn btn-sm btn-disputa mt-2">
-                        Assistir
-                      </button>
                     </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="p-3 border rounded-4 h-100">
-                      <div class="fw-semibold mb-1">
-                        <i class="bi bi-people text-brand me-1"></i> Atendimento
-                        & NPS
+                    <div class="col-12 col-md-6">
+                      <div class="p-3 border rounded-4 h-100">
+                        <div class="fw-semibold mb-1">
+                          <i class="bi bi-people text-brand me-1"></i>
+                          Atendimento & NPS
+                        </div>
+                        <div class="small text-muted">
+                          Artigo • 10 min • 60 pts
+                        </div>
+                        <button class="btn btn-sm btn-disputa mt-2">Ler</button>
                       </div>
-                      <div class="small text-muted">
-                        Artigo • 10 min • 60 pts
-                      </div>
-                      <button class="btn btn-sm btn-disputa mt-2">
-                        Ler
-                      </button>
                     </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="p-3 border rounded-4 h-100">
-                      <div class="fw-semibold mb-1">
-                        <i class="bi bi-basket text-brand me-1"></i> Cortes &
-                        Preparos
+                    <div class="col-12 col-md-6">
+                      <div class="p-3 border rounded-4 h-100">
+                        <div class="fw-semibold mb-1">
+                          <i class="bi bi-basket text-brand me-1"></i> Cortes &
+                          Preparos
+                        </div>
+                        <div class="small text-muted">
+                          Vídeo • 18 min • 120 pts
+                        </div>
+                        <button class="btn btn-sm btn-disputa mt-2">
+                          Assistir
+                        </button>
                       </div>
-                      <div class="small text-muted">
-                        Vídeo • 18 min • 120 pts
-                      </div>
-                      <button class="btn btn-sm btn-disputa mt-2">
-                        Assistir
-                      </button>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="card-footer bg-transparent">
-                <small class="text-muted"
-                  >Complete conteúdos para acelerar seu avanço de nível.</small
-                >
+                <div class="card-footer bg-transparent">
+                  <small class="text-muted"
+                    >Complete conteúdos para acelerar seu avanço de
+                    nível.</small
+                  >
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-4">
-            <div class="card h-100">
-              <div class="card-header">Conquistas</div>
-              <div class="card-body d-flex flex-wrap gap-2">
-                <div class="d-flex flex-wrap justify-content-center w-100 gap-4">
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="bi bi-stars text-brand mb-2" style="font-size: 2.5rem;"></i>
-                    <span class="fw-semibold">Atendente 5⭐</span>
-                  </div>
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="bi bi-bag-check text-brand mb-2" style="font-size: 2.5rem;"></i>
-                    <span class="fw-semibold">Combo Master</span>
-                  </div>
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="bi bi-emoji-smile text-brand mb-2" style="font-size: 2.5rem;"></i>
-                    <span class="fw-semibold">NPS Expert</span>
-                  </div>
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="bi bi-rocket-takeoff text-brand mb-2" style="font-size: 2.5rem;"></i>
-                    <span class="fw-semibold">Growth Seller</span>
-                  </div>
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="bi bi-award text-brand mb-2" style="font-size: 2.5rem;"></i>
-                    <span class="fw-semibold">Destaque do Mês</span>
-                  </div>
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="bi bi-lightning-charge text-brand mb-2" style="font-size: 2.5rem;"></i>
-                    <span class="fw-semibold">Meta Relâmpago</span>
+            <div class="col-12 col-lg-4">
+              <div class="card h-100">
+                <div class="card-header">Conquistas</div>
+                <div class="card-body d-flex flex-wrap gap-2">
+                  <div
+                    class="d-flex flex-wrap justify-content-center w-100 gap-4"
+                  >
+                    <div class="d-flex flex-column align-items-center">
+                      <i
+                        class="bi bi-stars text-brand mb-2"
+                        style="font-size: 2.5rem"
+                      ></i>
+                      <span class="fw-semibold">Atendente 5⭐</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                      <i
+                        class="bi bi-bag-check text-brand mb-2"
+                        style="font-size: 2.5rem"
+                      ></i>
+                      <span class="fw-semibold">Combo Master</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                      <i
+                        class="bi bi-emoji-smile text-brand mb-2"
+                        style="font-size: 2.5rem"
+                      ></i>
+                      <span class="fw-semibold">NPS Expert</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                      <i
+                        class="bi bi-rocket-takeoff text-brand mb-2"
+                        style="font-size: 2.5rem"
+                      ></i>
+                      <span class="fw-semibold">Growth Seller</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                      <i
+                        class="bi bi-award text-brand mb-2"
+                        style="font-size: 2.5rem"
+                      ></i>
+                      <span class="fw-semibold">Destaque do Mês</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                      <i
+                        class="bi bi-lightning-charge text-brand mb-2"
+                        style="font-size: 2.5rem"
+                      ></i>
+                      <span class="fw-semibold">Meta Relâmpago</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="card-footer bg-transparent text-end">
-                <a
-                  href="plano.html#todas"
-                  class="btn btn-sm btn-disputa"
-                  >Ver todas</a
-                >
+                <div class="card-footer bg-transparent text-end">
+                  <a href="plano.html#todas" class="btn btn-sm btn-disputa"
+                    >Ver todas</a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
 
-    <footer class="py-4 mt-4">
-      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+    <footer class="py-4">
+      <div
+        class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
+      >
         <div class="text-muted small">
           © 2025 SwiftPro. Todos os direitos reservados.
         </div>
         <div class="d-flex align-items-center gap-3">
           <a class="small text-decoration-none" href="termo.html">Termos</a>
-          <a class="small text-decoration-none" href="formulario_ajuda.html">Ajuda</a>
+          <a class="small text-decoration-none" href="formulario_ajuda.html"
+            >Ajuda</a
+          >
         </div>
       </div>
     </footer>

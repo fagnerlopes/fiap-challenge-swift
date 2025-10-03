@@ -6,8 +6,12 @@
     <title>SwiftPro – Gamificação para Lojas</title>
 
     <!-- Favicon -->
-     <link rel="shortcut icon" href="assets/images/favicon.ico.svg" type="image/x-icon">
-     
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico.svg"
+      type="image/x-icon"
+    />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -86,29 +90,58 @@
               <li class="nav-item">
                 <a class="nav-link" href="gerente.html">Área do Gerente</a>
               </li>
-              <li class="nav-item">
-              </li>
-              <li class="nav-item">
-              </li>
+              <li class="nav-item"></li>
+              <li class="nav-item"></li>
             </ul>
             <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0 align-items-center">
               <!-- Sininho de notificação -->
               <div class="nav-item dropdown position-relative me-2">
-                <a href="#" class="nav-link p-0" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false" title="Notificações" role="button">
+                <a
+                  href="#"
+                  class="nav-link p-0"
+                  id="notificationDropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  title="Notificações"
+                  role="button"
+                >
                   <i class="bi bi-bell-fill fs-4 text-brand"></i>
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:0.7em;">
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    style="font-size: 0.7em"
+                  >
                     3
                     <span class="visually-hidden">notificações não lidas</span>
                   </span>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="notificationDropdown" style="min-width: 280px;">
+                <ul
+                  class="dropdown-menu dropdown-menu-end mt-2"
+                  aria-labelledby="notificationDropdown"
+                  style="min-width: 280px"
+                >
                   <li class="dropdown-header">Notificações</li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="missoes.html"><strong>Nova missão criada pelo gerente</strong></a></li>
-                  <li><a class="dropdown-item" href="ranking.html"><strong>Você subiu de posição no ranking!</strong></a></li>
-                  <li><a class="dropdown-item" href="#"><strong>Disputa resolvida pelo gerente</strong></a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item text-center text-muted" href="#">Ver todas</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="missoes.html"
+                      ><strong>Nova missão criada pelo gerente</strong></a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="ranking.html"
+                      ><strong>Você subiu de posição no ranking!</strong></a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><strong>Disputa resolvida pelo gerente</strong></a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item text-center text-muted" href="#"
+                      >Ver todas</a
+                    >
+                  </li>
                 </ul>
               </div>
               <!-- Menu dropdown do usuário -->
@@ -173,199 +206,263 @@
 
     <div class="main-content">
       <section id="missoes" class="py-5">
-      <div class="container">
-        <div class="d-flex align-items-center justify-content-between mb-3">
-          <h2 class="h4 m-0">Missões</h2>
-          <div class="d-flex gap-2">
-            <select
-              class="form-select form-select-sm"
-              aria-label="Filtrar tipo"
-            >
-              <option>Vendas</option>
-              <option>Estoque</option>
-            </select>
-            <select
-              class="form-select form-select-sm"
-              aria-label="Filtrar período"
-            >
-              <option>Semana</option>
-              <option>Mês</option>
-            </select>
+        <div class="container">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h2 class="h4 m-0">Missões</h2>
+            <div class="d-flex gap-2">
+              <select
+                class="form-select form-select-sm"
+                aria-label="Filtrar tipo"
+              >
+                <option>Vendas</option>
+                <option>Estoque</option>
+              </select>
+              <select
+                class="form-select form-select-sm"
+                aria-label="Filtrar período"
+              >
+                <option>Semana</option>
+                <option>Mês</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="row g-3">
-          <!-- Missões de Vendas (já existentes) -->
-          <div class="col-12 col-lg-4">
-            <div class="card h-100">
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div>
-                    <strong>Venda Casada Premium</strong>
-                    <span class="badge bg-danger-subtle text-danger ms-2">Diária</span>
+          <div class="row g-3">
+            <!-- Missões de Vendas (já existentes) -->
+            <div class="col-12 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body d-flex flex-column">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <div>
+                      <strong>Venda Casada Premium</strong>
+                      <span class="badge bg-danger-subtle text-danger ms-2"
+                        >Diária</span
+                      >
+                    </div>
+                    <span class="badge bg-warning-subtle text-dark"
+                      >+30 pts</span
+                    >
                   </div>
-                  <span class="badge bg-warning-subtle text-dark">+30 pts</span>
-                </div>
-                <div class="small text-muted mb-2">
-                  Realizar 3 vendas casadas de cortes premium com temperos especiais
-                </div>
-                <div class="progress mb-2" style="height: 5px;">
-                  <div class="progress-bar bg-success" style="width: 33%"></div>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <small class="text-muted">1 de 3</small>
-                  <small class="text-muted">Expira hoje às 23:59</small>
-                </div>
-                <div class="mt-auto d-flex gap-2">
-                  <button class="btn btn-sm btn-disputa">Detalhes</button>
+                  <div class="small text-muted mb-2">
+                    Realizar 3 vendas casadas de cortes premium com temperos
+                    especiais
+                  </div>
+                  <div class="progress mb-2" style="height: 5px">
+                    <div
+                      class="progress-bar bg-success"
+                      style="width: 33%"
+                    ></div>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <small class="text-muted">1 de 3</small>
+                    <small class="text-muted">Expira hoje às 23:59</small>
+                  </div>
+                  <div class="mt-auto d-flex gap-2">
+                    <button class="btn btn-sm btn-disputa">Detalhes</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-4">
-            <div class="card h-100">
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div>
-                    <strong>Desafio NPS Excelente</strong>
-                    <span class="badge bg-primary-subtle text-primary ms-2">Semanal</span>
+            <div class="col-12 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body d-flex flex-column">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <div>
+                      <strong>Desafio NPS Excelente</strong>
+                      <span class="badge bg-primary-subtle text-primary ms-2"
+                        >Semanal</span
+                      >
+                    </div>
+                    <span class="badge bg-warning-subtle text-dark"
+                      >+100 pts</span
+                    >
                   </div>
-                  <span class="badge bg-warning-subtle text-dark">+100 pts</span>
-                </div>
-                <div class="small text-muted mb-2">
-                  Manter média de NPS acima de 9.5 durante a semana
-                </div>
-                <div class="progress mb-2" style="height: 5px;">
-                  <div class="progress-bar bg-success" style="width: 80%"></div>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <small class="text-muted">NPS atual: 9.6</small>
-                  <small class="text-muted">5 dias restantes</small>
-                </div>
-                <div class="mt-auto d-flex gap-2">
-                  <button class="btn btn-sm btn-disputa">Detalhes</button>
+                  <div class="small text-muted mb-2">
+                    Manter média de NPS acima de 9.5 durante a semana
+                  </div>
+                  <div class="progress mb-2" style="height: 5px">
+                    <div
+                      class="progress-bar bg-success"
+                      style="width: 80%"
+                    ></div>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <small class="text-muted">NPS atual: 9.6</small>
+                    <small class="text-muted">5 dias restantes</small>
+                  </div>
+                  <div class="mt-auto d-flex gap-2">
+                    <button class="btn btn-sm btn-disputa">Detalhes</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-4">
-            <div class="card h-100">
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div>
-                    <strong>Especialista em Cortes Nobres</strong>
-                    <span class="badge bg-success-subtle text-success ms-2">Mensal</span>
+            <div class="col-12 col-lg-4">
+              <div class="card h-100">
+                <div class="card-body d-flex flex-column">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <div>
+                      <strong>Especialista em Cortes Nobres</strong>
+                      <span class="badge bg-success-subtle text-success ms-2"
+                        >Mensal</span
+                      >
+                    </div>
+                    <span class="badge bg-warning-subtle text-dark"
+                      >+500 pts</span
+                    >
                   </div>
-                  <span class="badge bg-warning-subtle text-dark">+500 pts</span>
-                </div>
-                <div class="small text-muted mb-2">
-                  Atingir meta de R$ 15.000 em vendas de cortes premium no mês
-                </div>
-                <div class="progress mb-2" style="height: 5px;">
-                  <div class="progress-bar bg-success" style="width: 45%"></div>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <small class="text-muted">R$ 6.750 / R$ 15.000</small>
-                  <small class="text-muted">18 dias restantes</small>
-                </div>
-                <div class="mt-auto d-flex gap-2">
-                  <button class="btn btn-sm btn-disputa">Detalhes</button>
+                  <div class="small text-muted mb-2">
+                    Atingir meta de R$ 15.000 em vendas de cortes premium no mês
+                  </div>
+                  <div class="progress mb-2" style="height: 5px">
+                    <div
+                      class="progress-bar bg-success"
+                      style="width: 45%"
+                    ></div>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <small class="text-muted">R$ 6.750 / R$ 15.000</small>
+                    <small class="text-muted">18 dias restantes</small>
+                  </div>
+                  <div class="mt-auto d-flex gap-2">
+                    <button class="btn btn-sm btn-disputa">Detalhes</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Missões de Estoque para Estoquistas -->
-          <div class="col-12 col-lg-4">
-            <div class="card h-100 border-info">
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div>
-                    <strong>Inventário Perfeito</strong>
-                    <span class="badge bg-info-subtle text-info ms-2">Semanal</span>
+            <!-- Missões de Estoque para Estoquistas -->
+            <div class="col-12 col-lg-4">
+              <div class="card h-100 border-info">
+                <div class="card-body d-flex flex-column">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <div>
+                      <strong>Inventário Perfeito</strong>
+                      <span class="badge bg-info-subtle text-info ms-2"
+                        >Semanal</span
+                      >
+                    </div>
+                    <span class="badge bg-warning-subtle text-dark"
+                      >+80 pts</span
+                    >
                   </div>
-                  <span class="badge bg-warning-subtle text-dark">+80 pts</span>
-                </div>
-                <div class="small text-muted mb-2">
-                  Realizar inventário semanal sem divergências de estoque.
-                </div>
-                <div class="progress mb-2" style="height: 5px;">
-                  <div class="progress-bar bg-info" style="width: 60%"></div>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <small class="text-muted">3 de 5 setores</small>
-                  <small class="text-muted">4 dias restantes</small>
-                </div>
-                <div class="mt-auto d-flex gap-2">
-                  <button class="btn btn-sm btn-disputa">Detalhes</button>
+                  <div class="small text-muted mb-2">
+                    Realizar inventário semanal sem divergências de estoque.
+                  </div>
+                  <div class="progress mb-2" style="height: 5px">
+                    <div class="progress-bar bg-info" style="width: 60%"></div>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <small class="text-muted">3 de 5 setores</small>
+                    <small class="text-muted">4 dias restantes</small>
+                  </div>
+                  <div class="mt-auto d-flex gap-2">
+                    <button class="btn btn-sm btn-disputa">Detalhes</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-4">
-            <div class="card h-100 border-info">
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div>
-                    <strong>Reposição Ágil</strong>
-                    <span class="badge bg-info-subtle text-info ms-2">Diária</span>
+            <div class="col-12 col-lg-4">
+              <div class="card h-100 border-info">
+                <div class="card-body d-flex flex-column">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <div>
+                      <strong>Reposição Ágil</strong>
+                      <span class="badge bg-info-subtle text-info ms-2"
+                        >Diária</span
+                      >
+                    </div>
+                    <span class="badge bg-warning-subtle text-dark"
+                      >+20 pts</span
+                    >
                   </div>
-                  <span class="badge bg-warning-subtle text-dark">+20 pts</span>
-                </div>
-                <div class="small text-muted mb-2">
-                  Garantir reposição de todos os produtos nas gôndolas até 10h.
-                </div>
-                <div class="progress mb-2" style="height: 5px;">
-                  <div class="progress-bar bg-info" style="width: 90%"></div>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <small class="text-muted">Concluído</small>
-                  <small class="text-muted">Expira hoje às 10:00</small>
-                </div>
-                <div class="mt-auto d-flex gap-2">
-                  <button class="btn btn-sm btn-disputa">Detalhes</button>
+                  <div class="small text-muted mb-2">
+                    Garantir reposição de todos os produtos nas gôndolas até
+                    10h.
+                  </div>
+                  <div class="progress mb-2" style="height: 5px">
+                    <div class="progress-bar bg-info" style="width: 90%"></div>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <small class="text-muted">Concluído</small>
+                    <small class="text-muted">Expira hoje às 10:00</small>
+                  </div>
+                  <div class="mt-auto d-flex gap-2">
+                    <button class="btn btn-sm btn-disputa">Detalhes</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-4">
-            <div class="card h-100 border-info">
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <div>
-                    <strong>Controle de Validade</strong>
-                    <span class="badge bg-info-subtle text-info ms-2">Mensal</span>
+            <div class="col-12 col-lg-4">
+              <div class="card h-100 border-info">
+                <div class="card-body d-flex flex-column">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <div>
+                      <strong>Controle de Validade</strong>
+                      <span class="badge bg-info-subtle text-info ms-2"
+                        >Mensal</span
+                      >
+                    </div>
+                    <span class="badge bg-warning-subtle text-dark"
+                      >+150 pts</span
+                    >
                   </div>
-                  <span class="badge bg-warning-subtle text-dark">+150 pts</span>
-                </div>
-                <div class="small text-muted mb-2">
-                  Conferir e registrar validade de todos os produtos do estoque.
-                </div>
-                <div class="progress mb-2" style="height: 5px;">
-                  <div class="progress-bar bg-info" style="width: 25%"></div>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <small class="text-muted">20% concluído</small>
-                  <small class="text-muted">20 dias restantes</small>
-                </div>
-                <div class="mt-auto d-flex gap-2">
-                  <button class="btn btn-sm btn-disputa">Detalhes</button>
+                  <div class="small text-muted mb-2">
+                    Conferir e registrar validade de todos os produtos do
+                    estoque.
+                  </div>
+                  <div class="progress mb-2" style="height: 5px">
+                    <div class="progress-bar bg-info" style="width: 25%"></div>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <small class="text-muted">20% concluído</small>
+                    <small class="text-muted">20 dias restantes</small>
+                  </div>
+                  <div class="mt-auto d-flex gap-2">
+                    <button class="btn btn-sm btn-disputa">Detalhes</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
 
-    <footer class="py-4 mt-4">
-      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+    <footer class="py-4">
+      <div
+        class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
+      >
         <div class="text-muted small">
           © 2025 SwiftPro. Todos os direitos reservados.
         </div>
         <div class="d-flex align-items-center gap-3">
           <a class="small text-decoration-none" href="termo.html">Termos</a>
-          <a class="small text-decoration-none" href="formulario_ajuda.html">Ajuda</a>
+          <a class="small text-decoration-none" href="formulario_ajuda.html"
+            >Ajuda</a
+          >
         </div>
       </div>
     </footer>

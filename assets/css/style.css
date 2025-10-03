@@ -6,7 +6,8 @@
   font-weight: 600;
   transition: background 0.2s;
 }
-.btn-disputa:hover, .btn-disputa:focus {
+.btn-disputa:hover,
+.btn-disputa:focus {
   background: #d95e13;
   color: #fff;
 }
@@ -21,21 +22,22 @@
   background: #dc3545 !important;
   color: #fff;
 }
-:root{
-  --swift-primary:#FF7420;
-  --swift-dark:#1b1b1b;
-  --swift-light:#fffaf7;
-  --swift-muted:#f7f2ef;
+:root {
+  --swift-primary: #ff7420;
+  --swift-dark: #1b1b1b;
+  --swift-light: #fffaf7;
+  --swift-muted: #f7f2ef;
 }
 
 /* Layout principal com sticky footer */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-body { 
+body {
   background: var(--swift-light);
   display: flex;
   flex-direction: column;
@@ -45,20 +47,64 @@ body {
 /* Container principal que cresce para empurrar o footer */
 .main-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
-.navbar{ background: white; border-bottom: 1px solid #eee; }
-.btn-primary{ background: var(--swift-primary); border-color: var(--swift-primary); }
-.btn-primary:hover{ filter: brightness(0.95); }
-.text-brand{ color: var(--swift-primary) !important; }
-.bg-brand-soft{ background: linear-gradient(180deg,#fff 0%, #fff6f0 100%); }
-.badge-level{ background: var(--swift-primary); }
-.avatar-xl{ width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.08);}
-.card{ border: 1px solid #eee; border-radius: 16px; }
-.card-header{ background: transparent; font-weight: 600; }
-.soft-shadow{ box-shadow: 0 12px 24px rgba(0,0,0,0.06); }
-section{ scroll-margin-top: 84px; }
-.kpi{ font-size: 1.75rem; font-weight: 700; }
-.kpi-sub{ color: #6b7280; font-size: .9rem; }
+
+/* Garante que o conteúdo com background ocupe toda a altura disponível */
+.main-content > .bg-brand-soft {
+  flex: 1;
+}
+.navbar {
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+.btn-primary {
+  background: var(--swift-primary);
+  border-color: var(--swift-primary);
+}
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
+.text-brand {
+  color: var(--swift-primary) !important;
+}
+.bg-brand-soft {
+  background: linear-gradient(180deg, #fff 0%, #fff6f0 100%);
+}
+.badge-level {
+  background: var(--swift-primary);
+}
+.avatar-xl {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.card {
+  border: 1px solid #eee;
+  border-radius: 16px;
+}
+.card-header {
+  background: transparent;
+  font-weight: 600;
+}
+.soft-shadow {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+section {
+  scroll-margin-top: 84px;
+}
+.kpi {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+.kpi-sub {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
 
 /* Ajuste de alinhamento para posição do ranking no card do colaborador */
 .ranking-label {
@@ -74,18 +120,39 @@ section{ scroll-margin-top: 84px; }
   gap: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.progress{ height: 10px; border-radius: 999px; background: #eee; }
-.progress-bar{ background: var(--swift-primary); }
-.table thead th{ font-weight: 600; }
-.role-tab .nav-link{ border-radius: 999px; }
-.role-tab .nav-link.active{ background: var(--swift-primary); color: #fff; }
-.mission-item{ border: 1px dashed #e8e4e1; border-radius: 14px; padding: 14px; background: #fff; }
-footer{ 
-  background: #fff; 
+.progress {
+  height: 10px;
+  border-radius: 999px;
+  background: #eee;
+}
+.progress-bar {
+  background: var(--swift-primary);
+}
+.table thead th {
+  font-weight: 600;
+}
+.role-tab .nav-link {
+  border-radius: 999px;
+}
+.role-tab .nav-link.active {
+  background: var(--swift-primary);
+  color: #fff;
+}
+.mission-item {
+  border: 1px dashed #e8e4e1;
+  border-radius: 14px;
+  padding: 14px;
+  background: #fff;
+}
+footer {
+  background: #fff;
   border-top: 1px solid #eee;
   margin-top: auto;
 }
-:focus-visible{ outline: 3px solid #ffb98a; outline-offset: 2px; }
+:focus-visible {
+  outline: 3px solid #ffb98a;
+  outline-offset: 2px;
+}
 /* Garantir que a tabela de ranking mostre todos os 10 colaboradores */
 .table-responsive {
   max-height: none !important;
