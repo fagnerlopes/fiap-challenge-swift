@@ -25,6 +25,19 @@ if (
     window.location.href = "gerente.html";
   }
 }
+
+// Redireciona automaticamente estoquista para estoquista.html se acessar index.html
+if (
+  typeof window !== "undefined" &&
+  window.location &&
+  (window.location.pathname.endsWith("index.html") ||
+    window.location.pathname === "/")
+) {
+  const user = getCurrentUser && getCurrentUser();
+  if (user && user.role === "estoquista") {
+    window.location.href = "estoquista.html";
+  }
+}
 // ============================================
 // SISTEMA DE AUTENTICAÇÃO E CONTROLE DE ACESSO
 // ============================================
